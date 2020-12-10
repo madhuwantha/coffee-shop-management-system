@@ -1,0 +1,139 @@
+{% extends "Base/base_page.html.twig" %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+{% block page_content %}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="page-title-box">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        {#<h4 class="page-title">Data Table</h4>#}
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ path('dashboard') }}"><i
+                                            class="mdi mdi-home-outline"></i></a></li>
+                            {% for breadcrumb_link, breadcrumb in breadcrumbs %}
+                                <li class="breadcrumb-item"><a href="{{ path(breadcrumb_link) }}">{{ breadcrumb }}</a>
+                                </li>
+                            {% endfor %}
+                            <li class="breadcrumb-item active">List</li>
+                        </ol>
+                    </div>
+                </div> <!-- end row -->
+            </div>
+            <!-- end page-title -->
+            <div class="row">
+                <div class="col-12">
+                    {% if app.session.flashBag.has('success') %}
+                        {% for msg in app.session.flashBag.get('success') %}
+                            <div class="alert alert-success flash_alert" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                <strong>{{ msg }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% if app.session.flashBag.has('error') %}
+                        {% for msg in app.session.flashBag.get('error') %}
+                            <div class="alert alert-danger flash_alert" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                <strong>{{ msg }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="" method="get">
+                                <div class="form-group row">
+                                    <label for="Employee" class="col-sm-2 col-form-label">Employee </label>
+                                    <div class="col-sm-5">
+                                        <select class="form-control select2" name="employee"
+                                                id="employee"
+                                                required>
+                                            <option value=""></option>
+                                            {% for employee in employees %}
+                                                <option
+                                                        {% if employeeObj.id is defined %}
+                                                            {% if employee.id == employeeObj.id %}
+                                                                selected
+                                                            {% endif %}
+                                                        {% endif %}
+                                                        value="{{ employee.id }}">({{ employee.getEpfNo()}}) {{ employee.getName().__toString() }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <button type="submit" id="btn_search"
+                                                class="btn btn-success btn-block waves-effect waves-light">Search
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                                   style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead>
+                                <tr>
+                                    <th>Epf No</th>
+                                    <th>Name</th>
+                                    <th>Loan Amount (LKR)</th>
+                                    <th>No Of Installments</th>
+                                    <th>Installment Amount (LKR)</th>
+                                    <th>Effective From Date</th>
+                                    <th>Loan Status</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for key, bankLoan in bankLoans %}
+                                    <tr>
+                                        {#<td>{{ key +1 }}</td>#}
+                                        <td>{{ bankLoan.employee.epfNo }}</td>
+                                        <td>{{ bankLoan.employee.name.__toString }}</td>
+                                        <td class="text-right">{{ (bankLoan.loanAmount)|number_format(2, '.', ',') }}</td>
+                                        <td class="text-right">{{ (bankLoan.noOfInstallments)|number_format(2, '.', ',') }}</td>
+                                        <td class="text-right">{{ (bankLoan.installmentAmount)|number_format(2, '.', ',') }}</td>
+                                        <td>{{ bankLoan.effectiveFromDate | date('Y-m-d') }}</td>
+                                        <td>{{ bankLoan.bankLoanStatus.name }}</td>
+                                        <td>
+                                            <div class="btn-group" style="display: flex;">
+                                                <a href="{{ path('bank_loan_edit', {id: bankLoan.id} ) }}"
+                                                   class="btn btn-sm btn-info" role="button"><i
+                                                            class="fa fa-edit"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+        </div>
+        <!-- container-fluid -->
+    </div>
+    <!-- content -->
+
+{% endblock page_content %}
+{% block javascripts %}
+    <script>
+        {#var ajax_get_employee_list_auto_complete = "{{ url("ajax_get_employee_list_auto_complete") }}";#}
+    </script>
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+

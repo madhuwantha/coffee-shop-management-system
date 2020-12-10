@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+{% block title %}
+    {% if title is defined%}
+        MY |{{ title }}
+    {% else %}
+       MY
+    {% endif %}
+{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('dashboard') }}
+{% endblock %}
+{% block body %}
+    <!-- Begin page -->
+    <div id="wrapper">
+        <!-- Top Bar Start -->
+        {% include 'Base/header.html.twig' %}
+        <!-- Top Bar End -->
+        <!-- ========== Left Sidebar Start ========== -->
+        {% include 'Base/left-side-menu.html.twig' %}
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            {% block page_content %}
+            {% endblock page_content %}
+            <!-- content -->
+            <!-- Start footer -->
+            {% include 'Base/footer.html.twig' %}
+            <!-- enf footer -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- Start right-sidebar -->
+    {#{% include 'Base/right-sidebar.html.twig' %}#}
+    <!-- enf right-sidebar -->
+
+{% endblock %}
+
+
+
+
