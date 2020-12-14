@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit GalleryVideo{% endblock %}
+
+{% block body %}
+    <h1>Edit GalleryVideo</h1>
+
+    {{ include('gallery_video/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('gallery_video_index') }}">back to list</a>
+
+    {{ include('gallery_video/_delete_form.html.twig') }}
+{% endblock %}

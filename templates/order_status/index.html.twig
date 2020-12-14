@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OrderStatus index{% endblock %}
+
+{% block body %}
+    <h1>OrderStatus index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Code</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order_status in order_statuses %}
+            <tr>
+                <td>{{ order_status.id }}</td>
+                <td>{{ order_status.name }}</td>
+                <td>{{ order_status.code }}</td>
+                <td>
+                    <a href="{{ path('order_status_show', {'id': order_status.id}) }}">show</a>
+                    <a href="{{ path('order_status_edit', {'id': order_status.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('order_status_new') }}">Create new</a>
+{% endblock %}
