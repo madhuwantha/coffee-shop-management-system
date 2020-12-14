@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New GalleryVideo{% endblock %}
+
+{% block body %}
+    <h1>Create new GalleryVideo</h1>
+
+    {{ include('gallery_video/_form.html.twig') }}
+
+    <a href="{{ path('gallery_video_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OrderStatus{% endblock %}
+
+{% block body %}
+    <h1>OrderStatus</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ order_status.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ order_status.name }}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ order_status.code }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('order_status_index') }}">back to list</a>
+
+    <a href="{{ path('order_status_edit', {'id': order_status.id}) }}">edit</a>
+
+    {{ include('order_status/_delete_form.html.twig') }}
+{% endblock %}

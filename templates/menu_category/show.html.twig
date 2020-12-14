@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MenuCategory{% endblock %}
+
+{% block body %}
+    <h1>MenuCategory</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ menu_category.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('menu_category_index') }}">back to list</a>
+
+    <a href="{{ path('menu_category_edit', {'id': menu_category.id}) }}">edit</a>
+
+    {{ include('menu_category/_delete_form.html.twig') }}
+{% endblock %}

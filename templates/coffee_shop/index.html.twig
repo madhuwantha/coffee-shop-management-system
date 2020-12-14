@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CoffeeShop index{% endblock %}
+
+{% block body %}
+    <h1>CoffeeShop index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for coffee_shop in coffee_shops %}
+            <tr>
+                <td>{{ coffee_shop.id }}</td>
+                <td>{{ coffee_shop.name }}</td>
+                <td>{{ coffee_shop.city }}</td>
+                <td>
+                    <a href="{{ path('coffee_shop_show', {'id': coffee_shop.id}) }}">show</a>
+                    <a href="{{ path('coffee_shop_edit', {'id': coffee_shop.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('coffee_shop_new') }}">Create new</a>
+{% endblock %}
