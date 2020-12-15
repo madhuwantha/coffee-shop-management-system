@@ -89,8 +89,16 @@
                                         <td>{{ menu.id }}</td>
                                         <td>{{ menu.name }}</td>
                                         <td>
-                                            <a href="{{ path('menu_show', {'id': menu.id}) }}">show</a>
-                                            <a href="{{ path('menu_edit', {'id': menu.id}) }}">edit</a>
+                                            <div class="btn-group" style="display: flex;">
+                                                <a href="{{ path('menu_edit', {id: menu.id} ) }}"
+                                                   class="btn btn-sm btn-warning" role="button"><i
+                                                            class="fa fa-edit"></i>
+                                                </a>
+                                                <a href="{{ path('menu_show', {id: menu.id} ) }}"
+                                                   class="btn btn-sm btn-info" role="button"><i
+                                                            class="fa fa-eye"></i>
+                                                </a>
+                                            </div>
                                         </td>
                                     </tr>
                                 {% else %}
