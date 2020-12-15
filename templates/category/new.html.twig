@@ -1,11 +1,23 @@
-{% extends 'base.html.twig' %}
-
+{% extends "Base/base_page.html.twig" %}
 {% block title %}New Category{% endblock %}
 
-{% block body %}
-    <h1>Create new Category</h1>
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+{% block page_content %}
 
     {{ include('category/_form.html.twig') }}
 
-    <a href="{{ path('category_index') }}">back to list</a>
+{% endblock page_content %}
+{% block javascripts %}
+    <script>
+        {#var ajax_get_employee_list_auto_complete = "{{ url("ajax_get_employee_list_auto_complete") }}";#}
+    </script>
+    {{ encore_entry_script_tags('app') }}
 {% endblock %}
+
+
+
+
+

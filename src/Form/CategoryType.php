@@ -4,6 +4,8 @@ namespace App\Form;
 
 use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ResetType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,7 +17,8 @@ class CategoryType extends AbstractType
             ->add('name')
             ->add('code')
             ->add('level')
-            ->add('next_category')
+            ->add('reset', ResetType::class)
+            ->add('save', SubmitType::class);
         ;
     }
 

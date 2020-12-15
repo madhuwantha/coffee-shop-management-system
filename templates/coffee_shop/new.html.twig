@@ -1,11 +1,21 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}New CoffeeShop{% endblock %}
 
-{% block body %}
-    <h1>Create new CoffeeShop</h1>
+{% extends "Base/base_page.html.twig" %}
+{% block title %}New Coffee Shop{% endblock %}
+
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+{% block page_content %}
 
     {{ include('coffee_shop/_form.html.twig') }}
 
-    <a href="{{ path('coffee_shop_index') }}">back to list</a>
+{% endblock page_content %}
+{% block javascripts %}
+    <script>
+        {#var ajax_get_employee_list_auto_complete = "{{ url("ajax_get_employee_list_auto_complete") }}";#}
+    </script>
+    {{ encore_entry_script_tags('app') }}
 {% endblock %}
+

@@ -1,35 +1,126 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}User index{% endblock %}
+{% extends "Base/base_page.html.twig" %}
+{% block title %}Users List{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+{% block page_content %}
 
-{% block body %}
-    <h1>User index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.name }}</td>
-                <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('user_new') }}">Create new</a>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="page-title-box">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        {#<h4 class="page-title">Data Table</h4>#}
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ path('dashboard') }}"><i
+                                            class="mdi mdi-home-outline"></i></a></li>
+                            {#{% for breadcrumb_link, breadcrumb in breadcrumbs %}#}
+                            {#<li class="breadcrumb-item"><a href="{{ path(breadcrumb_link) }}">{{ breadcrumb }}</a>#}
+                            {#</li>#}
+                            {#{% endfor %}#}
+                            <li class="breadcrumb-item active">List</li>
+                        </ol>
+                    </div>
+                </div> <!-- end row -->
+            </div>
+            <!-- end page-title -->
+            <div class="row">
+                <div class="col-12">
+                    {% if app.session.flashBag.has('success') %}
+                        {% for msg in app.session.flashBag.get('success') %}
+                            <div class="alert alert-success flash_alert" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                <strong>{{ msg }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% if app.session.flashBag.has('error') %}
+                        {% for msg in app.session.flashBag.get('error') %}
+                            <div class="alert alert-danger flash_alert" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                <strong>{{ msg }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="" method="get">
+                                <div class="form-group row">
+                                    <label for="Employee" class="col-sm-2 col-form-label">Name </label>
+                                    <div class="col-sm-5">
+                                        <input name="category_name" class="form-control" type="text">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <button type="submit" id="btn_search"
+                                                class="btn btn-success btn-block waves-effect waves-light">Search
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                                   style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for user in users %}
+                                    <tr>
+                                        <td>{{ user.id }}</td>
+                                        <td>{{ user.name }}</td>
+                                        <td>
+                                            <div class="btn-group" style="display: flex;">
+                                                <a href="{{ path('user_edit', {id: user.id} ) }}"
+                                                   class="btn btn-sm btn-warning" role="button"><i
+                                                            class="fa fa-edit"></i>
+                                                </a>
+                                                <a href="{{ path('user_show', {id: user.id} ) }}"
+                                                   class="btn btn-sm btn-info" role="button"><i
+                                                            class="fa fa-eye"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="3">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+        </div>
+        <!-- container-fluid -->
+    </div>
+
+
+{% endblock page_content %}
+{% block javascripts %}
+    <script>
+        {#var ajax_get_employee_list_auto_complete = "{{ url("ajax_get_employee_list_auto_complete") }}";#}
+    </script>
+    {{ encore_entry_script_tags('app') }}
 {% endblock %}

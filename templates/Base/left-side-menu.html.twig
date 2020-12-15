@@ -16,165 +16,197 @@
                 </li>
                 <li>
                     <a href="javascript:void(0);" class="waves-effect"><i
-                                class="ion ion-md-people"></i><span> Employee<span
+                                class="ion ion-md-people"></i><span>User<span
                                     class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                     <ul class="submenu">
-                        <li><a href="">Create</a></li>
-                        <li><a href="">List</a></li>
+                        <li><a href="{{ path('user_new') }}">Create</a></li>
+                        <li><a href="{{ path('user_index') }}">List</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-list"></i><span> Working Days<span
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-list"></i><span> CoffeeShop<span
                                     class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                     <ul class="submenu">
-                        <li><a href="">Create</a></li>
-                        <li><a href="">List</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-code-working"></i><span> Attendance<span
-                                    class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <ul class="submenu">
-                        <li><a href="">Create</a></li>
-                        <li><a href="">List</a></li>
-                        {#                        <li><a href="{{ path('employee_attendance_upload') }}">Upload</a></li>#}
-                        <ul class="submenu">
-                            <li>
-                                <a href="javascript:void(0);">Upload<span class="float-right menu-arrow"><i
-                                                class="mdi mdi-chevron-right"></i></span></a>
-                                <ul class="submenu">
-                                    <li><a href="">Upload</a></li>
-                                    <li><a href="">List</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);">Confirmation<span class="float-right menu-arrow"><i
-                                                class="mdi mdi-chevron-right"></i></span></a>
-                                <ul class="submenu">
-                                    {#                                    <li><a href="{{ path('employee_attendance_upload') }}">Upload</a></li>#}
-                                    <li><a href="">List</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-leaf"></i><span> Employee Leave<span
-                                    class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <ul class="submenu">
-                        <li><a href="">Create</a></li>
-                        <li><a href="">List</a></li>
-                        <li><a href="">Leave Card</a></li>
+                        <li><a href="{{ path('coffee_shop_new') }}">Create</a></li>
+                        <li><a href="{{ path('coffee_shop_index') }}">List</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="javascript:void(0);" class="waves-effect"><i
-                                class="ion ion-md-cash"></i><span> Bank Loan<span
+                                class="ion ion-md-people"></i><span> Category<span
                                     class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                     <ul class="submenu">
-                        <li><a href="">Create</a></li>
-                        <li><a href="">List</a></li>
+                        <li><a href="{{ path('category_new') }}">Create</a></li>
+                        <li><a href="{{ path('category_index') }}">List</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-time"></i><span> Roster<span
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-list"></i><span>Gallery<span
                                     class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                     <ul class="submenu">
-                        <li>
-                            <a href="javascript:void(0);">Employee Roster Card <span class="float-right menu-arrow"><i
-                                            class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="submenu">
+                        <li><a href="{{ path('gallery_new') }}">Create</a></li>
+                        <li><a href="{{ path('gallery_index') }}">List</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-list"></i><span>Menu<span
+                                    class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a href="{{ path('menu_new') }}">Create</a></li>
+                        <li><a href="{{ path('menu_index') }}">List</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-list"></i><span>Order<span
+                                    class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a href="{{ path('order_index') }}">List</a></li>
+                    </ul>
+                </li>
+                {#<li>#}
+                    {#<a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-code-working"></i><span> Attendance<span#}
+                                    {#class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>#}
+                    {#<ul class="submenu">#}
+                        {#<li><a href="">Create</a></li>#}
+                        {#<li><a href="">List</a></li>#}
+                        {#                        <li><a href="{{ path('employee_attendance_upload') }}">Upload</a></li>#}
+                        {#<ul class="submenu">#}
+                            {#<li>#}
+                                {#<a href="javascript:void(0);">Upload<span class="float-right menu-arrow"><i#}
+                                                {#class="mdi mdi-chevron-right"></i></span></a>#}
+                                {#<ul class="submenu">#}
+                                    {#<li><a href="">Upload</a></li>#}
+                                    {#<li><a href="">List</a></li>#}
+                                {#</ul>#}
+                            {#</li>#}
+                            {#<li>#}
+                                {#<a href="javascript:void(0);">Confirmation<span class="float-right menu-arrow"><i#}
+                                                {#class="mdi mdi-chevron-right"></i></span></a>#}
+                                {#<ul class="submenu">#}
+                                    {#                                    <li><a href="{{ path('employee_attendance_upload') }}">Upload</a></li>#}
+                                    {#<li><a href="">List</a></li>#}
+                                {#</ul>#}
+                            {#</li>#}
+                        {#</ul>#}
+                    {#</ul>#}
+                {#</li>#}
+                {#<li>#}
+                    {#<a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-leaf"></i><span> Employee Leave<span#}
+                                    {#class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>#}
+                    {#<ul class="submenu">#}
+                        {#<li><a href="">Create</a></li>#}
+                        {#<li><a href="">List</a></li>#}
+                        {#<li><a href="">Leave Card</a></li>#}
+                    {#</ul>#}
+                {#</li>#}
+                {#<li>#}
+                    {#<a href="javascript:void(0);" class="waves-effect"><i#}
+                                {#class="ion ion-md-cash"></i><span> Bank Loan<span#}
+                                    {#class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>#}
+                    {#<ul class="submenu">#}
+                        {#<li><a href="">Create</a></li>#}
+                        {#<li><a href="">List</a></li>#}
+                    {#</ul>#}
+                {#</li>#}
+                {#<li>#}
+                    {#<a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-time"></i><span> Roster<span#}
+                                    {#class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>#}
+                    {#<ul class="submenu">#}
+                        {#<li>#}
+                            {#<a href="javascript:void(0);">Employee Roster Card <span class="float-right menu-arrow"><i#}
+                                            {#class="mdi mdi-chevron-right"></i></span></a>#}
+                            {#<ul class="submenu">#}
                                 {#<li><a href="{{ path('employee_roster_card_create') }}">Create</a></li>#}
                                 {#<li><a href="{{ path('employee_roster_card_list') }}">List</a></li>#}
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">Employee Date Roster <span class="float-right menu-arrow"><i
-                                            class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="submenu">
+                            {#</ul>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="javascript:void(0);">Employee Date Roster <span class="float-right menu-arrow"><i#}
+                                            {#class="mdi mdi-chevron-right"></i></span></a>#}
+                            {#<ul class="submenu">#}
                                 {#<li><a href="{{ path('employee_date_roster_create') }}">Create</a></li>#}
                                 {#<li><a href="{{ path('employee_date_roster_list') }}">List</a></li>#}
-                            </ul>
-                        </li>
+                            {#</ul>#}
+                        {#</li>#}
                         {#<li><a href="{{ path('roster_create') }}">Create</a></li>#}
                         {#<li><a href="{{ path('roster_list') }}">List</a></li>#}
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-infinite"></i><span> Remuneration<span
-                                    class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <ul class="submenu">
-                        <li>
-                            <a href="javascript:void(0);">Fix Remuneration <span class="float-right menu-arrow"><i
-                                            class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="submenu">
+                    {#</ul>#}
+                {#</li>#}
+                {#<li>#}
+                    {#<a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-infinite"></i><span> Remuneration<span#}
+                                    {#class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>#}
+                    {#<ul class="submenu">#}
+                        {#<li>#}
+                            {#<a href="javascript:void(0);">Fix Remuneration <span class="float-right menu-arrow"><i#}
+                                            {#class="mdi mdi-chevron-right"></i></span></a>#}
+                            {#<ul class="submenu">#}
                                 {#<li><a href="{{ path('fix_remuneration_create') }}">Create</a></li>#}
                                 {#<li><a href="{{ path('fix_remuneration_list') }}">List</a></li>#}
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="submenu">
-                        <li>
-                            <a href="javascript:void(0);">Variable Remuneration <span class="float-right menu-arrow"><i
-                                            class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="submenu">
+                            {#</ul>#}
+                        {#</li>#}
+                    {#</ul>#}
+                    {#<ul class="submenu">#}
+                        {#<li>#}
+                            {#<a href="javascript:void(0);">Variable Remuneration <span class="float-right menu-arrow"><i#}
+                                            {#class="mdi mdi-chevron-right"></i></span></a>#}
+                            {#<ul class="submenu">#}
                                 {#<li><a href="{{ path('variable_remuneration_create') }}">Create</a></li>#}
                                 {#<li><a href="{{ path('variable_remuneration_list') }}">List</a></li>#}
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-flag"></i><span> Resign<span
-                                    class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <ul class="submenu">
-                        <li>
-                            <a href="javascript:void(0);">Gratuity <span class="float-right menu-arrow"><i
-                                            class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="submenu">
+                            {#</ul>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</li>#}
+                {#<li>#}
+                    {#<a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-flag"></i><span> Resign<span#}
+                                    {#class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>#}
+                    {#<ul class="submenu">#}
+                        {#<li>#}
+                            {#<a href="javascript:void(0);">Gratuity <span class="float-right menu-arrow"><i#}
+                                            {#class="mdi mdi-chevron-right"></i></span></a>#}
+                            {#<ul class="submenu">#}
                                 {#<li><a href="{{ path('resign_gratuity_create') }}">Create</a></li>#}
                                 {#<li><a href="{{ path('resign_gratuity_list') }}">List</a></li>#}
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-leaf"></i><span> Other<span
-                                    class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <ul class="submenu">
-                        <li>
-                            <a href="javascript:void(0);">Canteen Book Release <span class="float-right menu-arrow"><i
-                                            class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="submenu">
+                            {#</ul>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</li>#}
+                {#<li>#}
+                    {#<a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-leaf"></i><span> Other<span#}
+                                    {#class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>#}
+                    {#<ul class="submenu">#}
+                        {#<li>#}
+                            {#<a href="javascript:void(0);">Canteen Book Release <span class="float-right menu-arrow"><i#}
+                                            {#class="mdi mdi-chevron-right"></i></span></a>#}
+                            {#<ul class="submenu">#}
                                 {#<li><a href="{{ path('canteen_book_release_create') }}">Create</a></li>#}
                                 {#<li><a href="{{ path('canteen_book_release_list') }}">List</a></li>#}
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="submenu">
-                        <li>
-                            <a href="javascript:void(0);">Telephone No Entry <span class="float-right menu-arrow"><i
-                                            class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="submenu">
+                            {#</ul>#}
+                        {#</li>#}
+                    {#</ul>#}
+                    {#<ul class="submenu">#}
+                        {#<li>#}
+                            {#<a href="javascript:void(0);">Telephone No Entry <span class="float-right menu-arrow"><i#}
+                                            {#class="mdi mdi-chevron-right"></i></span></a>#}
+                            {#<ul class="submenu">#}
                                 {#<li><a href="{{ path('telephone_no_entry_create') }}">Create</a></li>#}
                                 {#<li><a href="{{ path('telephone_no_entry_list') }}">List</a></li>#}
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-leaf"></i><span> Salary<span
-                                    class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <ul class="submenu">
-                        <li>
-                            <a href="javascript:void(0);">Employee Salary <span class="float-right menu-arrow"><i
-                                            class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="submenu">
+                            {#</ul>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</li>#}
+                {#<li>#}
+                    {#<a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-leaf"></i><span> Salary<span#}
+                                    {#class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>#}
+                    {#<ul class="submenu">#}
+                        {#<li>#}
+                            {#<a href="javascript:void(0);">Employee Salary <span class="float-right menu-arrow"><i#}
+                                            {#class="mdi mdi-chevron-right"></i></span></a>#}
+                            {#<ul class="submenu">#}
                                 {#<li><a href="{{ path('attendance_list') }}">List</a></li>#}
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                            {#</ul>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</li>#}
             </ul>
         </div>
         <!-- Sidebar -->

@@ -1,4 +1,77 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="page-title-box">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    {#<h4 class="page-title">Data Table</h4>#}
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ path('dashboard') }}"><i
+                                        class="mdi mdi-home-outline"></i></a></li>
+                        {#{% for breadcrumb_link, breadcrumb in breadcrumbs %}#}
+                        {#<li class="breadcrumb-item"><a href="{{ path(breadcrumb_link) }}">{{ breadcrumb }}</a>#}
+                        {#</li>#}
+                        {#{% endfor %}#}
+                        <li class="breadcrumb-item active">Create / Edit</li>
+                    </ol>
+                </div>
+            </div> <!-- end row -->
+        </div>
+        <!-- end page-title -->
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {{ form_start(form,{'attr':{'class':'form-horizontal'}}) }}
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title">Gallery details</h4>
+                            {#<p class="text-muted mb-4">Here are examples of <code>.form-control</code> applied to each#}
+                            {#textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>#}
+                            <hr/>
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">Name</label>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(form.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.name) }}
+                                    </div>
+                                </div>
+                                {#<div class="form-group row">#}
+                                    {#<label for="loanAmount" class="col-sm-4 control-label">City</label>#}
+                                    {#<div class="col-sm-8">#}
+                                        {#{{ form_widget(form.city, {'type':'text', 'attr': {'class': 'form-control'}}) }}#}
+                                        {#{{ form_errors(form.city) }}#}
+                                    {#</div>#}
+                                {#</div>#}
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        {{ form_widget(form.reset, {'attr': {'class': 'btn btn-secondary btn-block pull-left'}}) }}
+                                    </div>
+                                    <div class="offset-6 col-sm-3">
+                                        {{ form_widget(form.save, {'attr': {'class': 'btn btn-info btn-block pull-right'}}) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div>
+            <!-- end row -->
+            {{ form_end(form) }}
+        </form>
+
+    </div>
+    <!-- container-fluid -->
+
+</div>
+<!-- content -->
