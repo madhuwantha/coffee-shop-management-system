@@ -1,0 +1,19 @@
+
+<div class="form-group row">
+    <label for="sibling_name"
+           class="col-sm-4 control-label">Name</label>
+    <div class="col-sm-8">
+        {{ form_widget(galleryImag.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(galleryImag.name) }}
+    </div>
+</div>
+
+
+<div class="form-group row">
+    <label for="sibling_name"
+           class="col-sm-4 control-label">Path</label>
+    <div class="col-sm-8">
+        {{ form_widget(galleryImag.path, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(galleryImag.path) }}
+    </div>
+</div>

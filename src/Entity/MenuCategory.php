@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=MenuCategoryRepository::class)
  */
-class MenuCategory
+class MenuCategory // TODO : this class is not helpful
 {
     /**
      * @ORM\Id

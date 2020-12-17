@@ -102,6 +102,12 @@
                                                    class="btn btn-sm btn-info" role="button"><i
                                                             class="fa fa-eye"></i>
                                                 </a>
+                                                {% if category.level ==1 %}
+                                                    <a href="{{ path('sub_category_new', {id: category.id} ) }}"
+                                                       class="btn btn-sm btn-primary" role="button"><i
+                                                                class="far fa-plus-square"></i>
+                                                    </a>
+                                                {% endif %}
                                             </div>
                                         </td>
                                     </tr>

@@ -5,7 +5,7 @@
 {% extends "Base/base_page.html.twig" %}
 {% block title %}Gallery List{% endblock %}
 {% block stylesheets %}
-    {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_link_tags('gallery') }}
 {% endblock %}
 {% block page_content %}
 
@@ -92,8 +92,16 @@
                                         <td>{{ gallery.id }}</td>
                                         <td>{{ gallery.name }}</td>
                                         <td>
-                                            <a href="{{ path('gallery_show', {'id': gallery.id}) }}">show</a>
-                                            <a href="{{ path('gallery_edit', {'id': gallery.id}) }}">edit</a>
+                                            <div class="btn-group" style="display: flex;">
+                                                <a href="{{ path('gallery_edit', {id: gallery.id} ) }}"
+                                                   class="btn btn-sm btn-warning" role="button"><i
+                                                            class="fa fa-edit"></i>
+                                                </a>
+                                                <a href="{{ path('gallery_show', {id: gallery.id} ) }}"
+                                                   class="btn btn-sm btn-info" role="button"><i
+                                                            class="fa fa-eye"></i>
+                                                </a>
+                                            </div>
                                         </td>
                                     </tr>
                                 {% else %}
@@ -117,5 +125,5 @@
     <script>
         {#var ajax_get_employee_list_auto_complete = "{{ url("ajax_get_employee_list_auto_complete") }}";#}
     </script>
-    {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('gallery') }}
 {% endblock %}

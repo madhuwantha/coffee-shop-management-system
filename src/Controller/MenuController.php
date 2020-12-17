@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Menu;
 use App\Form\MenuType;
 use App\Repository\MenuRepository;
@@ -35,6 +36,9 @@ class MenuController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            foreach ($menu->getCategories() as $cat ){
+                $cat->setLevel(1);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($menu);
             $entityManager->flush();
@@ -53,6 +57,15 @@ class MenuController extends AbstractController
      */
     public function show(Menu $menu): Response
     {
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $categories = $entityManager->getRepository(Category::class)->findBy(array(
+            "menu" => $menu,
+            "level"  =>1
+        ));
+
+//        dump($categories);
+//        exit();
         return $this->render('menu/show.html.twig', [
             'menu' => $menu,
         ]);
@@ -67,6 +80,11 @@ class MenuController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            foreach ($menu->getCategories() as $cat ){
+                if ($cat->getLevel() == null){
+                    $cat->setLevel(1);
+                }
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('menu_index');

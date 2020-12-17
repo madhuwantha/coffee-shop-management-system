@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Form\CategoryType;
+use App\Form\MultipleCategoryType;
 use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -35,6 +36,7 @@ class CategoryController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $category->setLevel(1);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($category);
             $entityManager->flush();
@@ -49,12 +51,51 @@ class CategoryController extends AbstractController
     }
 
     /**
+     * @Route("/new-sub-category/{id}", name="sub_category_new", methods={"GET","POST"})
+     */
+    public function newSubCategory(Request $request,Category $category): Response
+    {
+
+        $c = new Category();
+        $form = $this->createForm(MultipleCategoryType::class, $c);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+
+
+            $tempList = $c->getNextCategories();
+            foreach ($tempList as $nextCategory){
+                $nextCategory->setParentCategory($category);
+                $nextCategory->setLevel(2);
+                $nextCategory->setMenu($category->getMenu());
+                $entityManager->persist($nextCategory);
+            }
+
+            $entityManager->flush();
+
+            return $this->redirectToRoute('category_index');
+        }
+
+        return $this->render('category/new_sub.html.twig', [
+            'category' => $category,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
      * @Route("/{id}", name="category_show", methods={"GET"})
      */
     public function show(Category $category): Response
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $data = $entityManager->getRepository(Category::class)->findBy(array(
+            "parentCategory" => $category
+        ));
+
         return $this->render('category/show.html.twig', [
             'category' => $category,
+            'subCategories' => $data,
         ]);
     }
 

@@ -38,13 +38,46 @@
                                         {{ form_errors(form.name) }}
                                     </div>
                                 </div>
-                                {#<div class="form-group row">#}
-                                    {#<label for="loanAmount" class="col-sm-4 control-label">City</label>#}
-                                    {#<div class="col-sm-8">#}
-                                        {#{{ form_widget(form.city, {'type':'text', 'attr': {'class': 'form-control'}}) }}#}
-                                        {#{{ form_errors(form.city) }}#}
-                                    {#</div>#}
-                                {#</div>#}
+                                <div class="form-group row">
+                                    <label for="loanAmount" class="col-sm-4 control-label">Coffee Shop</label>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(form.coffeeShop, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.coffeeShop) }}
+                                    </div>
+                                </div>
+
+                                <p class="text-muted mb-4">Gallery Images</p>
+                                <ul class="galleryImag" data-prototype="{{ include('gallery/gallery_image_prototype.html.twig', { 'galleryImag': form.galleryImages.vars.prototype }) |e('html_attr') }}">
+                                    {% for key, image in form.galleryImages %}
+                                        <li>
+                                            <hr/>
+                                            <div  class="form-group row ">
+                                                <label for="sibling_name"
+                                                       class="col-sm-4 control-label">Name</label>
+                                                <div class="col-sm-8">
+                                                    {{ form_widget(image.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                                    {{ form_errors(image.name) }}
+                                                </div>
+                                            </div>
+
+                                            <div  class="form-group row ">
+                                                <label for="sibling_name"
+                                                       class="col-sm-4 control-label">path</label>
+                                                <div class="col-sm-8">
+                                                    {{ form_widget(image.path, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                                    {{ form_errors(image.path) }}
+                                                </div>
+                                            </div>
+
+                                            <div style="display: none">
+                                                {{ form_widget(image.reset,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                {{ form_widget(image.save,  { 'attr': {'class': 'hidden-row'} }) }}
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+
+
                             </div>
                             <!-- /.box-body -->
                         </div>
@@ -69,9 +102,7 @@
             <!-- end row -->
             {{ form_end(form) }}
         </form>
-
     </div>
     <!-- container-fluid -->
-
 </div>
 <!-- content -->

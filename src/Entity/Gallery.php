@@ -25,7 +25,7 @@ class Gallery
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity=GalleryImage::class, mappedBy="gallery")
+     * @ORM\OneToMany(targetEntity=GalleryImage::class, mappedBy="gallery",  cascade={"persist", "remove"})
      */
     private $galleryImages;
 

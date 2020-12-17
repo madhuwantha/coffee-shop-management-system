@@ -2,12 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f2ec66-bb44-482f-8451-16964c9fc257" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/gallery/create.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gallery/createController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/menu/create.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/menu/createController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201216190327.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201216190836.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201216191010.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201216191122.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201216191443.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo/logoIcon_1.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo/logo_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo/logo_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/MultipleCategoryType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/category/category_prototype.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/category/new_sub.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/gallery/gallery_image_prototype.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/menu/category_prototype.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201214145521.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20201216190240.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Gallery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/MenuCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/MenuCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/NextCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/NextCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CategoryType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CategoryType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/GalleryType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/GalleryType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ItemImageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ItemImageType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ItemType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ItemType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MenuType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MenuType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Base/left-side-menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Base/left-side-menu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/category/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gallery/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gallery/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gallery/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gallery/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gallery/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu/_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/menu/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/menu/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,17 +63,12 @@
       <executable path="composer" />
     </execution>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>..</find>
-      <find>../../../../public/veltrix_v2/images/bg-pattern.png</find>
-      <find>veltrix_v2/images/bg-pattern.png</find>
-      <find>../../../public/veltrix_v2/images/bg-pattern.png</find>
-    </findStrings>
-    <dirStrings>
-      <dir>C:\xampp\htdocs\coffice\assets\includes</dir>
-      <dir>C:\xampp\htdocs\coffice\assets</dir>
-    </dirStrings>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -141,12 +178,17 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1lhTh8MMoOKaw8eoaVuaR9YO6vM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1608047873732" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../unl_erp_hrms" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -154,9 +196,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\coffice\templates" />
       <recent name="C:\xampp\htdocs\coffice\assets" />
-      <recent name="C:\xampp\htdocs\coffice\public" />
+      <recent name="C:\xampp\htdocs\coffice\templates\gallery" />
+      <recent name="C:\xampp\htdocs\coffice\templates\category" />
+      <recent name="C:\xampp\htdocs\coffice\assets\category" />
+      <recent name="C:\xampp\htdocs\coffice\assets\menu" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -188,7 +232,10 @@
       <workItem from="1608010380658" duration="25000" />
       <workItem from="1608028205872" duration="2163000" />
       <workItem from="1608031524611" duration="7765000" />
-      <workItem from="1608048447095" duration="6321000" />
+      <workItem from="1608048447095" duration="11550000" />
+      <workItem from="1608092479710" duration="4736000" />
+      <workItem from="1608122522416" duration="27635000" />
+      <workItem from="1608177111029" duration="6387000" />
     </task>
     <servers />
   </component>
@@ -200,11 +247,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="masterDetails">
     <states>

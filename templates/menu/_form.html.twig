@@ -1,17 +1,18 @@
 
+
 <div class="content">
     <div class="container-fluid">
         <div class="page-title-box">
             <div class="row align-items-center">
                 <div class="col-sm-6">
-                    {#<h4 class="page-title">Data Table</h4>#}
+{#                    <h4 class="page-title">Data Table</h4>#}
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ path('dashboard') }}"><i
                                         class="mdi mdi-home-outline"></i></a></li>
-                        {#{% for breadcrumb_link, breadcrumb in breadcrumbs %}#}
-                        {#<li class="breadcrumb-item"><a href="{{ path(breadcrumb_link) }}">{{ breadcrumb }}</a>#}
-                        {#</li>#}
-                        {#{% endfor %}#}
+{#                        {% for breadcrumb_link, breadcrumb in breadcrumbs %}#}
+{#                            <li class="breadcrumb-item"><a href="{{ path(breadcrumb_link) }}">{{ breadcrumb }}</a>#}
+{#                            </li>#}
+{#                        {% endfor %}#}
                         <li class="breadcrumb-item active">Create / Edit</li>
                     </ol>
                 </div>
@@ -31,12 +32,56 @@
                             <hr/>
                             <div class="box-body">
                                 <div class="form-group row">
-                                    <label for="employee" class="col-sm-4 control-label">Name</label>
+                                    <label for="familyDetail_nameOfSpouse" class="col-sm-4 control-label">Name</label>
                                     <div class="col-sm-8">
-                                        {{ form_widget(form.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                        {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
                                         {{ form_errors(form.name) }}
                                     </div>
                                 </div>
+                                <p class="text-muted mb-4">Categories</p>
+                                <ul class="category" data-prototype="{{ include('menu/category_prototype.html.twig', { 'category': form.categories.vars.prototype }) |e('html_attr') }}">
+                                    {% for key, category in form.categories %}
+                                        {% set level = category.vars.value.level  %}
+                                        {% if level == 1 %}
+                                            <li>
+                                                <hr/>
+                                                <div  class="form-group row ">
+                                                    <label for="sibling_name"
+                                                           class="col-sm-4 control-label">Name</label>
+                                                    <div class="col-sm-8">
+                                                        {{ form_widget(category.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                                        {{ form_errors(category.name) }}
+                                                    </div>
+                                                </div>
+
+                                                <div style="display: none">
+                                                    {{ form_widget(category.level,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                    {{ form_widget(category.reset,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                    {{ form_widget(category.save,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                    {{ form_widget(category.menu,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                </div>
+                                            </li>
+                                            {% else %}
+                                                <li style="display: none">
+                                                    <hr/>
+                                                    <div  class="form-group row ">
+                                                        <label for="sibling_name"
+                                                               class="col-sm-4 control-label">Name</label>
+                                                        <div class="col-sm-8">
+                                                            {{ form_widget(category.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                                            {{ form_errors(category.name) }}
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        {{ form_widget(category.level,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                        {{ form_widget(category.reset,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                        {{ form_widget(category.save,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                        {{ form_widget(category.menu,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                    </div>
+                                                </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
                             </div>
                             <!-- /.box-body -->
                         </div>
@@ -61,9 +106,6 @@
             <!-- end row -->
             {{ form_end(form) }}
         </form>
-
     </div>
     <!-- container-fluid -->
-
 </div>
-<!-- content -->

@@ -1,13 +1,36 @@
-{% extends 'base.html.twig' %}
+{#{% extends 'base.html.twig' %}#}
 
+{#{% block title %}Edit Gallery{% endblock %}#}
+
+{#{% block body %}#}
+{#    <h1>Edit Gallery</h1>#}
+
+{#    {{ include('gallery/_form.html.twig', {'button_label': 'Update'}) }}#}
+
+{#    <a href="{{ path('gallery_index') }}">back to list</a>#}
+
+{#    {{ include('gallery/_delete_form.html.twig') }}#}
+{#{% endblock %}#}
+
+
+
+
+{% extends "Base/base_page.html.twig" %}
 {% block title %}Edit Gallery{% endblock %}
 
-{% block body %}
-    <h1>Edit Gallery</h1>
 
-    {{ include('gallery/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('gallery_index') }}">back to list</a>
-
-    {{ include('gallery/_delete_form.html.twig') }}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('gallery') }}
 {% endblock %}
+{% block page_content %}
+
+    {{ include('gallery/_form.html.twig') }}
+
+{% endblock page_content %}
+{% block javascripts %}
+    <script>
+        {#var ajax_get_employee_list_auto_complete = "{{ url("ajax_get_employee_list_auto_complete") }}";#}
+    </script>
+    {{ encore_entry_script_tags('gallery') }}
+{% endblock %}
+

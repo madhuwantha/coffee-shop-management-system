@@ -1,0 +1,154 @@
+{% extends "Base/base_page.html.twig" %}
+{% block title %}New Category{% endblock %}
+
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('menu') }}
+{% endblock %}
+{% block page_content %}
+
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="page-title-box">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        {#<h4 class="page-title">Data Table</h4>#}
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ path('dashboard') }}"><i
+                                            class="mdi mdi-home-outline"></i></a></li>
+                            {#{% for breadcrumb_link, breadcrumb in breadcrumbs %}#}
+                            {#<li class="breadcrumb-item"><a href="{{ path(breadcrumb_link) }}">{{ breadcrumb }}</a>#}
+                            {#</li>#}
+                            {#{% endfor %}#}
+                            <li class="breadcrumb-item active">Create / Edit</li>
+                        </ol>
+                    </div>
+                </div> <!-- end row -->
+            </div>
+            <!-- end page-title -->
+
+            <form action="" method="post" enctype="multipart/form-data">
+                {{ form_start(form,{'attr':{'class':'form-horizontal'}}) }}
+                <div class="row">
+                    <div class="col-md-8 col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mt-0 header-title">Parent Category details</h4>
+                                {#<p class="text-muted mb-4">Here are examples of <code>.form-control</code> applied to each#}
+                                {#textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>#}
+                                <hr/>
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Name</label>
+                                        <div class="col-sm-8">
+                                            {{ category.name }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="noOfInstallments" class="col-sm-4 control-label">Menu</label>
+                                        <div class="col-sm-8">
+                                            {{ category.menu.name }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="noOfInstallments" class="col-sm-4 control-label">Level</label>
+                                        <div class="col-sm-8">
+                                            {{ category.level }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mt-0 header-title">Sub Categories</h4>
+                                <hr/>
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Name</label>
+                                        <div class="col-sm-8">
+                                        </div>
+                                    </div>
+                                    <ul class="category" data-prototype="{{ include('category/category_prototype.html.twig', { 'category': form.nextCategories.vars.prototype }) |e('html_attr') }}">
+                                        {% for key, category in form.nextCategories %}
+                                            <li>
+                                                <hr/>
+                                                <div class="form-group row">
+                                                    <label for="sibling_name"
+                                                           class="col-sm-4 control-label">Name</label>
+                                                    <div class="col-sm-8">
+                                                        {{ form_widget(category.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                                        {{ form_errors(category.name) }}
+                                                    </div>
+                                                </div>
+
+                                                <div style="display: none">
+                                                    {{ form_widget(category.reset,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                    {{ form_widget(category.save,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                    {{ form_widget(category.menu,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <div class="col-sm-3">
+                                            {{ form_widget(form.reset, {'attr': {'class': 'btn btn-secondary btn-block pull-left'}}) }}
+                                        </div>
+                                        <div class="offset-6 col-sm-3">
+                                            {{ form_widget(form.save, {'attr': {'class': 'btn btn-info btn-block pull-right'}}) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+                {{ form_end(form) }}
+            </form>
+
+        </div>
+        <!-- container-fluid -->
+
+    </div>
+    <!-- content -->
+
+
+{#    <h3>Tags</h3>#}
+
+{#    {{ form_start(form) }}#}
+
+
+{#    <ul class="tags">#}
+{#        {% for nextCategory in form.nextCategories %}#}
+{#            <li>{{ form_row(nextCategory.name) }}</li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#    {{ form_end(form) }}#}
+
+
+
+
+{% endblock page_content %}
+{% block javascripts %}
+    <script>
+        {#var ajax_get_employee_list_auto_complete = "{{ url("ajax_get_employee_list_auto_complete") }}";#}
+    </script>
+    {{ encore_entry_script_tags('menu') }}
+{% endblock %}
+
+
+
+
+

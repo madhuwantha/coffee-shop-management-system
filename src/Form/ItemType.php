@@ -16,9 +16,6 @@ class ItemType extends AbstractType
         $builder
             ->add('name')
             ->add('price')
-            ->add('category')
-            ->add('reset', ResetType::class)
-            ->add('save', SubmitType::class);
         ;
     }
 

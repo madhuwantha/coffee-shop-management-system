@@ -17,8 +17,8 @@ class ItemImageType extends AbstractType
             ->add('name')
             ->add('path')
 //            ->add('item')
-            ->add('reset', ResetType::class)
-            ->add('save', SubmitType::class);
+//            ->add('reset', ResetType::class)
+//            ->add('save', SubmitType::class);
         ;
     }
 

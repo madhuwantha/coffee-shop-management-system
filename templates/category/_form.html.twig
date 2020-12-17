@@ -16,8 +16,8 @@
                         <li class="breadcrumb-item"><a href="{{ path('dashboard') }}"><i
                                         class="mdi mdi-home-outline"></i></a></li>
                         {#{% for breadcrumb_link, breadcrumb in breadcrumbs %}#}
-                            {#<li class="breadcrumb-item"><a href="{{ path(breadcrumb_link) }}">{{ breadcrumb }}</a>#}
-                            {#</li>#}
+                        {#<li class="breadcrumb-item"><a href="{{ path(breadcrumb_link) }}">{{ breadcrumb }}</a>#}
+                        {#</li>#}
                         {#{% endfor %}#}
                         <li class="breadcrumb-item active">Create / Edit</li>
                     </ol>
@@ -44,41 +44,20 @@
                                         {{ form_errors(form.name) }}
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="loanAmount" class="col-sm-4 control-label">Code</label>
-                                    <div class="col-sm-8">
-                                        {{ form_widget(form.code, {'type':'text', 'attr': {'class': 'form-control'}}) }}
-                                        {{ form_errors(form.code) }}
-                                    </div>
-                                </div>
-                                <div class="form-group row">
+                                <div style="display: none" class="form-group row">
                                     <label for="noOfInstallments" class="col-sm-4 control-label">Level</label>
                                     <div class="col-sm-8">
                                         {{ form_widget(form.level, {'type':'number', 'attr': {'class': 'form-control'}}) }}
                                         {{ form_errors(form.level) }}
                                     </div>
                                 </div>
-                                {#<div class="form-group row">#}
-                                    {#<label for="installmentAmount" class="col-sm-4 control-label">Installment Amount (LKR)</label>#}
-                                    {#<div class="col-sm-8">#}
-                                        {#{{ form_widget(form.installmentAmount, {'type':'number', 'attr': {'class': 'form-control'}}) }}#}
-                                        {#{{ form_errors(form.installmentAmount) }}#}
-                                    {#</div>#}
-                                {#</div>#}
-                                {#<div class="form-group row">#}
-                                    {#<label for="effectiveFromDate" class="col-sm-4 control-label">Effective From Date</label>#}
-                                    {#<div class="col-sm-8">#}
-                                        {#{{ form_widget(form.effectiveFromDate, {'type':'date', 'attr': {'class': 'form-control'}}) }}#}
-                                        {#{{ form_errors(form.effectiveFromDate) }}#}
-                                    {#</div>#}
-                                {#</div>#}
-                                {#<div class="form-group row">#}
-                                    {#<label for="bankLoanStatus" class="col-sm-4 control-label">Loan Status</label>#}
-                                    {#<div class="col-sm-8">#}
-                                        {#{{ form_widget(form.bankLoanStatus, {'type':'select', 'attr': {'class': 'form-control'}}) }}#}
-                                        {#{{ form_errors(form.bankLoanStatus) }}#}
-                                    {#</div>#}
-                                {#</div>#}
+                                <div class="form-group row">
+                                    <label for="noOfInstallments" class="col-sm-4 control-label">Menu</label>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(form.menu, { 'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.menu) }}
+                                    </div>
+                                </div>
                             </div>
                             <!-- /.box-body -->
                         </div>

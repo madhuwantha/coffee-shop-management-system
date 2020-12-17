@@ -39,8 +39,20 @@ class Category
      */
     private $level;
 
+
     /**
-     * @ORM\OneToMany(targetEntity=NextCategory::class, mappedBy="parent_category")
+     * @ORM\ManyToOne(targetEntity=Menu::class, inversedBy="categories")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $menu;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="nextCategories")
+     */
+    private $parentCategory;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Category::class, mappedBy="category" , cascade={"persist", "remove"})
      */
     private $nextCategories;
 
@@ -63,6 +75,8 @@ class Category
     public function setName(string $name): self
     {
         $this->name = $name;
+        $tempCode = str_replace(" ","_",strtoupper($name)) ;
+        $this->setCode($tempCode);
 
         return $this;
     }
@@ -121,15 +135,39 @@ class Category
         return $this;
     }
 
+    public function getMenu(): ?Menu
+    {
+        return $this->menu;
+    }
+
+    public function setMenu(?Menu $menu): self
+    {
+        $this->menu = $menu;
+
+        return $this;
+    }
+
+    public function getParentCategory(): ?self
+    {
+        return $this->parentCategory;
+    }
+
+    public function setParentCategory(?self $parentCategory): self
+    {
+        $this->parentCategory = $parentCategory;
+
+        return $this;
+    }
+
     /**
-     * @return Collection|NextCategory[]
+     * @return Collection|self[]
      */
     public function getNextCategories(): Collection
     {
         return $this->nextCategories;
     }
 
-    public function addNextCategory(NextCategory $nextCategory): self
+    public function addNextCategory(self $nextCategory): self
     {
         if (!$this->nextCategories->contains($nextCategory)) {
             $this->nextCategories[] = $nextCategory;
@@ -139,7 +177,7 @@ class Category
         return $this;
     }
 
-    public function removeNextCategory(NextCategory $nextCategory): self
+    public function removeNextCategory(self $nextCategory): self
     {
         if ($this->nextCategories->removeElement($nextCategory)) {
             // set the owning side to null (unless already changed)
