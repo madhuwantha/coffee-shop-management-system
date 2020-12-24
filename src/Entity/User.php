@@ -30,9 +30,15 @@ class User
      */
     private $orders;
 
+    /**
+     * @ORM\OneToMany(targetEntity=ProfilePicture::class, mappedBy="path")
+     */
+    private $profilePictures;
+
     public function __construct()
     {
         $this->orders = new ArrayCollection();
+        $this->profilePictures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -76,6 +82,36 @@ class User
             // set the owning side to null (unless already changed)
             if ($order->getCustomer() === $this) {
                 $order->setCustomer(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ProfilePicture[]
+     */
+    public function getProfilePictures(): Collection
+    {
+        return $this->profilePictures;
+    }
+
+    public function addProfilePicture(ProfilePicture $profilePicture): self
+    {
+        if (!$this->profilePictures->contains($profilePicture)) {
+            $this->profilePictures[] = $profilePicture;
+            $profilePicture->setPath($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProfilePicture(ProfilePicture $profilePicture): self
+    {
+        if ($this->profilePictures->removeElement($profilePicture)) {
+            // set the owning side to null (unless already changed)
+            if ($profilePicture->getPath() === $this) {
+                $profilePicture->setPath(null);
             }
         }
 

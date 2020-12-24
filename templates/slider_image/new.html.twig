@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SliderImage{% endblock %}
+
+{% block body %}
+    <h1>Create new SliderImage</h1>
+
+    {{ include('slider_image/_form.html.twig') }}
+
+    <a href="{{ path('slider_image_index') }}">back to list</a>
+{% endblock %}

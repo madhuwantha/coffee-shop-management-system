@@ -1,0 +1,18 @@
+
+<div class="form-group row">
+    <label for="sibling_name"
+           class="col-sm-4 control-label">Name</label>
+    <div class="col-sm-8">
+        {{ form_widget(contact_details.email, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(contact_details.email) }}
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="sibling_name"
+           class="col-sm-4 control-label">phone number</label>
+    <div class="col-sm-8">
+        {{ form_widget(contact_details.phone_number, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(contact_details.phone_number) }}
+    </div>
+</div>

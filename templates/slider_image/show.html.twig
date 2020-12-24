@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SliderImage{% endblock %}
+
+{% block body %}
+    <h1>SliderImage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ slider_image.id }}</td>
+            </tr>
+            <tr>
+                <th>Path</th>
+                <td>{{ slider_image.path }}</td>
+            </tr>
+            <tr>
+                <th>Position</th>
+                <td>{{ slider_image.position }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('slider_image_index') }}">back to list</a>
+
+    <a href="{{ path('slider_image_edit', {'id': slider_image.id}) }}">edit</a>
+
+    {{ include('slider_image/_delete_form.html.twig') }}
+{% endblock %}

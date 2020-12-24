@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CoverPhoto index{% endblock %}
+
+{% block body %}
+    <h1>CoverPhoto index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Path</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cover_photo in cover_photos %}
+            <tr>
+                <td>{{ cover_photo.id }}</td>
+                <td>{{ cover_photo.path }}</td>
+                <td>
+                    <a href="{{ path('cover_photo_show', {'id': cover_photo.id}) }}">show</a>
+                    <a href="{{ path('cover_photo_edit', {'id': cover_photo.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cover_photo_new') }}">Create new</a>
+{% endblock %}

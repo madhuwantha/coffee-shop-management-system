@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ProfilePicture{% endblock %}
+
+{% block body %}
+    <h1>Create new ProfilePicture</h1>
+
+    {{ include('profile_picture/_form.html.twig') }}
+
+    <a href="{{ path('profile_picture_index') }}">back to list</a>
+{% endblock %}

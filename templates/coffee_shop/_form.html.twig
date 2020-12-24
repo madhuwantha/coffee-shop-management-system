@@ -27,8 +27,6 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="mt-0 header-title">Coffee shop details</h4>
-                            {#<p class="text-muted mb-4">Here are examples of <code>.form-control</code> applied to each#}
-                            {#textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>#}
                             <hr/>
                             <div class="box-body">
                                 <div class="form-group row">
@@ -52,17 +50,69 @@
                                         {{ form_errors(form.owner) }}
                                     </div>
                                 </div>
-{#                                <div class="form-group row">#}
-{#                                    <label for="noOfInstallments" class="col-sm-4 control-label">Theme</label>#}
-{#                                    <div class="col-sm-8">#}
-{#                                        #}{#{{ form_widget(form.level, {'type':'number', 'attr': {'class': 'form-control'}}) }}#}
-{#                                        #}{#{{ form_errors(form.level) }}#}
-{#                                    </div>#}
-{#                                </div>#}
+                                <div class="form-group row">
+                                    <label for="noOfInstallments" class="col-sm-4 control-label">Description</label>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(form.description, {'type':'textarea', 'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.owner) }}
+                                    </div>
+                                </div>
                             </div>
                             <!-- /.box-body -->
                         </div>
                     </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title">Coffee shop contact details</h4>
+                            <hr/>
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <ul class="contact_details" data-prototype="{{ include('coffee_shop/_form_contact_details.html.twig', { 'contact_details': form.contactDetails.vars.prototype }) |e('html_attr') }}">
+{#                                        {% for key, image in form.galleryImages %}#}
+{#                                        <li>#}
+{#                                            <hr/>#}
+{#                                            <div  class="form-group row ">#}
+{#                                                <label for="sibling_name"#}
+{#                                                       class="col-sm-4 control-label">Name</label>#}
+{#                                                <div class="col-sm-8">#}
+{#                                                    {{ form_widget(image.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}#}
+{#                                                    {{ form_errors(image.name) }}#}
+{#                                                </div>#}
+{#                                            </div>#}
+
+{#                                            <div  class="form-group row ">#}
+{#                                                <label for="sibling_name"#}
+{#                                                       class="col-sm-4 control-label">path</label>#}
+{#                                                <div class="col-sm-8">#}
+{#                                                    {{ form_widget(image.path, {'type':'text', 'attr': {'class': 'form-control'}}) }}#}
+{#                                                    {{ form_errors(image.path) }}#}
+{#                                                </div>#}
+{#                                            </div>#}
+
+{#                                            <div style="display: none">#}
+{#                                                {{ form_widget(image.reset,  { 'attr': {'class': 'hidden-row'} }) }}#}
+{#                                                {{ form_widget(image.save,  { 'attr': {'class': 'hidden-row'} }) }}#}
+{#                                            </div>#}
+{#                                        </li>#}
+{#                                        {% endfor %}#}
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+
+
+{#                    <div class="card">#}
+{#                        <div class="card-body">#}
+{#                            <div class="box-body">#}
+{#                                <h4 class="mt-0 header-title">Coffee shop contact details</h4>#}
+{#                                <hr/>#}
+{#                            </div>#}
+{#                            <!-- /.box-body -->#}
+{#                        </div>#}
+{#                    </div>#}
+
                     <div class="card">
                         <div class="card-body">
                             <div class="box-body">
@@ -80,6 +130,7 @@
                     </div>
                 </div> <!-- end col -->
             </div>
+
             <!-- end row -->
             {{ form_end(form) }}
         </form>
