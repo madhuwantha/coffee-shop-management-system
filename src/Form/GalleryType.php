@@ -47,6 +47,14 @@ class GalleryType extends AbstractType
                 'by_reference' => false,
                 'label' => false
             ])
+            ->add('galleryVideos',CollectionType::class,[
+                'entry_type' => GalleryVideoType::class,
+                'entry_options' => ['label' => true],
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+                'label' => false
+            ])
             ->add('reset', ResetType::class)
             ->add('save', SubmitType::class);
         ;

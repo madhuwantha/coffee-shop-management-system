@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\CoffeeShop;
 use App\Entity\CoverPhoto;
 use App\Form\CoverPhotoType;
 use App\Repository\CoverPhotoRepository;
@@ -26,15 +27,16 @@ class CoverPhotoController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="cover_photo_new", methods={"GET","POST"})
+     * @Route("/new/{id}", name="cover_photo_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request,CoffeeShop $coffeeShop): Response
     {
         $coverPhoto = new CoverPhoto();
         $form = $this->createForm(CoverPhotoType::class, $coverPhoto);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $coverPhoto->setShop($coffeeShop);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($coverPhoto);
             $entityManager->flush();

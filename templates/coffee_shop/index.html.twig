@@ -89,7 +89,11 @@
                                     <tr>
                                         <td>{{ coffee_shop.id }}</td>
                                         <td>{{ coffee_shop.name }}</td>
-                                        <td>{{ coffee_shop.city }}</td>
+                                        {% if coffee_shop.contactDetail != null %}
+                                            <td>{{ coffee_shop.contactDetail.address.city }}</td>
+                                        {% else %}
+                                            <td></td>
+                                        {% endif %}
                                         <td>
                                             <div class="btn-group" style="display: flex;">
                                                 <a href="{{ path('coffee_shop_edit', {id: coffee_shop.id} ) }}"

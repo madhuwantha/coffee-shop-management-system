@@ -27,8 +27,8 @@ class MenuType extends AbstractType
                 'by_reference' => false,
                 'label' => false
             ])
-            ->add('reset', ResetType::class)
-            ->add('save', SubmitType::class);
+//            ->add('reset', ResetType::class)
+//            ->add('save', SubmitType::class);
         ;
     }
 

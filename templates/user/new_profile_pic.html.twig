@@ -1,21 +1,20 @@
 
-
 {% extends "Base/base_page.html.twig" %}
-{% block title %}Edit Coffee Shop{% endblock %}
+{% block title %}New User{% endblock %}
 
 
 {% block stylesheets %}
-    {{ encore_entry_link_tags('shop') }}
+    {{ encore_entry_link_tags('app') }}
 {% endblock %}
 {% block page_content %}
 
-    {{ include('coffee_shop/_form.html.twig') }}
+    {{ include('user/_form_profile_picture.html.twig') }}
 
 {% endblock page_content %}
 {% block javascripts %}
     <script>
         {#var ajax_get_employee_list_auto_complete = "{{ url("ajax_get_employee_list_auto_complete") }}";#}
     </script>
-    {{ encore_entry_script_tags('shop') }}
+    {{ encore_entry_script_tags('app') }}
 {% endblock %}
 

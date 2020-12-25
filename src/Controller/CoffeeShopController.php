@@ -35,6 +35,11 @@ class CoffeeShopController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            foreach ($coffeeShop->getMenu()->getCategories() as $category){
+                $category->setLevel(1);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($coffeeShop);
             $entityManager->flush();
@@ -42,9 +47,12 @@ class CoffeeShopController extends AbstractController
             return $this->redirectToRoute('coffee_shop_index');
         }
 
+        $f = $form->createView();
+//        dump($f);
+//        exit();
         return $this->render('coffee_shop/new.html.twig', [
             'coffee_shop' => $coffeeShop,
-            'form' => $form->createView(),
+            'form' => $f,
         ]);
     }
 
@@ -67,6 +75,9 @@ class CoffeeShopController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            foreach ($coffeeShop->getMenu()->getCategories() as $category){
+                $category->setLevel(1);
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('coffee_shop_index');

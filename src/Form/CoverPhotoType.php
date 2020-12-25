@@ -13,7 +13,7 @@ class CoverPhotoType extends AbstractType
     {
         $builder
             ->add('path')
-            ->add('shop')
+//            ->add('shop')
         ;
     }
 

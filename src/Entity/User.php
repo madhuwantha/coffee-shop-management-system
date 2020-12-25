@@ -35,10 +35,16 @@ class User
      */
     private $profilePictures;
 
+    /**
+     * @ORM\OneToMany(targetEntity=CoffeeShop::class, mappedBy="owner")
+     */
+    private $coffeeShops;
+
     public function __construct()
     {
         $this->orders = new ArrayCollection();
         $this->profilePictures = new ArrayCollection();
+        $this->coffeeShops = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -112,6 +118,36 @@ class User
             // set the owning side to null (unless already changed)
             if ($profilePicture->getPath() === $this) {
                 $profilePicture->setPath(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CoffeeShop[]
+     */
+    public function getCoffeeShops(): Collection
+    {
+        return $this->coffeeShops;
+    }
+
+    public function addCoffeeShop(CoffeeShop $coffeeShop): self
+    {
+        if (!$this->coffeeShops->contains($coffeeShop)) {
+            $this->coffeeShops[] = $coffeeShop;
+            $coffeeShop->setOwner($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCoffeeShop(CoffeeShop $coffeeShop): self
+    {
+        if ($this->coffeeShops->removeElement($coffeeShop)) {
+            // set the owning side to null (unless already changed)
+            if ($coffeeShop->getOwner() === $this) {
+                $coffeeShop->setOwner(null);
             }
         }
 

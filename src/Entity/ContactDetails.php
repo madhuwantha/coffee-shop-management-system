@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ContactDetailsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -30,10 +32,20 @@ class ContactDetails
 
 
     /**
-     * @ORM\ManyToOne(targetEntity=CoffeeShop::class, inversedBy="contactDetails")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToOne(targetEntity=CoffeeShop::class, mappedBy="contactDetail", cascade={"persist", "remove"})
      */
-    private $shop;
+    private $coffeeShop;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Address::class, inversedBy="contactDetails", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $address;
+
+    public function __construct()
+    {
+
+    }
 
     public function getId(): ?int
     {
@@ -64,14 +76,31 @@ class ContactDetails
         return $this;
     }
 
-    public function getShop(): ?CoffeeShop
+    public function getCoffeeShop(): ?CoffeeShop
     {
-        return $this->shop;
+        return $this->coffeeShop;
     }
 
-    public function setShop(?CoffeeShop $shop): self
+    public function setCoffeeShop(CoffeeShop $coffeeShop): self
     {
-        $this->shop = $shop;
+        // set the owning side of the relation if necessary
+        if ($coffeeShop->getContactDetail() !== $this) {
+            $coffeeShop->setContactDetail($this);
+        }
+
+        $this->coffeeShop = $coffeeShop;
+
+        return $this;
+    }
+
+    public function getAddress(): ?Address
+    {
+        return $this->address;
+    }
+
+    public function setAddress(Address $address): self
+    {
+        $this->address = $address;
 
         return $this;
     }

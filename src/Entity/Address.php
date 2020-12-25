@@ -34,9 +34,20 @@ class Address
     private $city;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=50)
      */
     private $postal_code;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=ContactDetails::class, inversedBy="addresses")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $contactDetail;
+
+    /**
+     * @ORM\OneToOne(targetEntity=ContactDetails::class, mappedBy="address", cascade={"persist", "remove"})
+     */
+    private $contactDetails;
 
     public function getId(): ?int
     {
@@ -79,14 +90,43 @@ class Address
         return $this;
     }
 
-    public function getPostalCode(): ?Integer
+    public function getPostalCode(): ?string
     {
         return $this->postal_code;
     }
 
-    public function setPostalCode(Integer $postal_code): self
+    public function setPostalCode(string $postal_code): self
     {
         $this->postal_code = $postal_code;
+
+        return $this;
+    }
+
+    public function getContactDetail(): ?ContactDetails
+    {
+        return $this->contactDetail;
+    }
+
+    public function setContactDetail(?ContactDetails $contactDetail): self
+    {
+        $this->contactDetail = $contactDetail;
+
+        return $this;
+    }
+
+    public function getContactDetails(): ?ContactDetails
+    {
+        return $this->contactDetails;
+    }
+
+    public function setContactDetails(ContactDetails $contactDetails): self
+    {
+        // set the owning side of the relation if necessary
+        if ($contactDetails->getAddress() !== $this) {
+            $contactDetails->setAddress($this);
+        }
+
+        $this->contactDetails = $contactDetails;
 
         return $this;
     }

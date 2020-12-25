@@ -24,10 +24,6 @@ class CoffeeShop
      */
     private $name;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $city;
 
     /**
      * @ORM\ManyToOne(targetEntity=Theme::class, inversedBy="coffeeShops")
@@ -39,14 +35,9 @@ class CoffeeShop
      */
     private $menu;
 
-    /**
-     * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $owner;
 
     /**
-     * @ORM\OneToMany(targetEntity=SliderImage::class, mappedBy="shop")
+     * @ORM\OneToMany(targetEntity=SliderImage::class, mappedBy="shop", cascade={"persist", "remove"})
      */
     private $sliderImages;
 
@@ -56,15 +47,31 @@ class CoffeeShop
     private $description;
 
     /**
-     * @ORM\OneToMany(targetEntity=ContactDetails::class, mappedBy="shop")
+     * @ORM\Column(type="string", length=255)
      */
-    private $contactDetails;
+    private $aboutUs;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="coffeeShops")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $owner;
+
+    /**
+     * @ORM\OneToOne(targetEntity=ContactDetails::class, inversedBy="coffeeShop", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $contactDetail;
+
+    /**
+     * @ORM\OneToOne(targetEntity=CoverPhoto::class, cascade={"persist", "remove"})
+     */
+    private $coverPhoto;
 
 
     public function __construct()
     {
         $this->sliderImages = new ArrayCollection();
-        $this->contactDetails = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -84,17 +91,6 @@ class CoffeeShop
         return $this;
     }
 
-    public function getCity(): ?string
-    {
-        return $this->city;
-    }
-
-    public function setCity(string $city): self
-    {
-        $this->city = $city;
-
-        return $this;
-    }
 
     public function getTheme(): ?Theme
     {
@@ -120,17 +116,6 @@ class CoffeeShop
         return $this;
     }
 
-    public function getOwner(): ?User
-    {
-        return $this->owner;
-    }
-
-    public function setOwner(User $owner): self
-    {
-        $this->owner = $owner;
-
-        return $this;
-    }
 
     /**
      * @return Collection|SliderImage[]
@@ -174,32 +159,50 @@ class CoffeeShop
         return $this;
     }
 
-    /**
-     * @return Collection|ContactDetails[]
-     */
-    public function getContactDetails(): Collection
+    public function getAboutUs(): ?string
     {
-        return $this->contactDetails;
+        return $this->aboutUs;
     }
 
-    public function addContactDetail(ContactDetails $contactDetail): self
+    public function setAboutUs(string $aboutUs): self
     {
-        if (!$this->contactDetails->contains($contactDetail)) {
-            $this->contactDetails[] = $contactDetail;
-            $contactDetail->setShop($this);
-        }
+        $this->aboutUs = $aboutUs;
 
         return $this;
     }
 
-    public function removeContactDetail(ContactDetails $contactDetail): self
+    public function getOwner(): ?User
     {
-        if ($this->contactDetails->removeElement($contactDetail)) {
-            // set the owning side to null (unless already changed)
-            if ($contactDetail->getShop() === $this) {
-                $contactDetail->setShop(null);
-            }
-        }
+        return $this->owner;
+    }
+
+    public function setOwner(?User $owner): self
+    {
+        $this->owner = $owner;
+
+        return $this;
+    }
+
+    public function getContactDetail(): ?ContactDetails
+    {
+        return $this->contactDetail;
+    }
+
+    public function setContactDetail(ContactDetails $contactDetail): self
+    {
+        $this->contactDetail = $contactDetail;
+
+        return $this;
+    }
+
+    public function getCoverPhoto(): ?CoverPhoto
+    {
+        return $this->coverPhoto;
+    }
+
+    public function setCoverPhoto(?CoverPhoto $coverPhoto): self
+    {
+        $this->coverPhoto = $coverPhoto;
 
         return $this;
     }

@@ -7,6 +7,7 @@ use App\Entity\ContactDetails;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,6 +19,7 @@ class ContactDetailsType extends AbstractType
         $builder
             ->add('email',EmailType::class)
             ->add('phone_number')
+            ->add('address',AddressType::class,['required' => true,'label' => false])
         ;
     }
 

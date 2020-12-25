@@ -20,25 +20,32 @@ class CoffeeShopType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('city')
-            ->add('description',TextareaType::class)
-            ->add('contactDetails',CollectionType::class,[
-                'entry_type' => ContactDetailsType::class,
+            ->add('description', TextareaType::class, [
+                'attr' => ['class' => 'tinymce',
+                    'data' => 'abcdef',
+                ],
+            ])
+            ->add('aboutUs', TextareaType::class)
+            ->add('sliderImages', CollectionType::class, [
+                'entry_type' => SliderImageType::class,
                 'entry_options' => ['label' => true],
                 'allow_add' => true,
                 'allow_delete' => true,
                 'by_reference' => false,
                 'label' => false
             ])
-            ->add('owner',EntityType::class,[
+            ->add('contactDetail', ContactDetailsType::class, ['required' => true,'label' => false])
+            ->add('coverPhoto', CoverPhotoType::class, ['required' => true,'label' => false])
+            ->add('menu', MenuType::class, ['required' => true,'label' => false])
+            ->add('owner', EntityType::class, [
                 'required' => true,
                 'class' => User::class,
-                'query_builder' =>function (UserRepository $er) use ($options) {
-                    if ($options['data']->getId()){
+                'query_builder' => function (UserRepository $er) use ($options) {
+                    if ($options['data']->getId()) {
                         return $er->createQueryBuilder('object')
                             ->andWhere('object.id = :id')
                             ->setParameter('id', $options['data']->getOwner()->getId());
-                    }else{
+                    } else {
                         return $er->createQueryBuilder('object')
 //                            ->setMaxResults(1)
                             ->orderBy('object.id', 'ASC');
@@ -50,8 +57,7 @@ class CoffeeShopType extends AbstractType
                 'placeholder' => ''
             ])
             ->add('reset', ResetType::class)
-            ->add('save', SubmitType::class);
-        ;
+            ->add('save', SubmitType::class);;
     }
 
     public function configureOptions(OptionsResolver $resolver)

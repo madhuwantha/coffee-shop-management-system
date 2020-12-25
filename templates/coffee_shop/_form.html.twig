@@ -23,7 +23,7 @@
         <form action="" method="post" enctype="multipart/form-data">
             {{ form_start(form,{'attr':{'class':'form-horizontal'}}) }}
             <div class="row">
-                <div class="col-md-8 col-sm-12">
+                <div class="col-md-8 col-lg-12">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="mt-0 header-title">Coffee shop details</h4>
@@ -37,13 +37,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="loanAmount" class="col-sm-4 control-label">City</label>
-                                    <div class="col-sm-8">
-                                        {{ form_widget(form.city, {'type':'text', 'attr': {'class': 'form-control'}}) }}
-                                        {{ form_errors(form.city) }}
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <label for="noOfInstallments" class="col-sm-4 control-label">Owner</label>
                                     <div class="col-sm-8">
                                         {{ form_widget(form.owner, {'type':'number', 'attr': {'class': 'form-control'}}) }}
@@ -54,47 +47,119 @@
                                     <label for="noOfInstallments" class="col-sm-4 control-label">Description</label>
                                     <div class="col-sm-8">
                                         {{ form_widget(form.description, {'type':'textarea', 'attr': {'class': 'form-control'}}) }}
-                                        {{ form_errors(form.owner) }}
+                                        {{ form_errors(form.description) }}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="noOfInstallments" class="col-sm-4 control-label">About Us</label>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(form.aboutUs, {'type':'textarea', 'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.aboutUs) }}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="noOfInstallments" class="col-sm-4 control-label">Cover Photo</label>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(form.coverPhoto.path, {'type':'textarea', 'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.coverPhoto.path) }}
                                     </div>
                                 </div>
                             </div>
                             <!-- /.box-body -->
                         </div>
                     </div>
+
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="mt-0 header-title">Coffee shop contact details</h4>
-                            <hr/>
                             <div class="box-body">
-                                <div class="form-group row">
-                                    <ul class="contact_details" data-prototype="{{ include('coffee_shop/_form_contact_details.html.twig', { 'contact_details': form.contactDetails.vars.prototype }) |e('html_attr') }}">
-{#                                        {% for key, image in form.galleryImages %}#}
-{#                                        <li>#}
-{#                                            <hr/>#}
-{#                                            <div  class="form-group row ">#}
-{#                                                <label for="sibling_name"#}
-{#                                                       class="col-sm-4 control-label">Name</label>#}
-{#                                                <div class="col-sm-8">#}
-{#                                                    {{ form_widget(image.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}#}
-{#                                                    {{ form_errors(image.name) }}#}
-{#                                                </div>#}
-{#                                            </div>#}
+                                <h4 class="mt-0 header-title">Contact details</h4>
+                                <hr/>
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Email</label>
+                                        <div class="col-sm-8">
+                                            {{ form_widget(form.contactDetail.email, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                            {{ form_errors(form.contactDetail.email) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Phone number</label>
+                                        <div class="col-sm-8">
+                                            {{ form_widget(form.contactDetail.phone_number, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                            {{ form_errors(form.contactDetail.phone_number) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Address line one</label>
+                                        <div class="col-sm-8">
+                                            {{ form_widget(form.contactDetail.address.line_one, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                            {{ form_errors(form.contactDetail.address.line_one) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Address line two</label>
+                                        <div class="col-sm-8">
+                                            {{ form_widget(form.contactDetail.address.line_two, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                            {{ form_errors(form.contactDetail.address.line_two) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">City</label>
+                                        <div class="col-sm-8">
+                                            {{ form_widget(form.contactDetail.address.city, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                            {{ form_errors(form.contactDetail.address.city) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">postal code</label>
+                                        <div class="col-sm-8">
+                                            {{ form_widget(form.contactDetail.address.postal_code, {'type':'number', 'attr': {'class': 'form-control'}}) }}
+                                            {{ form_errors(form.contactDetail.address.postal_code) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
 
-{#                                            <div  class="form-group row ">#}
-{#                                                <label for="sibling_name"#}
-{#                                                       class="col-sm-4 control-label">path</label>#}
-{#                                                <div class="col-sm-8">#}
-{#                                                    {{ form_widget(image.path, {'type':'text', 'attr': {'class': 'form-control'}}) }}#}
-{#                                                    {{ form_errors(image.path) }}#}
-{#                                                </div>#}
-{#                                            </div>#}
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="box-body">
+                                <h4 class="mt-0 header-title">Slider Images</h4>
+                                <hr/>
+                                <div class="box-body">
+                                    <ul class="slider" data-prototype="{{ include('coffee_shop/_form_slider_image.html.twig', { 'slider': form.sliderImages.vars.prototype }) |e('html_attr') }}">
+                                        {% for key, sliderImg in form.sliderImages %}
+                                            <li>
+                                                <hr/>
+                                                <div  class="form-group row ">
+                                                    <label for="sibling_name"
+                                                           class="col-sm-4 control-label">Path</label>
+                                                    <div class="col-sm-8">
+                                                        {{ form_widget(sliderImg.path, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                                        {{ form_errors(sliderImg.path) }}
+                                                    </div>
 
-{#                                            <div style="display: none">#}
-{#                                                {{ form_widget(image.reset,  { 'attr': {'class': 'hidden-row'} }) }}#}
-{#                                                {{ form_widget(image.save,  { 'attr': {'class': 'hidden-row'} }) }}#}
-{#                                            </div>#}
-{#                                        </li>#}
-{#                                        {% endfor %}#}
+                                                    <label for="sibling_name"
+                                                           class="col-sm-4 control-label">Position in slider</label>
+                                                    <div class="col-sm-8">
+                                                        {{ form_widget(sliderImg.position, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                                        {{ form_errors(sliderImg.position) }}
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
@@ -103,15 +168,70 @@
                     </div>
 
 
-{#                    <div class="card">#}
-{#                        <div class="card-body">#}
-{#                            <div class="box-body">#}
-{#                                <h4 class="mt-0 header-title">Coffee shop contact details</h4>#}
-{#                                <hr/>#}
-{#                            </div>#}
-{#                            <!-- /.box-body -->#}
-{#                        </div>#}
-{#                    </div>#}
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="box-body">
+                                <h4 class="mt-0 header-title">Menu</h4>
+                                <hr/>
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Name</label>
+                                        <div class="col-sm-8">
+                                            {{ form_widget(form.menu.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                            {{ form_errors(form.menu.name) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-muted mb-4">Categories</p>
+                                <ul class="category" data-prototype="{{ include('menu/category_prototype.html.twig', { 'category': form.menu.categories.vars.prototype }) |e('html_attr') }}">
+                                    {% for key, category in form.menu.categories %}
+                                        {% set level = category.vars.value.level  %}
+                                        {% if level == 1 %}
+                                            <li>
+                                                <hr/>
+                                                <div  class="form-group row ">
+                                                    <label for="sibling_name"
+                                                           class="col-sm-4 control-label">Name</label>
+                                                    <div class="col-sm-8">
+                                                        {{ form_widget(category.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                                        {{ form_errors(category.name) }}
+                                                    </div>
+                                                </div>
+
+                                                <div style="display: none">
+                                                    {{ form_widget(category.level,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                    {{ form_widget(category.reset,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                    {{ form_widget(category.save,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                    {{ form_widget(category.menu,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                </div>
+                                            </li>
+                                        {% else %}
+                                            <li style="display: none">
+                                                <hr/>
+                                                <div  class="form-group row ">
+                                                    <label for="sibling_name"
+                                                           class="col-sm-4 control-label">Name</label>
+                                                    <div class="col-sm-8">
+                                                        {{ form_widget(category.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                                        {{ form_errors(category.name) }}
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    {{ form_widget(category.level,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                    {{ form_widget(category.reset,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                    {{ form_widget(category.save,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                    {{ form_widget(category.menu,  { 'attr': {'class': 'hidden-row'} }) }}
+                                                </div>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+
+
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
 
                     <div class="card">
                         <div class="card-body">

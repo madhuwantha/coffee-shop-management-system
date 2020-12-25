@@ -22,11 +22,7 @@ class CoverPhoto
      */
     private $path;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=CoffeeShop::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $shop;
+
 
     public function getId(): ?int
     {
@@ -45,15 +41,4 @@ class CoverPhoto
         return $this;
     }
 
-    public function getShop(): ?CoffeeShop
-    {
-        return $this->shop;
-    }
-
-    public function setShop(?CoffeeShop $shop): self
-    {
-        $this->shop = $shop;
-
-        return $this;
-    }
 }

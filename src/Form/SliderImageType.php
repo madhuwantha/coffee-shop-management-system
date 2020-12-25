@@ -14,7 +14,6 @@ class SliderImageType extends AbstractType
         $builder
             ->add('path')
             ->add('position')
-            ->add('shop')
         ;
     }
 

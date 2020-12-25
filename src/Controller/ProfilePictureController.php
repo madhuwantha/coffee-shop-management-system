@@ -42,7 +42,7 @@ class ProfilePictureController extends AbstractController
             return $this->redirectToRoute('profile_picture_index');
         }
 
-        return $this->render('profile_picture/new.html.twig', [
+        return $this->render('user/new_profile_pic.html.twig', [
             'profile_picture' => $profilePicture,
             'form' => $form->createView(),
         ]);

@@ -61,7 +61,7 @@
             </div>
             <!-- end page-title -->
             <div class="row">
-                <div class="col-md-8 col-sm-12">
+                <div class="col-md-8 col-lg-12">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="mt-0 header-title">Coffee Shop details</h4>
@@ -76,15 +76,147 @@
                             </div>
                             <div class="box-body">
                                 <div class="form-group row">
-                                    <label for="employee" class="col-sm-4 control-label">City</label>
+                                    <label for="employee" class="col-sm-4 control-label">Owner</label>
                                     <div class="col-sm-8">
-                                        {{ coffee_shop.city }}
+                                        {{ coffee_shop.owner.name }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">Description</label>
+                                    <div class="col-sm-8">
+                                        {{ coffee_shop.description }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">About Us</label>
+                                    <div class="col-sm-8">
+                                        {{ coffee_shop.aboutUs }}
                                     </div>
                                 </div>
                             </div>
                             <!-- /.box-body -->
                         </div>
                     </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title">Contact details</h4>
+                            <hr/>
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">Email</label>
+                                    <div class="col-sm-8">
+                                        {{ coffee_shop.contactDetail.email }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">Phone number</label>
+                                    <div class="col-sm-8">
+                                        {{ coffee_shop.contactDetail.phoneNumber }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">Address line one</label>
+                                    <div class="col-sm-8">
+                                        {{ coffee_shop.contactDetail.address.lineOne }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">Address line two</label>
+                                    <div class="col-sm-8">
+                                        {{ coffee_shop.contactDetail.address.lineTwo }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">City</label>
+                                    <div class="col-sm-8">
+                                        {{ coffee_shop.contactDetail.address.city }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">postal code</label>
+                                    <div class="col-sm-8">
+                                        {{ coffee_shop.contactDetail.address.postalCode }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title">Slider Images</h4>
+                            <hr/>
+
+                            {% for sliderImage in coffee_shop.sliderImages %}
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Path</label>
+                                        <div class="col-sm-8">
+                                            {{ sliderImage.path }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Slider Position</label>
+                                        <div class="col-sm-8">
+                                            {{ sliderImage.position }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title">Menu</h4>
+                            <hr/>
+
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">Name</label>
+                                    <div class="col-sm-8">
+                                        {{ coffee_shop.menu.name }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4 class="mt-0 header-title">Categories</h4>
+                            <hr/>
+
+                            {% for category in coffee_shop.menu.categories %}
+
+                                {% if category.level == 1 %}
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Name</label>
+                                        <div class="col-sm-8">
+                                            {{ category.name }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr/>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+
                     <div class="card">
                         <div class="card-body">
                             <div class="box-body">

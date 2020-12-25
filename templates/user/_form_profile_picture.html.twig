@@ -25,16 +25,16 @@
                 <div class="col-md-8 col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="mt-0 header-title">User details</h4>
+                            <h4 class="mt-0 header-title">Profile Picture</h4>
                             {#<p class="text-muted mb-4">Here are examples of <code>.form-control</code> applied to each#}
                             {#textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>#}
                             <hr/>
                             <div class="box-body">
                                 <div class="form-group row">
-                                    <label for="employee" class="col-sm-4 control-label">Name</label>
+                                    <label for="employee" class="col-sm-4 control-label">Path</label>
                                     <div class="col-sm-8">
-                                        {{ form_widget(form.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
-                                        {{ form_errors(form.name) }}
+                                        {{ form_widget(form.path, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.path) }}
                                     </div>
                                 </div>
                             </div>
