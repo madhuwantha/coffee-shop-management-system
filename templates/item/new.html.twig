@@ -1,11 +1,24 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}New Item{% endblock %}
 
-{% block body %}
-    <h1>Create new Item</h1>
+
+
+{% extends "Base/base_page.html.twig" %}
+{% block title %}New User{% endblock %}
+
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('item') }}
+{% endblock %}
+{% block page_content %}
 
     {{ include('item/_form.html.twig') }}
 
-    <a href="{{ path('item_index') }}">back to list</a>
+{% endblock page_content %}
+{% block javascripts %}
+    <script>
+        {#var ajax_get_employee_list_auto_complete = "{{ url("ajax_get_employee_list_auto_complete") }}";#}
+    </script>
+    {{ encore_entry_script_tags('item') }}
 {% endblock %}
+
+

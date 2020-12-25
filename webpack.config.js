@@ -25,6 +25,7 @@ Encore
     .addEntry('menu', './assets/menu/create.js')
     .addEntry('gallery', './assets/gallery/create.js')
     .addEntry('shop', './assets/shop/create.js')
+    .addEntry('item', './assets/item/create.js')
 
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

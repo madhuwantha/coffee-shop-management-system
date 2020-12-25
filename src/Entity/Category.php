@@ -30,7 +30,7 @@ class Category
     private $code;
 
     /**
-     * @ORM\OneToMany(targetEntity=Item::class, mappedBy="category")
+     * @ORM\OneToMany(targetEntity=Item::class, mappedBy="category", cascade={"persist", "remove"})
      */
     private $items;
 
