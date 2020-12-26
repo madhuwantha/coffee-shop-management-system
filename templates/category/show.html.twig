@@ -46,6 +46,31 @@
                             <!-- /.box-body -->
                         </div>
                     </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title">Items</h4>
+                            <hr/>
+                            {% for item in category.items %}
+                                <div class="box-body">
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Name</label>
+                                        <div class="col-sm-8">
+                                            {{ item.name }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Price</label>
+                                        <div class="col-sm-8">
+                                            {{ item.price }}
+                                        </div>
+                                    </div>
+{#                                    //TODO: add iage preview#}
+                                </div>
+                                <hr>
+                            {% endfor %}
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
 
                     {% if subCategories | length > 0 %}
                         <div class="card">
@@ -67,6 +92,7 @@
                             </div>
                         </div>
                     {% endif %}
+
                     <div class="card">
                         <div class="card-body">
                             <div class="box-body">

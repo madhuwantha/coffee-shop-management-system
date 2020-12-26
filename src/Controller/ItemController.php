@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Item;
+use App\Form\ItemCollectionType;
+use App\Form\ItemEditType;
 use App\Form\ItemType;
 use App\Repository\ItemRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,21 +29,27 @@ class ItemController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="item_new", methods={"GET","POST"})
+     * @Route("/new/{id}", name="item_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request,Category $category): Response
     {
+
+
         $item = new Item();
-        $form = $this->createForm(ItemType::class, $item);
+//        $form = $this->createForm(ItemType::class, $item);
+        $form = $this->createForm(ItemCollectionType::class,$category);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($item);
+            $entityManager->persist($category);
             $entityManager->flush();
 
             return $this->redirectToRoute('item_index');
         }
+
+//        dump($form->createView());
+//        exit();
 
         return $this->render('item/new.html.twig', [
             'item' => $item,
@@ -63,7 +72,7 @@ class ItemController extends AbstractController
      */
     public function edit(Request $request, Item $item): Response
     {
-        $form = $this->createForm(ItemType::class, $item);
+        $form = $this->createForm(ItemEditType::class, $item);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
