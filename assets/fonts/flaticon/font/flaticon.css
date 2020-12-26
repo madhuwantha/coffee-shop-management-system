@@ -1,0 +1,111 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 31/01/2017 15:34
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-css-file:before { content: "\f100"; }
+.flaticon-diary:before { content: "\f101"; }
+.flaticon-docx-file:before { content: "\f102"; }
+.flaticon-eps-file:before { content: "\f103"; }
+.flaticon-file:before { content: "\f104"; }
+.flaticon-file-1:before { content: "\f105"; }
+.flaticon-file-10:before { content: "\f106"; }
+.flaticon-file-11:before { content: "\f107"; }
+.flaticon-file-12:before { content: "\f108"; }
+.flaticon-file-13:before { content: "\f109"; }
+.flaticon-file-14:before { content: "\f10a"; }
+.flaticon-file-15:before { content: "\f10b"; }
+.flaticon-file-16:before { content: "\f10c"; }
+.flaticon-file-2:before { content: "\f10d"; }
+.flaticon-file-3:before { content: "\f10e"; }
+.flaticon-file-4:before { content: "\f10f"; }
+.flaticon-file-5:before { content: "\f110"; }
+.flaticon-file-6:before { content: "\f111"; }
+.flaticon-file-7:before { content: "\f112"; }
+.flaticon-file-8:before { content: "\f113"; }
+.flaticon-file-9:before { content: "\f114"; }
+.flaticon-files:before { content: "\f115"; }
+.flaticon-folder:before { content: "\f116"; }
+.flaticon-folder-1:before { content: "\f117"; }
+.flaticon-folder-2:before { content: "\f118"; }
+.flaticon-folder-3:before { content: "\f119"; }
+.flaticon-folder-4:before { content: "\f11a"; }
+.flaticon-folder-5:before { content: "\f11b"; }
+.flaticon-folder-6:before { content: "\f11c"; }
+.flaticon-folder-7:before { content: "\f11d"; }
+.flaticon-graphic:before { content: "\f11e"; }
+.flaticon-graphic-1:before { content: "\f11f"; }
+.flaticon-indd:before { content: "\f120"; }
+.flaticon-music-file:before { content: "\f121"; }
+.flaticon-music-file-1:before { content: "\f122"; }
+.flaticon-notepad:before { content: "\f123"; }
+.flaticon-notepad-1:before { content: "\f124"; }
+.flaticon-notepad-10:before { content: "\f125"; }
+.flaticon-notepad-11:before { content: "\f126"; }
+.flaticon-notepad-12:before { content: "\f127"; }
+.flaticon-notepad-13:before { content: "\f128"; }
+.flaticon-notepad-14:before { content: "\f129"; }
+.flaticon-notepad-15:before { content: "\f12a"; }
+.flaticon-notepad-16:before { content: "\f12b"; }
+.flaticon-notepad-17:before { content: "\f12c"; }
+.flaticon-notepad-18:before { content: "\f12d"; }
+.flaticon-notepad-19:before { content: "\f12e"; }
+.flaticon-notepad-2:before { content: "\f12f"; }
+.flaticon-notepad-20:before { content: "\f130"; }
+.flaticon-notepad-21:before { content: "\f131"; }
+.flaticon-notepad-22:before { content: "\f132"; }
+.flaticon-notepad-23:before { content: "\f133"; }
+.flaticon-notepad-24:before { content: "\f134"; }
+.flaticon-notepad-25:before { content: "\f135"; }
+.flaticon-notepad-26:before { content: "\f136"; }
+.flaticon-notepad-27:before { content: "\f137"; }
+.flaticon-notepad-28:before { content: "\f138"; }
+.flaticon-notepad-29:before { content: "\f139"; }
+.flaticon-notepad-3:before { content: "\f13a"; }
+.flaticon-notepad-30:before { content: "\f13b"; }
+.flaticon-notepad-31:before { content: "\f13c"; }
+.flaticon-notepad-32:before { content: "\f13d"; }
+.flaticon-notepad-33:before { content: "\f13e"; }
+.flaticon-notepad-34:before { content: "\f13f"; }
+.flaticon-notepad-35:before { content: "\f140"; }
+.flaticon-notepad-36:before { content: "\f141"; }
+.flaticon-notepad-37:before { content: "\f142"; }
+.flaticon-notepad-38:before { content: "\f143"; }
+.flaticon-notepad-39:before { content: "\f144"; }
+.flaticon-notepad-4:before { content: "\f145"; }
+.flaticon-notepad-5:before { content: "\f146"; }
+.flaticon-notepad-6:before { content: "\f147"; }
+.flaticon-notepad-7:before { content: "\f148"; }
+.flaticon-notepad-8:before { content: "\f149"; }
+.flaticon-notepad-9:before { content: "\f14a"; }
+.flaticon-png:before { content: "\f14b"; }
+.flaticon-pptx:before { content: "\f14c"; }
+.flaticon-psd:before { content: "\f14d"; }
+.flaticon-video-file:before { content: "\f14e"; }
+.flaticon-xlsx-file:before { content: "\f14f"; }

@@ -2,61 +2,103 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f2ec66-bb44-482f-8451-16964c9fc257" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201224111451.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201225033203.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201225052937.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201225054220.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201225060621.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201225061020.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201225061640.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201225062134.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201225062257.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201225063416.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201225074418.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201225075500.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/coffee_shop/_form_address.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/coffee_shop/_form_slider_image.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/gallery/gallery_video_prototype.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/_form_profile_picture.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/new_profile_pic.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/aos.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/bootstrap-datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/flaticon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/icomoon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/ionicons.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/jquery.timepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/open-iconic-bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/owl.carousel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/owl.theme.default.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/owl.video.play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/flaticon/font/Flaticon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/flaticon/font/Flaticon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/flaticon/font/Flaticon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/flaticon/font/Flaticon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/flaticon/font/_flaticon.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/flaticon/font/flaticon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/flaticon/font/flaticon.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/icomoon/fonts/icomoon.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/icomoon/fonts/icomoon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/icomoon/fonts/icomoon.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/icomoon/fonts/icomoon.ps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/icomoon/fonts/icomoon.pt3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/icomoon/fonts/icomoon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/icomoon/fonts/icomoon.t11" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/icomoon/fonts/icomoon.t42" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/icomoon/fonts/icomoon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/icomoon/fonts/icomoon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/icomoon/fonts/icomoon.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/icomoon/fonts/ionicons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/ionicons/fonts/ionicons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/ionicons/fonts/ionicons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/ionicons/fonts/ionicons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/ionicons/fonts/ionicons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/ionicons/fonts/ionicons.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/open-iconic/open-iconic.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/open-iconic/open-iconic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/open-iconic/open-iconic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/open-iconic/open-iconic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/open-iconic/open-iconic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/home/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/aos.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/bootstrap-datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/google-map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/jquery-migrate-3.0.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/jquery.animateNumber.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/jquery.easing.1.3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/jquery.magnific-popup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/jquery.stellar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/jquery.timepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/jquery.waypoints.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/owl.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/scrollax.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/about-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/about.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/bg_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/bg_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/bg_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/breakfast-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/breakfast-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/breakfast-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/breakfast-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/breakfast-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/breakfast-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/chef-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/chef-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/chef-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/chef-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/image_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/image_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/image_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/insta-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/insta-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/insta-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/insta-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/insta-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/insta-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/person_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/person_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/person_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/person_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/coffice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/coffice.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/gallery/createController.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/gallery/createController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/shop/createController.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/shop/createController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CoffeeShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CoffeeShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CoverPhotoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CoverPhotoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProfilePictureController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProfilePictureController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Address.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CoffeeShop.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CoffeeShop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ContactDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ContactDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CoverPhoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CoverPhoto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ProfilePicture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProfilePicture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CoffeeShopType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CoffeeShopType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CoverPhotoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CoverPhotoType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/GalleryType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/GalleryType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/MenuType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MenuType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ProfilePictureType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProfilePictureType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/SliderImageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SliderImageType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Base/left-side-menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Base/left-side-menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/new_sub.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/new_sub.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/_form_contact_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/_form_contact_details.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gallery/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gallery/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/controllers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,18 +228,25 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1608047873732" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -207,19 +256,11 @@
       <recent name="C:\xampp\htdocs\coffice\assets" />
       <recent name="C:\xampp\htdocs\coffice\templates\category" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\coffee-shop-management-system\public" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -246,24 +287,25 @@
       <workItem from="1608818767069" duration="2058000" />
       <workItem from="1608867060944" duration="3294000" />
       <workItem from="1608872996901" duration="10024000" />
+      <workItem from="1608901717173" duration="1220000" />
+      <workItem from="1608916000402" duration="8915000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
