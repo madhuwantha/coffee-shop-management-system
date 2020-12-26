@@ -10,7 +10,7 @@ Encore
     // directory where compiled assets will be stored
     .setOutputPath('public/build/')
     // public path used by the web server to access the output path
-    .setPublicPath('/coffice/public/build')
+    .setPublicPath('/coffee-shop-management-system/public/build')
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
 
@@ -19,6 +19,7 @@ Encore
      *
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
+     *
      */
     .addEntry('app', './assets/app.js')
     .addEntry('dashboard', './assets/dashboard/dashboard.js')
@@ -26,6 +27,8 @@ Encore
     .addEntry('gallery', './assets/gallery/create.js')
     .addEntry('shop', './assets/shop/create.js')
     .addEntry('item', './assets/item/create.js')
+    .addEntry('home', './assets/home/home.js')
+
 
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
@@ -37,6 +40,7 @@ Encore
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
     .enableSingleRuntimeChunk()
+    // .disableSingleRuntimeChunk()
 
     /*
      * FEATURE CONFIG
@@ -75,7 +79,25 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    // .autoProvidejQuery()
 ;
 
+
 module.exports = Encore.getWebpackConfig();
+
+// module.exports = {
+//     mode: 'development',
+//     module : Encore.getWebpackConfig(),
+//     module : {
+//         rules: [{
+//             test: require.resolve('jquery'),
+//             use: [{
+//                 loader: 'expose-loader',
+//                 options: 'jQuery'
+//             },{
+//                 loader: 'expose-loader',
+//                 options: '$'
+//             }]
+//         }]
+//     }
+// };
