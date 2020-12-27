@@ -10,7 +10,7 @@ Encore
     // directory where compiled assets will be stored
     .setOutputPath('public/build/')
     // public path used by the web server to access the output path
-    .setPublicPath('/coffee-shop-management-system/public/build')
+    .setPublicPath('/coffice/public/build')
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
 
@@ -27,7 +27,7 @@ Encore
     .addEntry('gallery', './assets/gallery/create.js')
     .addEntry('shop', './assets/shop/create.js')
     .addEntry('item', './assets/item/create.js')
-    .addEntry('home', './assets/home/home.js')
+    // .addEntry('home', './assets/home/home.js')
 
 
 
