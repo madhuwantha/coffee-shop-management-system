@@ -19,22 +19,21 @@ class CoffeeShopRepository extends ServiceEntityRepository
         parent::__construct($registry, CoffeeShop::class);
     }
 
-    // /**
-    //  * @return CoffeeShop[] Returns an array of CoffeeShop objects
-    //  */
-    /*
+     /**
+      * @return CoffeeShop[] Returns an array of CoffeeShop objects
+      */
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
+            ->select()
+//            ->andWhere('c.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->orderBy('c.id', 'ASC')
+//            ->setMaxResults(10)
+//            ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?CoffeeShop

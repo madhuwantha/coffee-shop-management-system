@@ -6,7 +6,20 @@
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
-/vendor/
+/vendor/bin
+/vendor/composer
+/vendor/doctrine
+/vendor/egulias
+/vendor/monolog
+/vendor/nikic
+/vendor/ocramius
+/vendor/phpdocumentor
+/vendor/psr
+/vendor/sensio
+/vendor/symfony
+/vendor/twig
+/vendor/webmozart
+/vendor/zendframework
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

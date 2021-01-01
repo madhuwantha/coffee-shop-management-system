@@ -12,6 +12,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+use Knp\Component\Pager\PaginatorInterface;
+
+
 /**
  * @Route("/coffee/shop")
  */
@@ -19,13 +22,30 @@ class CoffeeShopController extends AbstractController
 {
     /**
      * @Route("/", name="coffee_shop_index", methods={"GET"})
+     * @param PaginatorInterface $paginator
      * @param CoffeeShopRepository $coffeeShopRepository
+     * @param Request $request
      * @return Response
      */
-    public function index(CoffeeShopRepository $coffeeShopRepository): Response
+    public function index(PaginatorInterface $paginator,CoffeeShopRepository $coffeeShopRepository,Request $request): Response
     {
+
+//        $em = $this->getDoctrine()->getManager();
+//        $repo = $em->getRepository(CoffeeShop::class);
+//        $allAppointmentsQuery = $repo->createQueryBuilder('c')
+//            ->select()
+//            ->getQuery();
+
+
+        $query  = $coffeeShopRepository->findAll();
+        $coffeeShops = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            1
+        );
+
         return $this->render('coffee_shop/index.html.twig', [
-            'coffee_shops' => $coffeeShopRepository->findAll(),
+            'coffee_shops' =>$coffeeShops,
         ]);
     }
 
