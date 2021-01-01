@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\CoffeeShop;
+use App\Entity\SliderImage;
 use App\Form\CoffeeShopType;
 use App\Repository\CoffeeShopRepository;
+use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +19,8 @@ class CoffeeShopController extends AbstractController
 {
     /**
      * @Route("/", name="coffee_shop_index", methods={"GET"})
+     * @param CoffeeShopRepository $coffeeShopRepository
+     * @return Response
      */
     public function index(CoffeeShopRepository $coffeeShopRepository): Response
     {
@@ -27,14 +31,33 @@ class CoffeeShopController extends AbstractController
 
     /**
      * @Route("/new", name="coffee_shop_new", methods={"GET","POST"})
+     * @param Request $request
+     * @param FileUploader $fileUploader
+     * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, FileUploader $fileUploader): Response
     {
         $coffeeShop = new CoffeeShop();
         $form = $this->createForm(CoffeeShopType::class, $coffeeShop);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $sliderImages = $form->get('sliderImages')->getData();
+
+//            dump($sliderImages);
+//            exit();
+//
+//            foreach ($sliderImages as $sliderImage){
+//                $imageFileName = $fileUploader->upload($sliderImage);
+//
+////                $slI = new SliderImage();
+////                $slI->setPosition()
+//
+//                $sliderImage->setPath($imageFileName);
+//            }
+
 
             foreach ($coffeeShop->getMenu()->getCategories() as $category){
                 $category->setLevel(1);
@@ -58,6 +81,8 @@ class CoffeeShopController extends AbstractController
 
     /**
      * @Route("/{id}", name="coffee_shop_show", methods={"GET"})
+     * @param CoffeeShop $coffeeShop
+     * @return Response
      */
     public function show(CoffeeShop $coffeeShop): Response
     {
@@ -68,13 +93,29 @@ class CoffeeShopController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="coffee_shop_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param CoffeeShop $coffeeShop
+     * @param FileUploader $fileUploader
+     * @return Response
      */
-    public function edit(Request $request, CoffeeShop $coffeeShop): Response
+    public function edit(Request $request, CoffeeShop $coffeeShop, FileUploader $fileUploader): Response
     {
         $form = $this->createForm(CoffeeShopType::class, $coffeeShop);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $sliderImages = $form->get('sliderImages')->getData();
+
+////            dump($sliderImages);
+////            exit();
+//
+//            foreach ($sliderImages as $sliderImage){
+//                $imageFileName = $fileUploader->upload($sliderImage);
+//                $sliderImage->setPath($imageFileName);
+//            }
+
             foreach ($coffeeShop->getMenu()->getCategories() as $category){
                 $category->setLevel(1);
             }

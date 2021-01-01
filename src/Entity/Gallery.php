@@ -30,7 +30,7 @@ class Gallery
     private $galleryImages;
 
     /**
-     * @ORM\OneToMany(targetEntity=GalleryVideo::class, mappedBy="gallery")
+     * @ORM\OneToMany(targetEntity=GalleryVideo::class, mappedBy="gallery", cascade={"persist", "remove"})
      */
     private $galleryVideos;
 

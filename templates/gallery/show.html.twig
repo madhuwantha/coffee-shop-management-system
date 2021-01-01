@@ -70,6 +70,33 @@
                             </div>
                         </div>
                     {% endif %}
+
+                    {% if gallery.galleryVideos | length > 0 %}
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mt-0 header-title">Gallery Video details</h4>
+                                <hr/>
+                                {% for video in gallery.galleryVideos %}
+                                    <div class="box-body">
+                                        <div class="form-group row">
+                                            <label for="employee" class="col-sm-4 control-label">Name</label>
+                                            <div class="col-sm-8">
+                                                {{ video.name }}
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="employee" class="col-sm-4 control-label">path</label>
+                                            <div class="col-sm-8">
+                                                {{ video.path }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                {% endfor %}
+                                <!-- /.box-body -->
+                            </div>
+                        </div>
+                    {% endif %}
                     <div class="card">
                         <div class="card-body">
                             <div class="box-body">

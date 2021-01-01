@@ -27,6 +27,8 @@ class CoffeeShopType extends AbstractType
             ])
             ->add('aboutUs', TextareaType::class)
             ->add('sliderImages', CollectionType::class, [
+//                'multiple' => true,
+//                'mapped' => false,
                 'entry_type' => SliderImageType::class,
                 'entry_options' => ['label' => true],
                 'allow_add' => true,

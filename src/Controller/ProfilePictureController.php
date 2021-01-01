@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\ProfilePicture;
 use App\Form\ProfilePictureType;
 use App\Repository\ProfilePictureRepository;
+use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,14 +28,23 @@ class ProfilePictureController extends AbstractController
 
     /**
      * @Route("/new", name="profile_picture_new", methods={"GET","POST"})
+     * @param Request $request
+     * @param FileUploader $fileUploader
+     * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request,  FileUploader $fileUploader): Response
     {
         $profilePicture = new ProfilePicture();
         $form = $this->createForm(ProfilePictureType::class, $profilePicture);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $image = $form->get('path')->getData();
+            if ($image){
+                $imageFileName = $fileUploader->upload($image);
+            }
+            $image->setName($imageFileName);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($profilePicture);
             $entityManager->flush();
