@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f2ec66-bb44-482f-8451-16964c9fc257" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/Screenshot-10-5ff49949c1233.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/Screenshot-11-5ff498e321b2c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/Screenshot-9-5ff498e31ef0a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/Screenshot-9-5ff49949c3fe5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/DocumentType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/theme_one/products.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CoffeeShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CoffeeShopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/SliderImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/SliderImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CoffeeShopType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CoffeeShopType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SliderImageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SliderImageType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/FileUploader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/FileUploader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/_form_slider_image.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/_form_slider_image.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/theme_one/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/theme_one/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/theme_one_base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/theme_one_base.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -220,7 +236,9 @@
       <workItem from="1609414413635" duration="7414000" />
       <workItem from="1609484932953" duration="8368000" />
       <workItem from="1609496715246" duration="588000" />
-      <workItem from="1609599090945" duration="6701000" />
+      <workItem from="1609599090945" duration="9096000" />
+      <workItem from="1609695410255" duration="3145000" />
+      <workItem from="1609850168247" duration="11783000" />
     </task>
     <servers />
   </component>

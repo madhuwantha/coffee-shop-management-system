@@ -27,8 +27,6 @@ class CoffeeShopType extends AbstractType
             ])
             ->add('aboutUs', TextareaType::class)
             ->add('sliderImages', CollectionType::class, [
-//                'multiple' => true,
-//                'mapped' => false,
                 'entry_type' => SliderImageType::class,
                 'entry_options' => ['label' => true],
                 'allow_add' => true,
@@ -49,7 +47,6 @@ class CoffeeShopType extends AbstractType
                             ->setParameter('id', $options['data']->getOwner()->getId());
                     } else {
                         return $er->createQueryBuilder('object')
-//                            ->setMaxResults(1)
                             ->orderBy('object.id', 'ASC');
                     }
                 },

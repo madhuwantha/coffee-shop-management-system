@@ -27,4 +27,14 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    /**
+     * @Route("/theme-one-product", name="theme_one_home_product")
+     */
+    public function themeOneProduct(): Response
+    {
+        return $this->render('theme_one/products.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
 }

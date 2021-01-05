@@ -7,6 +7,7 @@ use App\Entity\SliderImage;
 use App\Form\CoffeeShopType;
 use App\Repository\CoffeeShopRepository;
 use App\Service\FileUploader;
+use PhpParser\Node\Scalar\MagicConst\File;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -127,20 +128,16 @@ class CoffeeShopController extends AbstractController
 
 
             $sliderImages = $form->get('sliderImages')->getData();
-
-////            dump($sliderImages);
-////            exit();
-//
-//            foreach ($sliderImages as $sliderImage){
-//                $imageFileName = $fileUploader->upload($sliderImage);
-//                $sliderImage->setPath($imageFileName);
-//            }
+            foreach ($sliderImages as $sliderImage){
+                $f = $sliderImage->getFile();
+                $path = $fileUploader->upload($f);
+                $sliderImage->setpath($path);
+            }
 
             foreach ($coffeeShop->getMenu()->getCategories() as $category){
                 $category->setLevel(1);
             }
             $this->getDoctrine()->getManager()->flush();
-
             return $this->redirectToRoute('coffee_shop_index');
         }
 

@@ -15,7 +15,7 @@ class FileUploader
 
     public function __construct($imageDirectory, SluggerInterface $slugger)
     {
-        $this->$imageDirectory = $imageDirectory;
+        $this->imageDirectory = $imageDirectory;
         $this->slugger = $slugger;
     }
 
