@@ -8,6 +8,7 @@ use App\Form\ItemCollectionType;
 use App\Form\ItemEditType;
 use App\Form\ItemType;
 use App\Repository\ItemRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,23 +21,33 @@ class ItemController extends AbstractController
 {
     /**
      * @Route("/", name="item_index", methods={"GET"})
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @param ItemRepository $itemRepository
+     * @return Response
      */
-    public function index(ItemRepository $itemRepository): Response
+    public function index(PaginatorInterface $paginator,Request $request,ItemRepository $itemRepository): Response
     {
+        $query  = $itemRepository->findAll();
+        $items = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            1
+        );
         return $this->render('item/index.html.twig', [
-            'items' => $itemRepository->findAll(),
+            'items' => $items,
         ]);
     }
 
     /**
      * @Route("/new/{id}", name="item_new", methods={"GET","POST"})
+     * @param Request $request
+     * @param Category $category
+     * @return Response
      */
     public function new(Request $request,Category $category): Response
     {
-
-
         $item = new Item();
-//        $form = $this->createForm(ItemType::class, $item);
         $form = $this->createForm(ItemCollectionType::class,$category);
         $form->handleRequest($request);
 
@@ -47,9 +58,6 @@ class ItemController extends AbstractController
 
             return $this->redirectToRoute('item_index');
         }
-
-//        dump($form->createView());
-//        exit();
 
         return $this->render('item/new.html.twig', [
             'item' => $item,

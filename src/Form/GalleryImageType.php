@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\GalleryImage;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -15,7 +16,8 @@ class GalleryImageType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('path')
+            ->add('file', FileType::class, ['required' => false])
+//            ->add('path')
 //            ->add('gallery')
             ->add('reset', ResetType::class)
             ->add('save', SubmitType::class);

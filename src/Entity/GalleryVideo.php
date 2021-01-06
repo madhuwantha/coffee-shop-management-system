@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=GalleryVideoRepository::class)
  */
-class GalleryVideo
+class GalleryVideo extends Image
 {
     /**
      * @ORM\Id

@@ -37,6 +37,13 @@
                                         {{ form_errors(form.name) }}
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">Name</label>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(form.file, {'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.file) }}
+                                    </div>
+                                </div>
                             </div>
                             <!-- /.box-body -->
                         </div>
@@ -52,6 +59,7 @@
                                         {{ form_widget(form.save, {'attr': {'class': 'btn btn-info btn-block pull-right'}}) }}
                                     </div>
                                 </div>
+
                             </div>
                             <!-- /.box-body -->
                         </div>

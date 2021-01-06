@@ -31,13 +31,6 @@ class CoffeeShopController extends AbstractController
     public function index(PaginatorInterface $paginator,CoffeeShopRepository $coffeeShopRepository,Request $request): Response
     {
 
-//        $em = $this->getDoctrine()->getManager();
-//        $repo = $em->getRepository(CoffeeShop::class);
-//        $allAppointmentsQuery = $repo->createQueryBuilder('c')
-//            ->select()
-//            ->getQuery();
-
-
         $query  = $coffeeShopRepository->findAll();
         $coffeeShops = $paginator->paginate(
             $query,
@@ -64,21 +57,19 @@ class CoffeeShopController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $coverPhoto = $form->get('coverPhoto')->getData();
+            $path = $fileUploader->upload($coverPhoto->getFile());
+            $coverPhoto->setPath($path);
+
+            $menu = $form->get('menu')->getData();
+            $menu->setName($coffeeShop->getName()."_MENU");
 
             $sliderImages = $form->get('sliderImages')->getData();
-
-//            dump($sliderImages);
-//            exit();
-//
-//            foreach ($sliderImages as $sliderImage){
-//                $imageFileName = $fileUploader->upload($sliderImage);
-//
-////                $slI = new SliderImage();
-////                $slI->setPosition()
-//
-//                $sliderImage->setPath($imageFileName);
-//            }
-
+            foreach ($sliderImages as $sliderImage){
+                $f = $sliderImage->getFile();
+                $path = $fileUploader->upload($f);
+                $sliderImage->setpath($path);
+            }
 
             foreach ($coffeeShop->getMenu()->getCategories() as $category){
                 $category->setLevel(1);
@@ -92,8 +83,6 @@ class CoffeeShopController extends AbstractController
         }
 
         $f = $form->createView();
-//        dump($f);
-//        exit();
         return $this->render('coffee_shop/new.html.twig', [
             'coffee_shop' => $coffeeShop,
             'form' => $f,
@@ -130,8 +119,10 @@ class CoffeeShopController extends AbstractController
             $sliderImages = $form->get('sliderImages')->getData();
             foreach ($sliderImages as $sliderImage){
                 $f = $sliderImage->getFile();
-                $path = $fileUploader->upload($f);
-                $sliderImage->setpath($path);
+                if ($f != null){
+                    $path = $fileUploader->upload($f);
+                    $sliderImage->setpath($path);
+                }
             }
 
             foreach ($coffeeShop->getMenu()->getCategories() as $category){

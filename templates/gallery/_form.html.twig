@@ -30,13 +30,6 @@
                             <hr/>
                             <div class="box-body">
                                 <div class="form-group row">
-                                    <label for="employee" class="col-sm-4 control-label">Name</label>
-                                    <div class="col-sm-8">
-                                        {{ form_widget(form.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
-                                        {{ form_errors(form.name) }}
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <label for="loanAmount" class="col-sm-4 control-label">Coffee Shop</label>
                                     <div class="col-sm-8">
                                         {{ form_widget(form.coffeeShop, {'type':'text', 'attr': {'class': 'form-control'}}) }}
@@ -69,10 +62,10 @@
 
                                                 <div  class="form-group row ">
                                                     <label for="sibling_name"
-                                                           class="col-sm-4 control-label">path</label>
+                                                           class="col-sm-4 control-label">File</label>
                                                     <div class="col-sm-8">
-                                                        {{ form_widget(image.path, {'type':'text', 'attr': {'class': 'form-control'}}) }}
-                                                        {{ form_errors(image.path) }}
+                                                        {{ form_widget(image.file, { 'attr': {'class': 'form-control'}}) }}
+                                                        {{ form_errors(image.file) }}
                                                     </div>
                                                 </div>
 
@@ -110,10 +103,10 @@
 
                                                 <div  class="form-group row ">
                                                     <label for="sibling_name"
-                                                           class="col-sm-4 control-label">path</label>
+                                                           class="col-sm-4 control-label">File</label>
                                                     <div class="col-sm-8">
-                                                        {{ form_widget(video.path, {'type':'text', 'attr': {'class': 'form-control'}}) }}
-                                                        {{ form_errors(video.path) }}
+                                                        {{ form_widget(video.file, { 'attr': {'class': 'form-control'}}) }}
+                                                        {{ form_errors(video.file) }}
                                                     </div>
                                                 </div>
 

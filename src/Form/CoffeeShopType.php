@@ -35,7 +35,7 @@ class CoffeeShopType extends AbstractType
                 'label' => false
             ])
             ->add('contactDetail', ContactDetailsType::class, ['required' => true,'label' => false])
-            ->add('coverPhoto', CoverPhotoType::class, ['required' => true,'label' => false])
+            ->add('coverPhoto', CoverPhotoType::class, ['required' => false,'label' => false])
             ->add('menu', MenuType::class, ['required' => true,'label' => false])
             ->add('owner', EntityType::class, [
                 'required' => true,

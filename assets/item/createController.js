@@ -20,7 +20,7 @@
         var $collectionHolder1;
 
         // setup an "add a tag" link
-        var $addTagButton1 = $('<button type="button" class="add_children_link btn btn-sm btn-primary">Add Image</button>');
+        var $addTagButton1 = $('<button type="button" class="add_children_link btn btn-sm btn-primary">Add</button>');
         var $newLinkLi1 = $('<li><hr/></li>').append($addTagButton1);
 
         // Get the ul that holds the collection of tags
@@ -77,7 +77,7 @@
         }
 
         function addTagFormDeleteLink1($tagFormLi1) {
-            var $removeFormButton1 = $('<button type="button" class="btn btn-sm btn-danger">Delete Image</button>');
+            var $removeFormButton1 = $('<button type="button" class="btn btn-sm btn-danger">Delete</button>');
             $tagFormLi1.append($removeFormButton1);
 
             $removeFormButton1.on('click', function (e) {

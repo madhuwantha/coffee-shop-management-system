@@ -15,14 +15,14 @@ class ItemType extends AbstractType
         $builder
             ->add('name')
             ->add('price')
-            ->add('itemImages',CollectionType::class,[
-                'entry_type' => ItemImageType::class,
-                'entry_options' => ['label' => true],
-                'allow_add' => true,
-                'allow_delete' => true,
-                'by_reference' => false,
-                'label' => false
-            ])
+//            ->add('itemImages',CollectionType::class,[
+//                'entry_type' => ItemImageType::class,
+//                'entry_options' => ['label' => true],
+//                'allow_add' => true,
+//                'allow_delete' => true,
+//                'by_reference' => false,
+//                'label' => false
+//            ])
 
         ;
     }

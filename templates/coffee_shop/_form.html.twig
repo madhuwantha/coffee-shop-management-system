@@ -60,8 +60,8 @@
                                 <div class="form-group row">
                                     <label for="noOfInstallments" class="col-sm-4 control-label">Cover Photo</label>
                                     <div class="col-sm-8">
-                                        {{ form_widget(form.coverPhoto.path, {'type':'textarea', 'attr': {'class': 'form-control'}}) }}
-                                        {{ form_errors(form.coverPhoto.path) }}
+                                        {{ form_widget(form.coverPhoto.file, {'type':'file', 'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.coverPhoto.file) }}
                                     </div>
                                 </div>
                             </div>
@@ -173,15 +173,7 @@
                             <div class="box-body">
                                 <h4 class="mt-0 header-title">Menu</h4>
                                 <hr/>
-                                <div class="box-body">
-                                    <div class="form-group row">
-                                        <label for="employee" class="col-sm-4 control-label">Name</label>
-                                        <div class="col-sm-8">
-                                            {{ form_widget(form.menu.name, {'type':'text', 'attr': {'class': 'form-control'}}) }}
-                                            {{ form_errors(form.menu.name) }}
-                                        </div>
-                                    </div>
-                                </div>
+
                                 <p class="text-muted mb-4">Categories</p>
                                 <ul class="category" data-prototype="{{ include('menu/category_prototype.html.twig', { 'category': form.menu.categories.vars.prototype }) |e('html_attr') }}">
                                     {% for key, category in form.menu.categories %}

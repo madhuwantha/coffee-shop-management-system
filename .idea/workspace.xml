@@ -2,25 +2,88 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f2ec66-bb44-482f-8451-16964c9fc257" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/Screenshot-10-5ff49949c1233.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/Screenshot-11-5ff498e321b2c.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/Screenshot-9-5ff498e31ef0a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/Screenshot-9-5ff49949c3fe5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/DocumentType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/theme_one/products.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210105193724.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-1-5ff4ccf2e1fb1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-2-5ff4c34ad3971.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-2-5ff5ded89e0cc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-2-5ff5df5a8ac39.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-2-5ff5e0a8d90bd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-2-5ff5e32c413b8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-3-5ff4cc5486073.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-3-5ff4ccbf8652a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-3-5ff4ccf2e2ad1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/currentaffairs-5ff5e39aa754d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/ex-network-to-int-network-ping-work-tcpdump-in-gateway-instance-5ff4ceab42217.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/my-5ff4c198324b7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-1-5ff5ea2e5151b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-2-5ff4ccf2e1534.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-2-5ff5e70eeb229.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ff4c34ad6bdc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ff5ded89d53e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ff5df5a8a122.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ff5e0a8d7ecb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ff5e32c402a1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ff5e414ca9e1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ff5e70ee88e1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ff4c34ad60fb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ff4cc5487300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ff4cc5487c7a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ff4ccbf88abd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ff4ccbf893f1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ff4ccf2deba8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ff5ded899e91.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ff5df5a87a9a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ff5e0a8d4c5d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ff5e32c3cf1a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ItemImageCollectionType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/item_image/_form_item.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/item/createController.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/item/createController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/images/Screenshot-10-5ff49949c1233.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/images/Screenshot-11-5ff498e321b2c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/images/Screenshot-9-5ff498e31ef0a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/images/Screenshot-9-5ff49949c3fe5.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CoffeeShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CoffeeShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GalleryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ItemImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemImageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/CoverPhoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CoverPhoto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/GalleryImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/GalleryImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/GalleryVideo.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/GalleryVideo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ItemImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ItemImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ProfilePicture.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProfilePicture.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/SliderImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/SliderImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/CoffeeShopType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CoffeeShopType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CoverPhotoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CoverPhotoType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/GalleryImageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/GalleryImageType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/GalleryType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/GalleryType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/GalleryVideoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/GalleryVideoType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ItemImageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ItemImageType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ItemType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ItemType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MenuType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MenuType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/SliderImageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SliderImageType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/FileUploader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/FileUploader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Base/left-side-menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Base/left-side-menu.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/coffee_shop/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/_form_slider_image.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/_form_slider_image.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/coffee_shop/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/theme_one/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/theme_one/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/theme_one_base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/theme_one_base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gallery/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gallery/gallery_image_prototype.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery/gallery_image_prototype.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gallery/gallery_video_prototype.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery/gallery_video_prototype.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gallery/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/item/_form_item.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/item/_form_item.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/item/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/item/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/item/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/item/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/item/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/item/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/item_image/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/item_image/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/item_image/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/item_image/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -238,7 +301,9 @@
       <workItem from="1609496715246" duration="588000" />
       <workItem from="1609599090945" duration="9096000" />
       <workItem from="1609695410255" duration="3145000" />
-      <workItem from="1609850168247" duration="11783000" />
+      <workItem from="1609850168247" duration="14835000" />
+      <workItem from="1609874406792" duration="5921000" />
+      <workItem from="1609940506462" duration="9879000" />
     </task>
     <servers />
   </component>

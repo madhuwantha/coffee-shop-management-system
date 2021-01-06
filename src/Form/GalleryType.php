@@ -18,7 +18,6 @@ class GalleryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
 //            ->add('coffee_shop')
             ->add('coffeeShop',EntityType::class,[
                 'required' => true,

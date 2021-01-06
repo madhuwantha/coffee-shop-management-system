@@ -64,6 +64,15 @@
                 <div class="col-md-8 col-lg-12">
                     <div class="card">
                         <div class="card-body">
+                            <div class="box-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-8">
+                                        <img style="width: 500px" src="{{ asset('uploads/images/') ~ coffee_shop.coverPhoto.path }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
                             <h4 class="mt-0 header-title">Coffee Shop details</h4>
                             <hr/>
                             <div class="box-body">
@@ -160,7 +169,6 @@
                         <div class="card-body">
                             <h4 class="mt-0 header-title">Slider Images</h4>
                             <hr/>
-
                             {% for sliderImage in coffee_shop.sliderImages %}
                                 <div class="box-body">
                                     <div class="form-group row">

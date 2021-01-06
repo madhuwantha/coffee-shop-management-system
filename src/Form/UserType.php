@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -15,6 +16,7 @@ class UserType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('file', FileType::class, ['required' => false])
             ->add('reset', ResetType::class)
             ->add('save', SubmitType::class);
         ;

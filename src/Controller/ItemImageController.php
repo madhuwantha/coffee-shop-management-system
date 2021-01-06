@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Item;
 use App\Entity\ItemImage;
+use App\Form\ItemImageCollectionType;
 use App\Form\ItemImageType;
 use App\Repository\ItemImageRepository;
+use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +20,8 @@ class ItemImageController extends AbstractController
 {
     /**
      * @Route("/", name="item_image_index", methods={"GET"})
+     * @param ItemImageRepository $itemImageRepository
+     * @return Response
      */
     public function index(ItemImageRepository $itemImageRepository): Response
     {
@@ -26,20 +31,35 @@ class ItemImageController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="item_image_new", methods={"GET","POST"})
+     * @Route("/new/{id}", name="item_image_new", methods={"GET","POST"})
+     * @param Request $request
+     * @param Item $item
+     * @param FileUploader $fileUploader
+     * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, Item $item,  FileUploader $fileUploader): Response
     {
         $itemImage = new ItemImage();
-        $form = $this->createForm(ItemImageType::class, $itemImage);
+        $form = $this->createForm(ItemImageCollectionType::class, $item);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $itemImages = $form->get('itemImages')->getData();
+            foreach ($itemImages as $image){
+                $f = $image->getFile();
+                if ($f != null){
+                    $path = $fileUploader->upload($f);
+                    $image->setpath($path);
+                    $image->setName($path);
+                }
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($itemImage);
+            $entityManager->persist($item);
             $entityManager->flush();
 
-            return $this->redirectToRoute('item_image_index');
+            return $this->redirectToRoute('item_index');
         }
 
         return $this->render('item_image/new.html.twig', [
