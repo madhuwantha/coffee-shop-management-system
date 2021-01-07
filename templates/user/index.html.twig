@@ -80,6 +80,8 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Roles</th>
                                     <th>actions</th>
                                 </tr>
                                 </thead>
@@ -88,6 +90,8 @@
                                     <tr>
                                         <td>{{ user.id }}</td>
                                         <td>{{ user.name }}</td>
+                                        <td>{{ user.email }}</td>
+                                        <td>{% for role in user.roles %}{{ role }}  |  {% endfor %}</td>
                                         <td>
                                             <div class="btn-group" style="display: flex;">
                                                 <a href="{{ path('user_edit', {id: user.id} ) }}"
@@ -108,11 +112,13 @@
                                 {% endfor %}
                                 </tbody>
                             </table>
-                            <div class="d-flex align-items-end flex-column" style="">
-                                <div class="navigation justify-content-end">
-                                    {{ knp_pagination_render(users) }}
+                            {% if k  %}
+                                <div class="d-flex align-items-end flex-column" style="">
+                                    <div class="navigation justify-content-end">
+                                        {{ knp_pagination_render(users) }}
+                                    </div>
                                 </div>
-                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div> <!-- end col -->

@@ -38,7 +38,31 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="employee" class="col-sm-4 control-label">Name</label>
+                                    <label for="employee" class="col-sm-4 control-label">Email</label>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(form.email, {'type':'email','attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.email) }}
+                                    </div>
+                                </div>
+                                {% if is_granted('ROLE_SUPPER_ADMIN') %}
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">Is this user admin of a coffee shop</label>
+                                        <div class="col-sm-8">
+                                            {{ form_widget(form.isAdmin, {'attr': {'class': 'form-control'}}) }}
+                                            {{ form_errors(form.isAdmin) }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">Password</label>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(form.plainPassword, {'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.plainPassword) }}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="employee" class="col-sm-4 control-label">Profile Picture</label>
                                     <div class="col-sm-8">
                                         {{ form_widget(form.file, {'attr': {'class': 'form-control'}}) }}
                                         {{ form_errors(form.file) }}

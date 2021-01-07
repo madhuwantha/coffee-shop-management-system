@@ -6,6 +6,7 @@ use App\Entity\Theme;
 use App\Form\ThemeType;
 use App\Repository\ThemeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,8 +16,27 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ThemeController extends AbstractController
 {
+
+    /**
+     * @Route("/preview/{code}", name="preview", methods={"GET"})
+     * @param string $code
+     * @return RedirectResponse
+     */
+    public function preview(string  $code){
+        switch ($code){
+            case "ONE":
+                $vdf = 0;
+                return $this->redirectToRoute('theme_one_home');
+            case "TWO":
+                return $this->redirectToRoute('theme_one_home');
+        }
+    }
+
+
     /**
      * @Route("/", name="theme_index", methods={"GET"})
+     * @param ThemeRepository $themeRepository
+     * @return Response
      */
     public function index(ThemeRepository $themeRepository): Response
     {
@@ -27,6 +47,8 @@ class ThemeController extends AbstractController
 
     /**
      * @Route("/new", name="theme_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {

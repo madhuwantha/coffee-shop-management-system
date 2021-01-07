@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\CoffeeShop;
 use App\Entity\SliderImage;
+use App\Entity\Theme;
 use App\Form\CoffeeShopType;
 use App\Repository\CoffeeShopRepository;
 use App\Service\FileUploader;
@@ -14,6 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\Security\Core\Security;
 
 
 /**
@@ -21,6 +23,19 @@ use Knp\Component\Pager\PaginatorInterface;
  */
 class CoffeeShopController extends AbstractController
 {
+
+
+    /**
+     * @var Security
+     */
+    private $security;
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
+
+
     /**
      * @Route("/", name="coffee_shop_index", methods={"GET"})
      * @param PaginatorInterface $paginator
@@ -30,12 +45,21 @@ class CoffeeShopController extends AbstractController
      */
     public function index(PaginatorInterface $paginator,CoffeeShopRepository $coffeeShopRepository,Request $request): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        $user = $this->security->getUser();
 
-        $query  = $coffeeShopRepository->findAll();
+        $query = "";
+        if (in_array("ROLE_SUPPER_ADMIN", $user->getRoles())){
+            $query  = $coffeeShopRepository->findAll();
+        }else{
+            $query  = $coffeeShopRepository->findBy(array("owner" => $user));
+        }
+
+
         $coffeeShops = $paginator->paginate(
             $query,
             $request->query->getInt('page', 1),
-            1
+            10
         );
 
         return $this->render('coffee_shop/index.html.twig', [
@@ -51,9 +75,15 @@ class CoffeeShopController extends AbstractController
      */
     public function new(Request $request, FileUploader $fileUploader): Response
     {
+
+        $this->denyAccessUnlessGranted('ROLE_SUPPER_ADMIN');
+
         $coffeeShop = new CoffeeShop();
         $form = $this->createForm(CoffeeShopType::class, $coffeeShop);
         $form->handleRequest($request);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $teams = $entityManager->getRepository(Theme::class)->findAll();
 
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -86,6 +116,7 @@ class CoffeeShopController extends AbstractController
         return $this->render('coffee_shop/new.html.twig', [
             'coffee_shop' => $coffeeShop,
             'form' => $f,
+            'themes' => $teams
         ]);
     }
 
@@ -110,9 +141,13 @@ class CoffeeShopController extends AbstractController
      */
     public function edit(Request $request, CoffeeShop $coffeeShop, FileUploader $fileUploader): Response
     {
+
+
         $form = $this->createForm(CoffeeShopType::class, $coffeeShop);
         $form->handleRequest($request);
 
+        $entityManager = $this->getDoctrine()->getManager();
+        $teams = $entityManager->getRepository(Theme::class)->findAll();
         if ($form->isSubmitted() && $form->isValid()) {
 
 
@@ -135,6 +170,7 @@ class CoffeeShopController extends AbstractController
         return $this->render('coffee_shop/edit.html.twig', [
             'coffee_shop' => $coffeeShop,
             'form' => $form->createView(),
+            'themes' => $teams
         ]);
     }
 

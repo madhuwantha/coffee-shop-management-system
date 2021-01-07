@@ -41,14 +41,16 @@ class CoffeeShopType extends AbstractType
                 'required' => true,
                 'class' => User::class,
                 'query_builder' => function (UserRepository $er) use ($options) {
-                    if ($options['data']->getId()) {
-                        return $er->createQueryBuilder('object')
-                            ->andWhere('object.id = :id')
-                            ->setParameter('id', $options['data']->getOwner()->getId());
-                    } else {
-                        return $er->createQueryBuilder('object')
-                            ->orderBy('object.id', 'ASC');
-                    }
+//                    if ($options['data']->getId()) {
+//                        return $er->createQueryBuilder('object')
+//                            ->andWhere('object.id = :id')
+//                            ->setParameter('id', $options['data']->getOwner()->getId());
+//                    } else {
+//                        return $er->createQueryBuilder('object')
+//                            ->orderBy('object.id', 'ASC');
+//                    }
+                    return $er->createQueryBuilder('object')
+                        ->orderBy('object.id', 'ASC');
                 },
                 'choice_label' => function (User $obj) {
                     return sprintf('%s', $obj->getName());

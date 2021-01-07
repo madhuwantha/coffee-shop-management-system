@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Message;
+use App\Entity\User;
 use App\Form\MessageType;
 use App\Repository\MessageRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,17 +18,32 @@ use Symfony\Component\Routing\Annotation\Route;
 class MessageController extends AbstractController
 {
     /**
-     * @Route("/", name="message_index", methods={"GET"})
+     * @Route("/{id}", name="message_index", methods={"GET"})
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @param MessageRepository $messageRepository
+     * @param User $user
+     * @return Response
      */
-    public function index(MessageRepository $messageRepository): Response
+    public function index(PaginatorInterface $paginator,Request $request,MessageRepository $messageRepository, User $user ): Response
     {
+        $query  = $user->getMessageReceiveds();
+
+        $messages = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            1
+        );
         return $this->render('message/index.html.twig', [
-            'messages' => $messageRepository->findAll(),
+            'messages' => $messages,
         ]);
     }
 
+
     /**
      * @Route("/new", name="message_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {

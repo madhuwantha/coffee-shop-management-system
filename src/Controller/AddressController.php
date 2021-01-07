@@ -27,6 +27,8 @@ class AddressController extends AbstractController
 
     /**
      * @Route("/new", name="address_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {

@@ -8,16 +8,30 @@ use App\Form\UserType;
 use App\Repository\UserRepository;
 use App\Service\FileUploader;
 use Knp\Component\Pager\PaginatorInterface;
+use phpDocumentor\Reflection\Types\Null_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 
 /**
  * @Route("/user")
  */
 class UserController extends AbstractController
 {
+
+
+    /**
+     * @var Security
+     */
+    private $security;
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
+
     /**
      * @Route("/", name="user_index", methods={"GET"})
      * @param PaginatorInterface $paginator
@@ -27,15 +41,27 @@ class UserController extends AbstractController
      */
     public function index(PaginatorInterface $paginator,Request $request, UserRepository $userRepository): Response
     {
-        $query = $userRepository->findAll();
-        $users = $paginator->paginate(
-            $query,
-            $request->query->getInt('page', 1),
-            1
-        );
+
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+        $user = $this->security->getUser();
+        $users = [];
+        $k = false;
+        if (in_array("ROLE_SUPPER_ADMIN", $user->getRoles())){
+            $query = $userRepository->findAll();
+            $users = $paginator->paginate(
+                $query,
+                $request->query->getInt('page', 1),
+                6
+            );
+            $k = true;
+        }else{
+            array_push($users,$user);
+        }
 
         return $this->render('user/index.html.twig', [
             'users' => $users,
+            'k' => $k
         ]);
     }
 
@@ -47,11 +73,15 @@ class UserController extends AbstractController
      */
     public function new(Request $request, FileUploader $fileUploader): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_SUPPER_ADMIN');
+
+
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
 
 
             $profilePhoto = $form->get('file')->getData();

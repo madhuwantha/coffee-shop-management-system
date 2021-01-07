@@ -68,62 +68,16 @@
             <div class="col-md-12">
                 <div class="featured">
                     <div class="d-flex justify-content-around">
-                        <div class="col-md-3">
-                            <div class="featured-menus ftco-animate">
-                                <div class="menu-img img" style="background-image: url('../../public/images/shop-1.jpg');"></div>
-                                <div class="text text-center">
-                                    <h3>Shop 01</h3>
-                                    <p>
-                                        <span>Meat</span>,
-                                        <span>Potatoes</span>,
-                                        <span>Rice</span>,
-                                        <span>Tomatoe</span>
-                                    </p>
+                        {% for coffeeShop in coffeeShops %}
+                            <div class="col-md-3" style="cursor: pointer">
+                                <div class="featured-menus ">
+                                    <div class="menu-img img" style="width: 200px;height: 200px; background-image: url({{ asset('uploads/images/') ~ coffeeShop.coverPhoto.path }});"></div>
+                                    <div class="text text-center">
+                                        <h3>{{ coffeeShop.name }}</h3>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="featured-menus ftco-animate">
-                                <div class="menu-img img" style="background-image: url('../../public/images/shop-2.jpg');"></div>
-                                <div class="text text-center">
-                                    <h3>Shop 02</h3>
-                                    <p>
-                                        <span>Meat</span>,
-                                        <span>Potatoes</span>,
-                                        <span>Rice</span>,
-                                        <span>Tomatoe</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="featured-menus ftco-animate">
-                                <div class="menu-img img" style="background-image: url('../../public/images/shop-3.jpg');"></div>
-                                <div class="text text-center">
-                                    <h3>Shop 03</h3>
-                                    <p>
-                                        <span>Meat</span>,
-                                        <span>Potatoes</span>,
-                                        <span>Rice</span>,
-                                        <span>Tomatoe</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="featured-menus ftco-animate">
-                                <div class="menu-img img" style="background-image: url('../../public/images/shop-4.jpg');"></div>
-                                <div class="text text-center">
-                                    <h3>Shop 04</h3>
-                                    <p>
-                                        <span>Meat</span>,
-                                        <span>Potatoes</span>,
-                                        <span>Rice</span>,
-                                        <span>Tomatoe</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -303,40 +257,40 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
-                <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Open Hours</h2>
-                    <ul class="list-unstyled open-hours">
-                        <li class="d-flex">
-                            <span>Monday</span>
-                            <span>9:00 - 24:00</span>
-                        </li>
-                        <li class="d-flex">
-                            <span>Tuesday</span>
-                            <span>9:00 - 24:00</span>
-                        </li>
-                        <li class="d-flex">
-                            <span>Wednesday</span>
-                            <span>9:00 - 24:00</span>
-                        </li>
-                        <li class="d-flex">
-                            <span>Thursday</span>
-                            <span>9:00 - 24:00</span>
-                        </li>
-                        <li class="d-flex">
-                            <span>Friday</span>
-                            <span>9:00 - 02:00</span>
-                        </li>
-                        <li class="d-flex">
-                            <span>Saturday</span>
-                            <span>9:00 - 02:00</span>
-                        </li>
-                        <li class="d-flex">
-                            <span>Sunday</span>
-                            <span>
-									9:00 - 02:00</span>
-                        </li>
-                    </ul>
-                </div>
+{#                <div class="ftco-footer-widget mb-4">#}
+{#                    <h2 class="ftco-heading-2">Open Hours</h2>#}
+{#                    <ul class="list-unstyled open-hours">#}
+{#                        <li class="d-flex">#}
+{#                            <span>Monday</span>#}
+{#                            <span>9:00 - 24:00</span>#}
+{#                        </li>#}
+{#                        <li class="d-flex">#}
+{#                            <span>Tuesday</span>#}
+{#                            <span>9:00 - 24:00</span>#}
+{#                        </li>#}
+{#                        <li class="d-flex">#}
+{#                            <span>Wednesday</span>#}
+{#                            <span>9:00 - 24:00</span>#}
+{#                        </li>#}
+{#                        <li class="d-flex">#}
+{#                            <span>Thursday</span>#}
+{#                            <span>9:00 - 24:00</span>#}
+{#                        </li>#}
+{#                        <li class="d-flex">#}
+{#                            <span>Friday</span>#}
+{#                            <span>9:00 - 02:00</span>#}
+{#                        </li>#}
+{#                        <li class="d-flex">#}
+{#                            <span>Saturday</span>#}
+{#                            <span>9:00 - 02:00</span>#}
+{#                        </li>#}
+{#                        <li class="d-flex">#}
+{#                            <span>Sunday</span>#}
+{#                            <span>#}
+{#									9:00 - 02:00</span>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </div>#}
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="ftco-footer-widget mb-4">
@@ -357,12 +311,12 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Newsletter</h2>
                     <p>Far far away, behind the word mountains, far from the countries.</p>
-                    <form action="#" class="subscribe-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
-                            <input type="submit" value="Subscribe" class="form-control submit px-3">
-                        </div>
-                    </form>
+{#                    <form action="#" class="subscribe-form">#}
+{#                        <div class="form-group">#}
+{#                            <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">#}
+{#                            <input type="submit" value="Subscribe" class="form-control submit px-3">#}
+{#                        </div>#}
+{#                    </form>#}
                 </div>
             </div>
         </div>
