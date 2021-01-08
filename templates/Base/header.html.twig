@@ -118,18 +118,17 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                         <!-- item-->
-                        <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle"></i> Profile</a>
-                        {#<a class="dropdown-item" href="#"><i class="mdi mdi-wallet"></i> My Wallet</a>#}
-                        {#<a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i#}
-                                    {#class="mdi mdi-settings"></i> Settings</a>#}
-                        {#<a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock screen</a>#}
-                        {#<div class="dropdown-divider"></div>#}
-                        <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i>
+                        {% if app.user %}
+                            <a class="dropdown-item" href="{{ path('user_show', {id: app.user.id}) }}"><i class="mdi mdi-account-circle"></i> Profile</a>
+                            <a class="dropdown-item" href="{{ path('message_index', {id: app.user.id}) }}"><span class="badge badge-success float-right">11</span><i class="mdi mdi-wallet"></i>Messages</a>
+                            <a class="dropdown-item d-block" href="{{ path('user_edit', {id: app.user.id}) }}"><i class="mdi mdi-settings"></i> Settings</a>
+                        {% endif %}
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="{{ path('app_logout') }}"><i class="mdi mdi-power text-danger"></i>
                             Logout</a>
                     </div>
                 </div>
             </li>
-
         </ul>
 
         <ul class="list-inline menu-left mb-0">

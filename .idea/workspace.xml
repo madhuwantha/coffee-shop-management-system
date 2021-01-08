@@ -2,44 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f2ec66-bb44-482f-8451-16964c9fc257" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210106190234.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/learn-shear-5ff7429bef47e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-2-5ff741355123e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ff60a07856a5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ff723fb3b654.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ff72434b76c2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ff7302f4e9f3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ff726a7be48b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ff73679002f3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EventListener/AccessDeniedListener.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/AuthenticationEntryPoint.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/register.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ShopController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/MessageReceivedType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/login2.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/shop/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/themes/one/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/themes/two/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AddressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AddressController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CoffeeShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CoffeeShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ThemeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ThemeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CoffeeShopType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CoffeeShopType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MessageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MessageType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Base/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Base/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Base/left-side-menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Base/left-side-menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/item_image/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/item_image/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/item_image/_form_item.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/item_image/_form_item.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/message/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/message/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/show.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -188,7 +168,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1608047873732" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/themes" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -201,11 +181,11 @@
       <recent name="C:\xampp\htdocs\coffee-shop-management-system\public" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\coffice\templates\themes" />
+      <recent name="C:\xampp\htdocs\coffice\public\css" />
+      <recent name="C:\xampp\htdocs\coffice\templates\security" />
       <recent name="C:\xampp\htdocs\coffice\templates" />
       <recent name="C:\xampp\htdocs\coffice\public\images" />
-      <recent name="C:\xampp\htdocs\coffice\public\css" />
-      <recent name="C:\xampp\htdocs\coffice\public\js" />
-      <recent name="C:\xampp\htdocs\coffice\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -263,7 +243,9 @@
       <workItem from="1609940506462" duration="12650000" />
       <workItem from="1609956770718" duration="1377000" />
       <workItem from="1609958170570" duration="2322000" />
-      <workItem from="1610026536962" duration="14357000" />
+      <workItem from="1610026536962" duration="14623000" />
+      <workItem from="1610110182383" duration="2369000" />
+      <workItem from="1610124583579" duration="5126000" />
     </task>
     <servers />
   </component>

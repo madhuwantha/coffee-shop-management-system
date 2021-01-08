@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Message;
+use App\Entity\MessageReceived;
 use App\Entity\User;
+use App\Form\MessageReceivedType;
 use App\Form\MessageType;
 use App\Repository\MessageRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -18,7 +20,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MessageController extends AbstractController
 {
     /**
-     * @Route("/{id}", name="message_index", methods={"GET"})
+     * @Route("/{id}", name="message_index", methods={"GET","POST"})
      * @param PaginatorInterface $paginator
      * @param Request $request
      * @param MessageRepository $messageRepository
@@ -28,6 +30,17 @@ class MessageController extends AbstractController
     public function index(PaginatorInterface $paginator,Request $request,MessageRepository $messageRepository, User $user ): Response
     {
         $query  = $user->getMessageReceiveds();
+        $messageReceived = new MessageReceived();
+        $form = $this->createForm(MessageReceivedType::class, $messageReceived);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($messageReceived);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('message_index');
+        }
 
         $messages = $paginator->paginate(
             $query,
@@ -36,6 +49,7 @@ class MessageController extends AbstractController
         );
         return $this->render('message/index.html.twig', [
             'messages' => $messages,
+            'form' => $form->createView(),
         ]);
     }
 

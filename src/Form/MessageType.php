@@ -14,7 +14,7 @@ class MessageType extends AbstractType
         $builder
             ->add('message')
             ->add('date')
-            ->add('sender')
+//            ->add('sender')
             ->add('state')
         ;
     }

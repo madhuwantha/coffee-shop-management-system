@@ -43,11 +43,11 @@ class Message
     /**
      * @ORM\OneToMany(targetEntity=MessageReceived::class, mappedBy="message")
      */
-    private $messageReceiveds;
+    private $messageReceivers;
 
     public function __construct()
     {
-        $this->messageReceiveds = new ArrayCollection();
+        $this->messageReceivers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -106,15 +106,15 @@ class Message
     /**
      * @return Collection|MessageReceived[]
      */
-    public function getMessageReceiveds(): Collection
+    public function getMessageReceivers(): Collection
     {
-        return $this->messageReceiveds;
+        return $this->messageReceivers;
     }
 
     public function addMessageReceived(MessageReceived $messageReceived): self
     {
-        if (!$this->messageReceiveds->contains($messageReceived)) {
-            $this->messageReceiveds[] = $messageReceived;
+        if (!$this->messageReceivers->contains($messageReceived)) {
+            $this->messageReceivers[] = $messageReceived;
             $messageReceived->setMessage($this);
         }
 
@@ -123,7 +123,7 @@ class Message
 
     public function removeMessageReceived(MessageReceived $messageReceived): self
     {
-        if ($this->messageReceiveds->removeElement($messageReceived)) {
+        if ($this->messageReceivers->removeElement($messageReceived)) {
             // set the owning side to null (unless already changed)
             if ($messageReceived->getMessage() === $this) {
                 $messageReceived->setMessage(null);

@@ -14,15 +14,17 @@
                         <span> Dashboard </span>
                     </a>
                 </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i
-                                class="ion ion-md-people"></i><span>User<span
-                                    class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <ul class="submenu">
-                        <li><a href="{{ path('app_register') }}">Create</a></li>
-                        <li><a href="{{ path('user_index') }}">List</a></li>
-                    </ul>
-                </li>
+                {% if is_granted('ROLE_SUPPER_ADMIN') %}
+                    <li>
+                        <a href="javascript:void(0);" class="waves-effect"><i
+                                    class="ion ion-md-people"></i><span>User<span
+                                        class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                        <ul class="submenu">
+                            <li><a href="{{ path('app_register') }}">Create</a></li>
+                            <li><a href="{{ path('user_index') }}">List</a></li>
+                        </ul>
+                    </li>
+                {% endif %}
                 <li>
                     <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-list"></i><span> CoffeeShop<span
                                     class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
