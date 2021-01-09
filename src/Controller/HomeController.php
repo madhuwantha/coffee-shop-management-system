@@ -31,7 +31,7 @@ class HomeController extends AbstractController
      */
     public function themeOneIndex(): Response
     {
-        return $this->render('theme_one/index.html.twig', [
+        return $this->render('theme_one/index2.html.twig', [
             'controller_name' => 'HomeController',
         ]);
     }

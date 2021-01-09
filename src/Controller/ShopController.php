@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\CoffeeShop;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,11 +12,14 @@ class ShopController extends AbstractController
 {
     /**
      * @Route("/shop/{shop_id}", name="shop")
-     * @param CoffeeShop $coffeeShop
+     * @param $shop_id
      * @return Response
      */
-    public function index(CoffeeShop $coffeeShop): Response
+    public function index($shop_id): Response
     {
+
+        $em = $this->getDoctrine()->getManager();
+        $coffeeShop = $em->getRepository(CoffeeShop::class)->find($shop_id);
 
         $themeCode  = $coffeeShop->getTheme()->getCode();
 

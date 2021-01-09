@@ -1,0 +1,511 @@
+{% extends "theme_one_base.html.twig" %}
+{% block stylesheets %}
+
+{% endblock %}
+{% block body %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Feliciano</a>
+            <!---------------------------------------------------------------------------------------------->
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <div class="departments" data-departments-fixed-by="">
+                            <div class="departments__body" id="set">
+                                <div class="departments__links-wrapper">
+                                    <ul class="departments__links">
+                                        {% for category in shop.menu.categories %}
+                                            <li class="departments__item">
+                                                <a href="#">{{ category.name }}
+                                                    <svg class="departments__link-arrow" width="6px" height="9px">
+                                                        <use xlink:href="../../../public/images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                                    </svg>
+                                                </a>
+                                                <div class="departments__megamenu departments__megamenu--xl">
+                                                    <div class="megamenu megamenu--departments"
+                                                         style="background-image: url('../../../public/images/megamenu/megamenu-1.jpg');">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <ul class="megamenu__links megamenu__links--level--0">
+                                                                    <li class="megamenu__item megamenu__item--with-submenu">
+                                                                        <ul class="megamenu__links megamenu__links--level--1">
+
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="departments__button">Men</button>
+                        </div>
+                    </li>
+                    <li class="nav-item active"><a href="" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Menu</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Stories</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home-slider owl-carousel js-fullheight">
+
+        <div class="slider-item js-fullheight" style="background-image: url('../../../public/images/bg_1.jpg');">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row slider-text js-fullheight justify-content-center align-items-center"
+                     data-scrollax-parent="true">
+                    <div class="col-md-12 col-sm-12 text-center ftco-animate">
+                        <span class="subheading">Journal</span>
+                        <h1 class="mb-4">Best</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-item js-fullheight" style="background-image: url('../../../public/images/bg_2.jpg');">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row slider-text js-fullheight justify-content-center align-items-center"
+                     data-scrollax-parent="true">
+                    <div class="col-md-12 col-sm-12 text-center ftco-animate">
+                        <span class="subheading">Journal</span>
+                        <h1 class="mb-4">Nutritious &amp; Tasty</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-item js-fullheight" style="background-image: url('../../../public/images/bg_3.jpg');">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
+                    <div class="col-md-12 col-sm-12 text-center ftco-animate">
+                        <span class="subheading">Journal</span>
+                        <h1 class="mb-4">Delicious Specialties</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="products" class="ftco-section">
+        <div class="container">
+            <div class="row no-gutters justify-content-center mb-5 pb-2">
+                <div class="col-md-12 text-center heading-section ftco-animate">
+                    <span class="subheading">Specialties</span>
+                    <h2 class="mb-4">Our products</h2>
+                </div>
+            </div>
+            <div class="row no-gutters d-flex align-items-stretch">
+                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
+                        <div class="menu-img img"
+                             style="background-image: url('../../../public/images/breakfast-1.jpg');"></div>
+                        <div class="text d-flex align-items-center">
+                            <div>
+                                <div class="d-flex">
+                                    <div class="one-half">
+                                        <h3>Grilled Beef with potatoes</h3>
+                                    </div>
+                                    <div class="one-forth">
+                                        <span class="price">$29</span>
+                                    </div>
+                                </div>
+                                <p>
+                                    <span>Meat</span>,
+                                    <span>Potatoes</span>,
+                                    <span>Rice</span>,
+                                    <span>Tomatoe</span>
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary">Order now</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
+                        <div class="menu-img img"
+                             style="background-image: url('../../../public/images/breakfast-2.jpg');"></div>
+                        <div class="text d-flex align-items-center">
+                            <div>
+                                <div class="d-flex">
+                                    <div class="one-half">
+                                        <h3>Grilled Beef with potatoes</h3>
+                                    </div>
+                                    <div class="one-forth">
+                                        <span class="price">$29</span>
+                                    </div>
+                                </div>
+                                <p>
+                                    <span>Meat</span>,
+                                    <span>Potatoes</span>,
+                                    <span>Rice</span>,
+                                    <span>Tomatoe</span>
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary">Order now</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
+                        <div class="menu-img img order-md-last"
+                             style="background-image: url('../../../public/images/breakfast-3.jpg');"></div>
+                        <div class="text d-flex align-items-center">
+                            <div>
+                                <div class="d-flex">
+                                    <div class="one-half">
+                                        <h3>Grilled Beef with potatoes</h3>
+                                    </div>
+                                    <div class="one-forth">
+                                        <span class="price">$29</span>
+                                    </div>
+                                </div>
+                                <p>
+                                    <span>Meat</span>,
+                                    <span>Potatoes</span>,
+                                    <span>Rice</span>,
+                                    <span>Tomatoe</span>
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary">Order now</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
+                        <div class="menu-img img order-md-last"
+                             style="background-image: url('../../../public/images/breakfast-5.jpg');"></div>
+                        <div class="text d-flex align-items-center">
+                            <div>
+                                <div class="d-flex">
+                                    <div class="one-half">
+                                        <h3>Grilled Beef with potatoes</h3>
+                                    </div>
+                                    <div class="one-forth">
+                                        <span class="price">$29</span>
+                                    </div>
+                                </div>
+                                <p>
+                                    <span>Meat</span>,
+                                    <span>Potatoes</span>,
+                                    <span>Rice</span>,
+                                    <span>Tomatoe</span>
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary">Order now</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
+                        <div class="menu-img img"
+                             style="background-image: url('../../../public/images/breakfast-6.jpg');"></div>
+                        <div class="text d-flex align-items-center">
+                            <div>
+                                <div class="d-flex">
+                                    <div class="one-half">
+                                        <h3>Grilled Beef with potatoes</h3>
+                                    </div>
+                                    <div class="one-forth">
+                                        <span class="price">$29</span>
+                                    </div>
+                                </div>
+                                <p>
+                                    <span>Meat</span>,
+                                    <span>Potatoes</span>,
+                                    <span>Rice</span>,
+                                    <span>Tomatoe</span>
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary">Order now</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
+                        <div class="menu-img img"
+                             style="background-image: url('../../../public/images/breakfast-2.jpg');"></div>
+                        <div class="text d-flex align-items-center">
+                            <div>
+                                <div class="d-flex">
+                                    <div class="one-half">
+                                        <h3>Grilled Beef with potatoes</h3>
+                                    </div>
+                                    <div class="one-forth">
+                                        <span class="price">$29</span>
+                                    </div>
+                                </div>
+                                <p>
+                                    <span>Meat</span>,
+                                    <span>Potatoes</span>,
+                                    <span>Rice</span>,
+                                    <span>Tomatoe</span>
+                                </p>
+                                <p>
+                                    <a href="#" class="btn btn-primary">Order now</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="gallery" class="ftco-section img" style="background-image: url('../../../public/images/bg_3.jpg')"
+             data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-7 text-center heading-section ftco-animate">
+                    <span class="subheading">Images and Videos</span>
+                    <h2 class="mb-4">Gallery</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="gallery">
+                    <div class="img-w">
+                        <img src="https://images.unsplash.com/photo-1485766410122-1b403edb53db?dpr=1&auto=format&fit=crop&w=1500&h=846&q=80&cs=tinysrgb&crop="
+                             alt=""/></div>
+                    <div class="img-w"><img
+                                src="https://images.unsplash.com/photo-1485793997698-baba81bf21ab?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop="
+                                alt=""/></div>
+                    <div class="img-w"><img
+                                src="https://images.unsplash.com/photo-1485871800663-71856dc09ec4?dpr=1&auto=format&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb&crop="
+                                alt=""/></div>
+                    <div class="img-w"><img
+                                src="https://images.unsplash.com/photo-1485871882310-4ecdab8a6f94?dpr=1&auto=format&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb&crop="
+                                alt=""/></div>
+                    <div class="img-w"><img
+                                src="https://images.unsplash.com/photo-1485872304698-0537e003288d?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop="
+                                alt=""/></div>
+                    <div class="img-w"><img
+                                src="https://images.unsplash.com/photo-1485872325464-50f17b82075a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop="
+                                alt=""/></div>
+                    <div class="img-w"><img
+                                src="https://images.unsplash.com/photo-1470171119584-533105644520?dpr=1&auto=format&fit=crop&w=1500&h=886&q=80&cs=tinysrgb&crop="
+                                alt=""/></div>
+                    <div class="img-w"><img
+                                src="https://images.unsplash.com/photo-1485881787686-9314a2bc8f9b?dpr=1&auto=format&fit=crop&w=1500&h=969&q=80&cs=tinysrgb&crop="
+                                alt=""/></div>
+                    <div class="img-w"><img
+                                src="https://images.unsplash.com/photo-1485889397316-8393dd065127?dpr=1&auto=format&fit=crop&w=1500&h=843&q=80&cs=tinysrgb&crop="
+                                alt=""/></div>
+                    <div class="img-w"><img
+                                src="https://images.unsplash.com/photo-1485889397316-8393dd065127?dpr=1&auto=format&fit=crop&w=1500&h=843&q=80&cs=tinysrgb&crop="
+                                alt=""/></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-section bg-light"></section>
+    <section id="about-us" class="ftco-section ftco-wrap-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 d-flex">
+                    <div class="img img-1 mr-md-2"
+                         style="background-image: url('../../../public/images/about.jpg');"></div>
+                    <div class="img img-2 ml-md-2"
+                         style="background-image: url('../../../public/images/about-1.jpg');"></div>
+                </div>
+                <div class="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3 ftco-animate">
+                    <div class="heading-section mb-4 my-5 my-md-0">
+                        <span class="subheading">About</span>
+                        <h2 class="mb-4">Journal</h2>
+                    </div>
+                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It
+                        is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                    <p class="time">
+    						<span>Mon - Fri
+    							<strong>8 AM - 11 PM</strong>
+    						</span>
+                        <span>
+    							<a href="#">+ 1-978-123-4567</a>
+    						</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-section ftco-counter img ftco-no-pt" id="section-counter">
+        <div class="container">
+            <div class="row d-md-flex">
+                <div class="col-md-9">
+                    <div class="d-md-flex align-items-center">
+                        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="18">0</strong>
+                                    <span>Years of Experienced</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="100">0</strong>
+                                    <span>Menus/Dish</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="50">0</strong>
+                                    <span>Staffs</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="block-18">
+                                <div class="text">
+                                    <strong class="number" data-number="15000">0</strong>
+                                    <span>Happy Customers</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center text-md-left">
+                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer" class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-6 col-lg-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Journal</h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                            there live the blind texts.</p>
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                            <li class="ftco-animate">
+                                <a href="#">
+                                    <span class="icon-twitter"></span>
+                                </a>
+                            </li>
+                            <li class="ftco-animate">
+                                <a href="#">
+                                    <span class="icon-facebook"></span>
+                                </a>
+                            </li>
+                            <li class="ftco-animate">
+                                <a href="#">
+                                    <span class="icon-instagram"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Open Hours</h2>
+                        <ul class="list-unstyled open-hours">
+                            <li class="d-flex">
+                                <span>Monday</span>
+                                <span>9:00 - 24:00</span>
+                            </li>
+                            <li class="d-flex">
+                                <span>Tuesday</span>
+                                <span>9:00 - 24:00</span>
+                            </li>
+                            <li class="d-flex">
+                                <span>Wednesday</span>
+                                <span>9:00 - 24:00</span>
+                            </li>
+                            <li class="d-flex">
+                                <span>Thursday</span>
+                                <span>9:00 - 24:00</span>
+                            </li>
+                            <li class="d-flex">
+                                <span>Friday</span>
+                                <span>9:00 - 02:00</span>
+                            </li>
+                            <li class="d-flex">
+                                <span>Saturday</span>
+                                <span>9:00 - 02:00</span>
+                            </li>
+                            <li class="d-flex">
+                                <span>Sunday</span>
+                                <span>
+									9:00 - 02:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Instagram</h2>
+                        <div class="thumb d-sm-flex">
+                            <a href="#" class="thumb-menu img"
+                               style="background-image: url('../../../public/images/insta-1.jpg')"></a>
+                            <a href="#" class="thumb-menu img"
+                               style="background-image: url('../../../public/images/insta-2.jpg');"></a>
+                            <a href="#" class="thumb-menu img"
+                               style="background-image: url('../../../public/images/insta-3.jpg');"></a>
+                        </div>
+                        <div class="thumb d-flex">
+                            <a href="#" class="thumb-menu img"
+                               style="background-image: url('../../../public/images/insta-4.jpg');"></a>
+                            <a href="#" class="thumb-menu img"
+                               style="background-image: url('../../../public/images/insta-5.jpg');"></a>
+                            <a href="#" class="thumb-menu img"
+                               style="background-image: url('../../../public/images/insta-6.jpg');"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Newsletter</h2>
+                        <p>Far far away, behind the word mountains, far from the countries.</p>
+                        <form action="#" class="subscribe-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control mb-2 text-center"
+                                       placeholder="Enter email address">
+                                <input type="submit" value="Subscribe" class="form-control submit px-3">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        All rights reserved | Powerd By EquitemSoft &copy;
+                        <script data-cfasync="false" src="#"></script>
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                        <i class="icon-heart" aria-hidden="true"></i>
+                        <a href="" target="_blank"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+{% endblock body %}
+
+{% block javascripts %}
+    <script>
+    </script>
+{% endblock %}
