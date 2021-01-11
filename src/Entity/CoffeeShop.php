@@ -26,7 +26,7 @@ class CoffeeShop
 
 
     /**
-     * @ORM\ManyToOne(targetEntity=Theme::class, inversedBy="coffeeShops")
+     * @ORM\ManyToOne(targetEntity=Theme::class, inversedBy="coffeeShops", cascade={"persist", "remove"})
      */
     private $theme;
 

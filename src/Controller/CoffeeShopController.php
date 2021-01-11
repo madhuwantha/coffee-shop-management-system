@@ -2,7 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\CoffeeShop;
+use App\Entity\Gallery;
+use App\Entity\GalleryImage;
+use App\Entity\GalleryVideo;
+use App\Entity\Item;
 use App\Entity\SliderImage;
 use App\Entity\Theme;
 use App\Form\CoffeeShopType;
@@ -33,6 +38,70 @@ class CoffeeShopController extends AbstractController
     public function __construct(Security $security)
     {
         $this->security = $security;
+    }
+
+    /**
+     * @Route("/shop/{shop_id}", name="shop")
+     * @param $shop_id
+     * @return Response
+     */
+    public function shopIndex($shop_id): Response
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $coffeeShop = $em->getRepository(CoffeeShop::class)->find($shop_id);
+
+        $themeCode  = $coffeeShop->getTheme()->getCode();
+        $menu = $coffeeShop->getMenu();
+
+
+
+        $categories = $em->getRepository(Category::class)->findBy(["menu" => $menu, "level" => 1]) ;
+
+        $gallery  = $em->getRepository(Gallery::class)->findOneBy(['coffee_shop' => $coffeeShop]);
+
+        $imageGallery =$em->getRepository(GalleryImage::class)->findBy(['gallery' => $gallery]);
+        $videoGallery =$em->getRepository(GalleryVideo::class)->findBy(['gallery' => $gallery]);
+
+
+//        $products = $em->getRepository(Item::class)->findBy(['isInHomePage' => true, ""]);
+
+        $sendCategories = array();
+        foreach ($categories as $category){
+            $nextCategories = $em->getRepository(Category::class)->findBy([
+               "parentCategory" => $category,
+               "level" => 2
+            ]);
+            array_push($sendCategories,array(
+                "category" => $category,
+                "subCategories" => $nextCategories,
+            ));
+        }
+
+
+
+//        switch ($themeCode){
+//            case 'TWO':
+//                return $this->render('shop/two/index.html.twig', [
+//                    'controller_name' => 'ShopController',
+//                    'shop' => $coffeeShop
+//                ]);
+//            case 'ONE':
+////            default:
+////                return $this->render('themes/one/one_index.html.twig', [
+////                    'controller_name' => 'ShopController',
+////                    'shop' => $coffeeShop
+////                ]);
+//        }
+
+
+        return $this->render('coffee_shop/one_index.html.twig', [
+            'controller_name' => 'ShopController',
+            'shop' => $coffeeShop,
+            'categories' => $sendCategories,
+            'imageGallery' => $imageGallery,
+            'videoGallery' => $videoGallery
+        ]);
     }
 
 

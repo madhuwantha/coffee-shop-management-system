@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\CoffeeShop;
+use App\Entity\Theme;
 use App\Entity\User;
+use App\Repository\ThemeRepository;
 use App\Repository\UserRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -19,6 +21,18 @@ class CoffeeShopType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('theme',EntityType::class,[
+                'required' => true,
+                'class' => Theme::class,
+                'query_builder' => function (ThemeRepository $er) use ($options) {
+                    return $er->createQueryBuilder('object')
+                        ->orderBy('object.id', 'ASC');
+                },
+                'choice_label' => function (Theme $obj) {
+                    return sprintf('%s', $obj->getName());
+                },
+                'placeholder' => ''
+            ])
             ->add('name')
             ->add('description', TextareaType::class, [
                 'attr' => ['class' => 'tinymce',
@@ -41,14 +55,6 @@ class CoffeeShopType extends AbstractType
                 'required' => true,
                 'class' => User::class,
                 'query_builder' => function (UserRepository $er) use ($options) {
-//                    if ($options['data']->getId()) {
-//                        return $er->createQueryBuilder('object')
-//                            ->andWhere('object.id = :id')
-//                            ->setParameter('id', $options['data']->getOwner()->getId());
-//                    } else {
-//                        return $er->createQueryBuilder('object')
-//                            ->orderBy('object.id', 'ASC');
-//                    }
                     return $er->createQueryBuilder('object')
                         ->orderBy('object.id', 'ASC');
                 },

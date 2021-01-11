@@ -39,6 +39,21 @@ class Item
      */
     private $itemImages;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $ingredients;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isInHomePage;
+
     public function __construct()
     {
         $this->itemImages = new ArrayCollection();
@@ -111,6 +126,42 @@ class Item
                 $itemImage->setItem(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIngredients(): ?string
+    {
+        return $this->ingredients;
+    }
+
+    public function setIngredients(string $ingredients): self
+    {
+        $this->ingredients = $ingredients;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getIsInHomePage(): ?bool
+    {
+        return $this->isInHomePage;
+    }
+
+    public function setIsInHomePage(bool $isInHomePage): self
+    {
+        $this->isInHomePage = $isInHomePage;
 
         return $this;
     }

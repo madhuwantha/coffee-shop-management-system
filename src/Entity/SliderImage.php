@@ -40,6 +40,16 @@ class SliderImage
      */
     private $shop;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $title;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $subTitle;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -99,6 +109,30 @@ class SliderImage
     public function getFile()
     {
         return $this->file;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(?string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getSubTitle(): ?string
+    {
+        return $this->subTitle;
+    }
+
+    public function setSubTitle(?string $subTitle): self
+    {
+        $this->subTitle = $subTitle;
+
+        return $this;
     }
 
 }

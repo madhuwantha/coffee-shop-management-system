@@ -34,8 +34,8 @@
                                         {{ form_errors(form.name) }}
                                     </div>
                                 </div>
-                                {% if is_granted('ROLE_ADMIN') == false %}
-                                <div class="form-group row">
+                                    {% if is_granted('ROLE_SUPPER_ADMIN') == true %}
+                                    <div class="form-group row">
                                     {% else %}
                                     <div style="display: none" class="form-group row">
                                         {% endif %}
@@ -89,6 +89,14 @@
                                                 </div>
                                             </div>
                                         {% endfor %}
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="noOfInstallments" class="col-sm-4 control-label">Select a theam</label>
+                                        <div class="col-sm-8">
+                                            {{ form_widget(form.theme, { 'attr': {'class': 'form-control'}}) }}
+                                            {{ form_errors(form.theme) }}
+                                        </div>
                                     </div>
                                     <!-- /.box-body -->
                                 </div>

@@ -15,6 +15,8 @@ class SliderImageType extends AbstractType
     {
         $builder
             ->add('position')
+            ->add('title')
+            ->add('subTitle')
             ->add('file',FileType::class, ['required' => false])
         ;
     }

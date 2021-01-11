@@ -51,6 +51,31 @@
                                         {{ form_errors(form.category) }}
                                     </div>
                                 </div>
+                                <div  class="form-group row ">
+                                    <label for="sibling_name"
+                                           class="col-sm-4 control-label">Ingredients</label>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(form.ingredients, {'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.ingredients) }}
+                                    </div>
+                                </div>
+
+                                <div  class="form-group row ">
+                                    <label for="sibling_name"
+                                           class="col-sm-4 control-label">Is in home page</label>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(form.isInHomePage, { 'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.isInHomePage) }}
+                                    </div>
+                                </div>
+                                <div  class="form-group row ">
+                                    <label for="sibling_name"
+                                           class="col-sm-4 control-label">Description</label>
+                                    <div class="col-sm-8">
+                                        {{ form_widget(form.description, { 'attr': {'class': 'form-control'}}) }}
+                                        {{ form_errors(form.description) }}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

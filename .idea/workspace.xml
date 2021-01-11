@@ -2,50 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f2ec66-bb44-482f-8451-16964c9fc257" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/megamenu/hgfb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/megamenu/lkjhgfd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/megamenu/megamenu-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/megamenu/megamenu-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/megamenu/megamenu-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/sprite.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/jss/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/jss/number.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/bootstrap-4.2.1/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/bootstrap-4.2.1/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/css/all.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-brands-400d41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-regular-400d41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/fontawesome-5.6.1/webfonts/fa-solid-900d41d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/jquery-3.3.1/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nouislider-12.1.0/nouislider.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/owl-carousel-2.3.4/assets/owl.carousel.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/owl-carousel-2.3.4/assets/owl.video.play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/owl-carousel-2.3.4/owl.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/svg4everybody-2.1.9/svg4everybody.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/theme_one/index2.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/megamenu/Picture1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/megamenu/pic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/megamenu/pic2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/megamenu/shop-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/Screenshot-11-10-2020-10-01-17-AM-5ffc8546e0605.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-2-5ffc8c5e4837e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-2-5ffc8c5e4b95e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-3-5ffc752b83408.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-3-5ffc8c9cc8f93.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/ex-network-to-int-network-ping-work-tcpdump-in-gateway-instance-5ffc8546e2dc3.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/my-5ffc62c1a48da.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/my-5ffc6aaa568dd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/my-courses-5ffc8c82b6577.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/pic2-5ffc752b7ef38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-1-5ffc6aaa5a2b4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-2-5ffc63286ee89.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-2-5ffc752b81f90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-2-5ffc752b83f7b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ffc6aaa59778.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-5ffc8c9cc5845.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ffc634cf3f45.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-5ffc8c5e4c582.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/splash-5ffc8c82b8b2c.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201216190240.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210111143548.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201216190327.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201216190836.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201216191010.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201216191122.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201216191443.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201224090033.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201224101221.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210111173144.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201224102657.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201224111451.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201225033203.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210111172614.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201225052937.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201225054220.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201225060621.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201225061020.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201225061640.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210111174050.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201225062134.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201225062257.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201225063416.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201225074418.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201225075500.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210105193724.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210106190234.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CoffeeShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CoffeeShopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shop/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shop/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/theme_one_base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/theme_one_base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/themes/one/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/themes/one/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/CoffeeShop.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CoffeeShop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/SliderImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/SliderImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CoffeeShopType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CoffeeShopType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ItemEditType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ItemEditType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ItemType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ItemType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MenuType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MenuType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SliderImageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SliderImageType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/_form_slider_image.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/_form_slider_image.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home_base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home_base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/item/_form_item.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/item/_form_item.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/item/_form_item_edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/item/_form_item_edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/themes/one/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/one_index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/themes/two/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shop/two/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -208,7 +232,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1608047873732" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/megamenu" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -218,13 +242,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\coffice\public\images\megamenu" />
       <recent name="C:\xampp\htdocs\coffice\public\images" />
       <recent name="C:\xampp\htdocs\coffice\public\jss" />
       <recent name="C:\xampp\htdocs\coffice\public" />
-      <recent name="C:\xampp\htdocs\coffice\public\images\megamenu" />
       <recent name="C:\xampp\htdocs\coffice\templates\theme_one" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\coffice\templates\coffee_shop" />
+      <recent name="C:\xampp\htdocs\coffice\templates\shop" />
       <recent name="C:\xampp\htdocs\coffee-shop-management-system\public" />
     </key>
   </component>
@@ -286,6 +312,9 @@
       <workItem from="1610026536962" duration="14623000" />
       <workItem from="1610110182383" duration="2369000" />
       <workItem from="1610124583579" duration="5126000" />
+      <workItem from="1610249721462" duration="1727000" />
+      <workItem from="1610336810838" duration="2230000" />
+      <workItem from="1610375327383" duration="10501000" />
     </task>
     <servers />
   </component>

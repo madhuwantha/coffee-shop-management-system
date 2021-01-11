@@ -19,6 +19,32 @@
     </div>
 </div>
 
+<div class="form-group row">
+    <label for="sibling_name"
+           class="col-sm-4 control-label">Ingredients</label>
+    <div class="col-sm-8">
+        {{ form_widget(item.ingredients, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(item.ingredients) }}
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="sibling_name"
+           class="col-sm-4 control-label">Description</label>
+    <div class="col-sm-8">
+        {{ form_widget(item.description, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(item.description) }}
+    </div>
+</div>
+<div class="form-group row">
+    <label for="sibling_name"
+           class="col-sm-4 control-label">Should Appear in home page</label>
+    <div class="col-sm-8">
+        {{ form_widget(item.isInHomePage, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(item.isInHomePage) }}
+    </div>
+</div>
+
 
 {#<div class="form-group row">#}
 {#    <label for="sibling_name"#}

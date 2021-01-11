@@ -18,6 +18,7 @@ class MenuType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+//            ->add('name')
             ->add('categories',CollectionType::class,[
                 'entry_type' => CategoryType::class,
                 'entry_options' => ['label' => true],
