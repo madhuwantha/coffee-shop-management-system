@@ -147,6 +147,7 @@ hr {
     background: transparent;
     box-shadow: none;
     border-radius: 2px;
+    z-index: 1;
 }
 
 .departments__links {
@@ -217,6 +218,7 @@ hr {
 
 .departments__megamenu--xl {
     width: 855px;
+    z-index: 3;
 }
 
 .departments__links-wrapper {
@@ -12188,4 +12190,8 @@ textarea.form-control {
         stroke-dasharray: 89, 200;
         stroke-dashoffset: -136px;
     }
+}
+
+body{
+    padding-top: 0px;
 }

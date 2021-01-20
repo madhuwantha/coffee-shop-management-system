@@ -1,0 +1,27 @@
+<div class="form-group row">
+    <label for="sibling_name"
+           class="col-sm-4 control-label">Day</label>
+    <div class="col-sm-8">
+        {{ form_widget(od.day, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(od.day) }}
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="sibling_name"
+           class="col-sm-4 control-label">Start Time</label>
+    <div class="col-sm-8">
+        {{ form_widget(od.start, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(od.start) }}
+    </div>
+</div>
+
+
+<div class="form-group row">
+    <label for="sibling_name"
+           class="col-sm-4 control-label">End Time</label>
+    <div class="col-sm-8">
+        {{ form_widget(od.end, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(od.end) }}
+    </div>
+</div>

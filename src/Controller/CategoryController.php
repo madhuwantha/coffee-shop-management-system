@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Form\CategoryType;
 use App\Form\MultipleCategoryType;
 use App\Repository\CategoryRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,11 +19,23 @@ class CategoryController extends AbstractController
 {
     /**
      * @Route("/", name="category_index", methods={"GET"})
+     * @param CategoryRepository $categoryRepository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return Response
      */
-    public function index(CategoryRepository $categoryRepository): Response
+    public function index(CategoryRepository $categoryRepository, PaginatorInterface $paginator, Request $request): Response
     {
+
+        $query =   $categoryRepository->findAll();
+        $categories = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            10
+        );
         return $this->render('category/index.html.twig', [
-            'categories' => $categoryRepository->findAll(),
+            'constance' => new Constance(),
+            'categories' => $categories
         ]);
     }
 
@@ -45,6 +58,7 @@ class CategoryController extends AbstractController
         }
 
         return $this->render('category/new.html.twig', [
+            'constance' => new Constance(),
             'category' => $category,
             'form' => $form->createView(),
         ]);
@@ -78,6 +92,7 @@ class CategoryController extends AbstractController
         }
 
         return $this->render('category/new_sub.html.twig', [
+            'constance' => new Constance(),
             'category' => $category,
             'form' => $form->createView(),
         ]);
@@ -94,6 +109,7 @@ class CategoryController extends AbstractController
         ));
 
         return $this->render('category/show.html.twig', [
+            'constance' => new Constance(),
             'category' => $category,
             'subCategories' => $data,
         ]);
@@ -114,6 +130,7 @@ class CategoryController extends AbstractController
         }
 
         return $this->render('category/edit.html.twig', [
+            'constance' => new Constance(),
             'category' => $category,
             'form' => $form->createView(),
         ]);

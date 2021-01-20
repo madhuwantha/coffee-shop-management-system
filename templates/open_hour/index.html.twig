@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OpenHour index{% endblock %}
+
+{% block body %}
+    <h1>OpenHour index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for open_hour in open_hours %}
+            <tr>
+                <td>{{ open_hour.id }}</td>
+                <td>{{ open_hour.start }}</td>
+                <td>{{ open_hour.end }}</td>
+                <td>
+                    <a href="{{ path('open_hour_show', {'id': open_hour.id}) }}">show</a>
+                    <a href="{{ path('open_hour_edit', {'id': open_hour.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('open_hour_new') }}">Create new</a>
+{% endblock %}

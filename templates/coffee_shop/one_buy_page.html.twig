@@ -1,0 +1,81 @@
+{% extends "theme_one_base.html.twig" %}
+{% block stylesheets %}
+
+{% endblock %}
+{% block body %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="left-sidebar">
+                        <div style="padding-top: 0" class="shipping text-center"><!--shipping-->
+                            <img src="{{ asset('../public/images/buy_image.jpg') }}" alt=""/>
+                        </div><!--/shipping-->
+                    </div>
+                </div>
+
+                <div class="col-lg-9 p-4">
+                    <div class="container product-details"><!--product-details-->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-md-5" style="border: 1px solid #343a401c; z-index: 0">
+                                    <div class="view-product owl-carousel ">
+                                        {% for image in product.itemImages %}
+                                            <img src="{{ asset('uploads/images/') ~ image.path }}" alt=""/>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="col-sm-7" style="border: 1px solid #343a401c;">
+                                    <div class="product-information"><!--/product-information-->
+                                        <h2>{{ product.name }}</h2>
+                                        <p>{{ product.category.name }}</p>
+                                        <span>
+                                            <span>US ${{ product.price }}</span>
+                                            <label>Quantity:</label>
+                                            <input type="text" value="1"/>
+                                        </span>
+{#                                        <p><b>Condition:</b> New</p>#}
+                                    </div>
+                                </div>
+                                <span class="p-2"></span>
+                                <div class="col-sm-12" style="border: 1px solid #343a401c;">
+                                    <h4>About the coffee</h4>
+                                    <h5>Description</h5>
+                                    {{ product.description }}
+
+                                    <span class="p-1"></span>
+                                    <h5>Ingredients</h5>
+                                    {{ product.ingredients }}
+                                </div>
+                                <button class="btn btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div><!--/product-details-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                // 600:{
+                //     items:3
+                // },
+                // 1000:{
+                //     items:5
+                // }
+            }
+        })
+    </script>
+{% endblock %}

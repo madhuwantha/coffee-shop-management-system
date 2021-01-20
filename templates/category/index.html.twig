@@ -120,9 +120,13 @@
                                         <td colspan="5">no records found</td>
                                     </tr>
                                 {% endfor %}
-
                                 </tbody>
                             </table>
+                            <div class="d-flex align-items-end flex-column" style="">
+                                <div class="navigation justify-content-end">
+                                    {{ knp_pagination_render(categories) }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div> <!-- end col -->

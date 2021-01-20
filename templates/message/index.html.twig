@@ -44,7 +44,7 @@
                     {% endif %}
                 </div>
             </div>
-            <form action="" method="post" enctype="multipart/form-data">
+            <form about="{{ path('message_index') }}" method="post" enctype="multipart/form-data">
                 {{ form_start(form,{'attr':{'class':'form-horizontal'}}) }}
                 <div class="row">
                     <div class="col-md-8 col-lg-12">
@@ -54,7 +54,7 @@
                                 <hr/>
                                 <div class="box-body">
                                     <div class="form-group row">
-                                        <label for="employee" class="col-sm-4 control-label">Name</label>
+                                        <label for="employee" class="col-sm-4 control-label">Message</label>
                                         <div class="col-sm-8">
                                             {{ form_widget(form.message, { 'attr': {'class': 'form-control'}}) }}
                                             {{ form_errors(form.message) }}
@@ -63,13 +63,13 @@
                                     <div class="form-group row">
                                         <label for="employee" class="col-sm-4 control-label">Reciver</label>
                                         <div class="col-sm-8">
-                                            {{ form_widget(form.reciever, {'attr': {'class': 'form-control'}}) }}
-                                            {{ form_errors(form.reciever) }}
+                                            {{ form_widget(form.messageReceiver, {'attr': {'class': 'form-control'}}) }}
+                                            {{ form_errors(form.messageReceiver) }}
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        {{ form_widget(form.save, {'attr': {'class': 'btn btn-info btn-block pull-right', 'label': 'Send'}}) }}
+                                        {{ form_widget(form.Send, {'attr': {'class': 'btn btn-info btn-block pull-right', 'label': 'Send'}}) }}
                                     </div>
                                 </div>
                             </div>
@@ -78,6 +78,7 @@
                 </div> <!-- end row -->
                 {{ form_end(form) }}
             </form>
+
             <div class="row">
                 <div class="col-xl-12">
                     <div class="card">
@@ -86,125 +87,128 @@
                             <div class="table-responsive">
                                 <table class="table table-nowrap mb-0">
                                     <tbody>
-                                    <tr>
-                                        <td style="width: 60px;">
-                                            <img src="{{ asset('veltrix_v2/images/users/user-2.jpg') }}" alt=""
-                                                 class="thumb-sm rounded-circle">
-                                        </td>
-                                        <td>David Wiley
-                                            <p class="m-0 text-muted">On 02 Jun, 2019</p>
-                                        </td>
-                                        <td>Desktop</td>
-                                        <td>
-                                            <i class="mdi mdi-checkbox-blank-circle text-success mr-1"></i>
-                                            Confirm
-                                        </td>
-                                        <td>
-                                            $2105
-                                            <p class="m-0 text-muted font-14">Amount</p>
-                                        </td>
+                                    {% for message in messages %}
+                                        {% if message.message.isReplyTo != 1 %}
+                                            <tr>
+                                                <td style="width: 60px;">
+                                                    <img src="{{ asset('uploads/images/') ~ message.message.sender.profilePictures.get(0).path }}" alt=""
+                                                         class="thumb-sm rounded-circle">
+                                                </td>
+                                                <td>{{ message.message.sender.name }}
+                                                    <p class="m-0 text-muted">{{ message.message.date | date('Y-m-d') }}</p>
+                                                </td>
+                                                <td>
+                                                    {{ message.message.message |slice(0, 90) }} ...
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        <a href="{{ path('message_show',{id: message.message.id }) }}" class="btn btn-primary btn-sm">Show</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {% endif %}
+                                    {% endfor %}
 
-                                        <td>
-                                            <div>
-                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="{{ asset('veltrix_v2/images/users/user-3.jpg') }}" alt=""
-                                                 class="thumb-sm rounded-circle">
-                                        </td>
+{#                                    <tr>#}
+{#                                        <td>#}
+{#                                            <img src="{{ asset('veltrix_v2/images/users/user-3.jpg') }}" alt=""#}
+{#                                                 class="thumb-sm rounded-circle">#}
+{#                                        </td>#}
 
-                                        <td>Michael Gatlin
-                                            <p class="m-0 text-muted">On 03 Jun, 2019</p>
-                                        </td>
-                                        <td>laptop</td>
-                                        <td>
-                                            <i class="mdi mdi-checkbox-blank-circle text-danger mr-1"></i>
-                                            Payment expired
-                                        </td>
-                                        <td>
-                                            $1825
-                                            <p class="m-0 text-muted font-14">Amount</p>
-                                        </td>
-                                        <td>
-                                            <div>
-                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="{{ asset('veltrix_v2/images/users/user-4.jpg') }}" alt=""
-                                                 class="thumb-sm rounded-circle">
-                                        </td>
-                                        <td>Steve Dietrich
-                                            <p class="m-0 text-muted">On 05 Jun, 2019</p>
-                                        </td>
-                                        <td>Tablet</td>
-                                        <td>
-                                            <i class="mdi mdi-checkbox-blank-circle text-warning mr-1"></i>
-                                            Waiting payment
-                                        </td>
-                                        <td>
-                                            $1460
-                                            <p class="m-0 text-muted font-14">Amount</p>
-                                        </td>
-                                        <td>
-                                            <div>
-                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="{{ asset('veltrix_v2/images/users/user-5.jpg') }}" alt=""
-                                                 class="thumb-sm rounded-circle">
-                                        </td>
-                                        <td>James Harris
-                                            <p class="m-0 text-muted">On 07 Jun, 2019</p>
-                                        </td>
-                                        <td>Mobile</td>
-                                        <td>
-                                            <i class="mdi mdi-checkbox-blank-circle text-success mr-1"></i>
-                                            Confirm
-                                        </td>
-                                        <td>
-                                            $1434
-                                            <p class="m-0 text-muted font-14">Amount</p>
-                                        </td>
-                                        <td>
-                                            <div>
-                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="{{ asset('veltrix_v2/images/users/user-6.jpg') }}" alt=""
-                                                 class="thumb-sm rounded-circle">
-                                        </td>
-                                        <td>Clay Johnson
-                                            <p class="m-0 text-muted">On 08 Jun, 2019</p>
-                                        </td>
-                                        <td>laptop</td>
-                                        <td>
-                                            <i class="mdi mdi-checkbox-blank-circle text-success mr-1"></i>
-                                            Confirm
-                                        </td>
-                                        <td>
-                                            $1759
-                                            <p class="m-0 text-muted font-14">Amount</p>
-                                        </td>
-                                        <td>
-                                            <div>
-                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                            </div>
-                                        </td>
-                                    </tr>
+{#                                        <td>Michael Gatlin#}
+{#                                            <p class="m-0 text-muted">On 03 Jun, 2019</p>#}
+{#                                        </td>#}
+{#                                        <td>laptop</td>#}
+{#                                        <td>#}
+{#                                            <i class="mdi mdi-checkbox-blank-circle text-danger mr-1"></i>#}
+{#                                            Payment expired#}
+{#                                        </td>#}
+{#                                        <td>#}
+{#                                            $1825#}
+{#                                            <p class="m-0 text-muted font-14">Amount</p>#}
+{#                                        </td>#}
+{#                                        <td>#}
+{#                                            <div>#}
+{#                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>#}
+{#                                            </div>#}
+{#                                        </td>#}
+{#                                    </tr>#}
+{#                                    <tr>#}
+{#                                        <td>#}
+{#                                            <img src="{{ asset('veltrix_v2/images/users/user-4.jpg') }}" alt=""#}
+{#                                                 class="thumb-sm rounded-circle">#}
+{#                                        </td>#}
+{#                                        <td>Steve Dietrich#}
+{#                                            <p class="m-0 text-muted">On 05 Jun, 2019</p>#}
+{#                                        </td>#}
+{#                                        <td>Tablet</td>#}
+{#                                        <td>#}
+{#                                            <i class="mdi mdi-checkbox-blank-circle text-warning mr-1"></i>#}
+{#                                            Waiting payment#}
+{#                                        </td>#}
+{#                                        <td>#}
+{#                                            $1460#}
+{#                                            <p class="m-0 text-muted font-14">Amount</p>#}
+{#                                        </td>#}
+{#                                        <td>#}
+{#                                            <div>#}
+{#                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>#}
+{#                                            </div>#}
+{#                                        </td>#}
+{#                                    </tr>#}
+{#                                    <tr>#}
+{#                                        <td>#}
+{#                                            <img src="{{ asset('veltrix_v2/images/users/user-5.jpg') }}" alt=""#}
+{#                                                 class="thumb-sm rounded-circle">#}
+{#                                        </td>#}
+{#                                        <td>James Harris#}
+{#                                            <p class="m-0 text-muted">On 07 Jun, 2019</p>#}
+{#                                        </td>#}
+{#                                        <td>Mobile</td>#}
+{#                                        <td>#}
+{#                                            <i class="mdi mdi-checkbox-blank-circle text-success mr-1"></i>#}
+{#                                            Confirm#}
+{#                                        </td>#}
+{#                                        <td>#}
+{#                                            $1434#}
+{#                                            <p class="m-0 text-muted font-14">Amount</p>#}
+{#                                        </td>#}
+{#                                        <td>#}
+{#                                            <div>#}
+{#                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>#}
+{#                                            </div>#}
+{#                                        </td>#}
+{#                                    </tr>#}
+{#                                    <tr>#}
+{#                                        <td>#}
+{#                                            <img src="{{ asset('veltrix_v2/images/users/user-6.jpg') }}" alt=""#}
+{#                                                 class="thumb-sm rounded-circle">#}
+{#                                        </td>#}
+{#                                        <td>Clay Johnson#}
+{#                                            <p class="m-0 text-muted">On 08 Jun, 2019</p>#}
+{#                                        </td>#}
+{#                                        <td>laptop</td>#}
+{#                                        <td>#}
+{#                                            <i class="mdi mdi-checkbox-blank-circle text-success mr-1"></i>#}
+{#                                            Confirm#}
+{#                                        </td>#}
+{#                                        <td>#}
+{#                                            $1759#}
+{#                                            <p class="m-0 text-muted font-14">Amount</p>#}
+{#                                        </td>#}
+{#                                        <td>#}
+{#                                            <div>#}
+{#                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>#}
+{#                                            </div>#}
+{#                                        </td>#}
+{#                                    </tr>#}
                                     </tbody>
                                 </table>
+                            </div>
+                            <div class="d-flex align-items-end flex-column" style="">
+                                <div class="navigation justify-content-end">
+                                    {{ knp_pagination_render(messages) }}
+                                </div>
                             </div>
                         </div>
                     </div>

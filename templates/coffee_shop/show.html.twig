@@ -1,7 +1,3 @@
-
-
-
-
 {% extends "Base/base_page.html.twig" %}
 {% block title %}Coffee Shop{% endblock %}
 
@@ -38,7 +34,8 @@
                             <div class="box-body">
                                 <div class="form-group row">
                                     <div class="col-sm-8">
-                                        <img style="width: 500px" src="{{ asset('uploads/images/') ~ coffee_shop.coverPhoto.path }}" alt="">
+                                        <img style="width: 500px"
+                                             src="{{ asset('uploads/images/') ~ coffee_shop.coverPhoto.path }}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -145,8 +142,9 @@
                                     <div class="form-group row">
                                         <label for="employee" class="col-sm-4 control-label">Image</label>
                                         <div class="col-sm-8">
-                                            <img style="width: 500px" src="{{ asset('uploads/images/' ~ sliderImage.path) }}">
-{#                                            {{ sliderImage.path }}#}
+                                            <img style="width: 500px"
+                                                 src="{{ asset('uploads/images/' ~ sliderImage.path) }}">
+                                            {#                                            {{ sliderImage.path }}#}
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -164,34 +162,51 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="mt-0 header-title">Menu</h4>
-                            <hr/>
-
-{#                            <div class="box-body">#}
-{#                                <div class="form-group row">#}
-{#                                    <label for="employee" class="col-sm-4 control-label">Name</label>#}
-{#                                    <div class="col-sm-8">#}
-{#                                        {{ coffee_shop.menu.name }}#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-
                             <h4 class="mt-0 header-title">Categories</h4>
                             <hr/>
-
                             {% for category in coffee_shop.menu.categories %}
 
                                 {% if category.level == 1 %}
+                                    <div class="box-body">
+                                        <div class="form-group row">
+                                            <label for="employee" class="col-sm-4 control-label">Name</label>
+                                            <div class="col-sm-8">
+                                                {{ category.name }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title">Open Days</h4>
+                            <hr/>
+                            {% for day in coffee_shop.openHours %}
                                 <div class="box-body">
                                     <div class="form-group row">
-                                        <label for="employee" class="col-sm-4 control-label">Name</label>
+                                        <label for="employee" class="col-sm-4 control-label">Day</label>
                                         <div class="col-sm-8">
-                                            {{ category.name }}
+                                            {{ day.day }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">From</label>
+                                        <div class="col-sm-8">
+                                            {{ day.start }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="employee" class="col-sm-4 control-label">To</label>
+                                        <div class="col-sm-8">
+                                            {{ day.end }}
                                         </div>
                                     </div>
                                 </div>
                                 <hr/>
-                                {% endif %}
                             {% endfor %}
                         </div>
                     </div>

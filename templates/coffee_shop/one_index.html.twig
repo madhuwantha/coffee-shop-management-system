@@ -4,106 +4,11 @@
 {% endblock %}
 {% block body %}
 
-
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="departments" data-departments-fixed-by="">
-            <div class="departments__body" id="set">
-                <div class="departments__links-wrapper">
-                    <ul class="departments__links">
-                        {% for category in categories %}
-                            <li class="departments__item">
-                                <a href="#">{{ category.category.name }}
-                                    <svg class="departments__link-arrow" width="6px" height="9px">
-                                        <use xlink:href="../../../../../public/images/sprite.svg#arrow-rounded-right-6x9"></use>
-                                    </svg>
-                                </a>
-                                <div class="departments__megamenu departments__megamenu--xl">
-                                    <div class="megamenu megamenu--departments" style="background-image: url('../../../../../public/images/megamenu/pic2.png');">
-{#                                        <div class="row">#}
-{#                                            <div class="col-3">#}
-                                                <ul class="megamenu__links megamenu__links--level--0">
-                                                    <li class="megamenu__item megamenu__item--with-submenu">
-                                                        <ul class="megamenu__links megamenu__links--level--1">
-                                                            {% if category.subCategories | length > 0 %}
-                                                                {%  for sub in category.subCategories %}
-                                                                    <li class="megamenu__item"><a href="#">{{ sub.name }}</a></li>
-                                                                {% endfor %}
-                                                            {% endif %}
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-{#                                            </div>#}
-{#                                        </div>#}
-                                    </div>
-                                </div>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <button class="departments__button">Menu</button>
-        </div>
-        <div class="container">
-            <a class="navbar-brand" href="{{ path('home') }}">{{shop.name}}</a>
-            <!---------------------------------------------------------------------------------------------->
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-{#                        <div class="departments" data-departments-fixed-by="">#}
-{#                            <div class="departments__body" id="set">#}
-{#                                <div class="departments__links-wrapper">#}
-{#                                    <ul class="departments__links">#}
-{#                                        {% for category in categories %}#}
-{#                                            <li class="departments__item">#}
-{#                                                <a href="#">{{ category.category.name }}#}
-{#                                                    <svg class="departments__link-arrow" width="6px" height="9px">#}
-{#                                                        <use xlink:href="../../../public/images/sprite.svg#arrow-rounded-right-6x9"></use>#}
-{#                                                    </svg>#}
-{#                                                </a>#}
-{#                                                <div class="departments__megamenu departments__megamenu--xl">#}
-{#                                                    <div class="megamenu megamenu--departments"#}
-{#                                                         style="background-image: url('../../../../../public/images/megamenu/megamenu-1.jpg');">#}
-{#                                                        <div class="row">#}
-{#                                                            <div class="col-3">#}
-{#                                                                <ul class="megamenu__links megamenu__links--level--0">#}
-{#                                                                    <li class="megamenu__item megamenu__item--with-submenu">#}
-{#                                                                        <ul class="megamenu__links megamenu__links--level--1">#}
-{#                                                                            {% if category.subCategories | length > 0 %}#}
-{#                                                                                {%  for sub in category.subCategories %}#}
-{#                                                                                    <li class="megamenu__item"><a href="#">{{ sub.name }}</a></li>#}
-{#                                                                                {% endfor %}#}
-{#                                                                            {% endif %}#}
-{#                                                                        </ul>#}
-{#                                                                    </li>#}
-{#                                                                </ul>#}
-{#                                                            </div>#}
-{#                                                        </div>#}
-{#                                                    </div>#}
-{#                                                </div>#}
-{#                                            </li>#}
-{#                                        {% endfor %}#}
-{#                                    </ul>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <button class="departments__button">Men</button>#}
-{#                        </div>#}
-                    </li>
-                    <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#products" class="nav-link">Products</a></li>
-                    <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
-                    <li class="nav-item"><a href="#about-us" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#footer" class="nav-link">Contact</a></li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <section class="home-slider owl-carousel js-fullheight">
 
         {% for slider in shop.sliderImages %}
-{#            <div class="slider-item js-fullheight" style="background-image: url('../../../../../public/images/bg_1.jpg');">#}
-            <div class="slider-item js-fullheight" style="background-image: url({{ asset('uploads/images/') ~ slider.path }});">
+            <div class="slider-item js-fullheight"
+                 style="background-image: url({{ asset('uploads/images/') ~ slider.path }});">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row slider-text js-fullheight justify-content-center align-items-center"
@@ -116,41 +21,6 @@
                 </div>
             </div>
         {% endfor %}
-{#        <div class="slider-item js-fullheight" style="background-image: url('../../../../../public/images/bg_1.jpg');">#}
-{#            <div class="overlay"></div>#}
-{#            <div class="container">#}
-{#                <div class="row slider-text js-fullheight justify-content-center align-items-center"#}
-{#                     data-scrollax-parent="true">#}
-{#                    <div class="col-md-12 col-sm-12 text-center ftco-animate">#}
-{#                        <span class="subheading">Journal</span>#}
-{#                        <h1 class="mb-4">Best</h1>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="slider-item js-fullheight" style="background-image: url('../../../../../public/images/bg_2.jpg');">#}
-{#            <div class="overlay"></div>#}
-{#            <div class="container">#}
-{#                <div class="row slider-text js-fullheight justify-content-center align-items-center"#}
-{#                     data-scrollax-parent="true">#}
-{#                    <div class="col-md-12 col-sm-12 text-center ftco-animate">#}
-{#                        <span class="subheading">Journal</span>#}
-{#                        <h1 class="mb-4">Nutritious &amp; Tasty</h1>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="slider-item js-fullheight" style="background-image: url('../../../../../public/images/bg_3.jpg');">#}
-{#            <div class="overlay"></div>#}
-{#            <div class="container">#}
-{#                <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">#}
-{#                    <div class="col-md-12 col-sm-12 text-center ftco-animate">#}
-{#                        <span class="subheading">Journal</span>#}
-{#                        <h1 class="mb-4">Delicious Specialties</h1>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
     </section>
     <section id="products" class="ftco-section">
         <div class="container">
@@ -161,199 +31,37 @@
                 </div>
             </div>
             <div class="row no-gutters d-flex align-items-stretch">
-                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
-                        <div class="menu-img img"
-                             style="background-image: url('../../../../../public/images/breakfast-1.jpg');"></div>
-                        <div class="text d-flex align-items-center">
-                            <div>
-                                <div class="d-flex">
-                                    <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
+                {% for product in products %}
+                    <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+                        <div class="menus d-sm-flex ftco-animate align-items-stretch">
+                            <div class="menu-img img"
+                                 style="background-image: url({{ asset('uploads/images/') ~ product.itemImages[0].path }});"></div>
+                            <div class="text d-flex align-items-center">
+                                <div>
+                                    <div class="d-flex">
+                                        <div class="one-half">
+                                            <h3>{{ product.name }}</h3>
+                                        </div>
+                                        <div class="one-forth">
+                                            <span class="price">${{ product.price }}</span>
+                                        </div>
                                     </div>
-                                    <div class="one-forth">
-                                        <span class="price">$29</span>
-                                    </div>
+                                    <p>
+                                        <span>{{ product.ingredients }}</span>
+                                    </p>
+                                    <p>
+                                        <a href="{{ path('shop_product_buy',  {shop_id: shop.id, item_id: product.id  }) }}" class="btn btn-primary">Order now</a>
+                                    </p>
                                 </div>
-                                <p>
-                                    <span>Meat</span>,
-                                    <span>Potatoes</span>,
-                                    <span>Rice</span>,
-                                    <span>Tomatoe</span>
-                                </p>
-                                <p>
-                                    <a href="#" class="btn btn-primary">Order now</a>
-                                </p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
-                        <div class="menu-img img"
-                             style="background-image: url('../../../../../public/images/breakfast-2.jpg');"></div>
-                        <div class="text d-flex align-items-center">
-                            <div>
-                                <div class="d-flex">
-                                    <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
-                                    </div>
-                                    <div class="one-forth">
-                                        <span class="price">$29</span>
-                                    </div>
-                                </div>
-                                <p>
-                                    <span>Meat</span>,
-                                    <span>Potatoes</span>,
-                                    <span>Rice</span>,
-                                    <span>Tomatoe</span>
-                                </p>
-                                <p>
-                                    <a href="#" class="btn btn-primary">Order now</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
-                        <div class="menu-img img order-md-last"
-                             style="background-image: url('../../../../../public/images/breakfast-3.jpg');"></div>
-                        <div class="text d-flex align-items-center">
-                            <div>
-                                <div class="d-flex">
-                                    <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
-                                    </div>
-                                    <div class="one-forth">
-                                        <span class="price">$29</span>
-                                    </div>
-                                </div>
-                                <p>
-                                    <span>Meat</span>,
-                                    <span>Potatoes</span>,
-                                    <span>Rice</span>,
-                                    <span>Tomatoe</span>
-                                </p>
-                                <p>
-                                    <a href="#" class="btn btn-primary">Order now</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
-                        <div class="menu-img img order-md-last"
-                             style="background-image: url('../../../../../public/images/breakfast-5.jpg');"></div>
-                        <div class="text d-flex align-items-center">
-                            <div>
-                                <div class="d-flex">
-                                    <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
-                                    </div>
-                                    <div class="one-forth">
-                                        <span class="price">$29</span>
-                                    </div>
-                                </div>
-                                <p>
-                                    <span>Meat</span>,
-                                    <span>Potatoes</span>,
-                                    <span>Rice</span>,
-                                    <span>Tomatoe</span>
-                                </p>
-                                <p>
-                                    <a href="#" class="btn btn-primary">Order now</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
-                        <div class="menu-img img"
-                             style="background-image: url('../../../../../public/images/breakfast-6.jpg');"></div>
-                        <div class="text d-flex align-items-center">
-                            <div>
-                                <div class="d-flex">
-                                    <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
-                                    </div>
-                                    <div class="one-forth">
-                                        <span class="price">$29</span>
-                                    </div>
-                                </div>
-                                <p>
-                                    <span>Meat</span>,
-                                    <span>Potatoes</span>,
-                                    <span>Rice</span>,
-                                    <span>Tomatoe</span>
-                                </p>
-                                <p>
-                                    <a href="#" class="btn btn-primary">Order now</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
-                        <div class="menu-img img"
-                             style="background-image: url('../../../../../public/images/breakfast-2.jpg');"></div>
-                        <div class="text d-flex align-items-center">
-                            <div>
-                                <div class="d-flex">
-                                    <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
-                                    </div>
-                                    <div class="one-forth">
-                                        <span class="price">$29</span>
-                                    </div>
-                                </div>
-                                <p>
-                                    <span>Meat</span>,
-                                    <span>Potatoes</span>,
-                                    <span>Rice</span>,
-                                    <span>Tomatoe</span>
-                                </p>
-                                <p>
-                                    <a href="#" class="btn btn-primary">Order now</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-                    <div class="menus d-sm-flex ftco-animate align-items-stretch">
-                        <div class="menu-img img"
-                             style="background-image: url('../../../../../public/images/breakfast-2.jpg');"></div>
-                        <div class="text d-flex align-items-center">
-                            <div>
-                                <div class="d-flex">
-                                    <div class="one-half">
-                                        <h3>Grilled Beef with potatoes</h3>
-                                    </div>
-                                    <div class="one-forth">
-                                        <span class="price">$29</span>
-                                    </div>
-                                </div>
-                                <p>
-                                    <span>Meat</span>,
-                                    <span>Potatoes</span>,
-                                    <span>Rice</span>,
-                                    <span>Tomatoe</span>
-                                </p>
-                                <p>
-                                    <a href="#" class="btn btn-primary">Order now</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
-    <section id="gallery" class="ftco-section img" style="background-image: url('../../../../../public/images/bg_3.jpg')"
+    <section id="gallery" class="ftco-section img"
+             style="background-image: url('../../../../../public/images/bg_3.jpg')"
              data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row justify-content-center mb-5">
@@ -392,7 +100,7 @@
                 <div class="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3 ftco-animate">
                     <div class="heading-section mb-4 my-5 my-md-0">
                         <span class="subheading">About</span>
-                        <h2 class="mb-4">{{shop.name}}</h2>
+                        <h2 class="mb-4">{{ shop.name }}</h2>
                     </div>
                     <p>{{ shop.aboutUs }}</p>
                     <p class="time">
@@ -450,118 +158,7 @@
             </div>
         </div>
     </section>
-    <footer id="footer" class="ftco-footer ftco-bg-dark ftco-section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-6 col-lg-3">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">{{shop.name}}</h2>
-                        <p>{{ shop.description }}</p>
-                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                            <li class="ftco-animate">
-                                <a href="#">
-                                    <span class="icon-twitter"></span>
-                                </a>
-                            </li>
-                            <li class="ftco-animate">
-                                <a href="#">
-                                    <span class="icon-facebook"></span>
-                                </a>
-                            </li>
-                            <li class="ftco-animate">
-                                <a href="#">
-                                    <span class="icon-instagram"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Open Hours</h2>
-                        <ul class="list-unstyled open-hours">
-                            <li class="d-flex">
-                                <span>Monday</span>
-                                <span>9:00 - 24:00</span>
-                            </li>
-                            <li class="d-flex">
-                                <span>Tuesday</span>
-                                <span>9:00 - 24:00</span>
-                            </li>
-                            <li class="d-flex">
-                                <span>Wednesday</span>
-                                <span>9:00 - 24:00</span>
-                            </li>
-                            <li class="d-flex">
-                                <span>Thursday</span>
-                                <span>9:00 - 24:00</span>
-                            </li>
-                            <li class="d-flex">
-                                <span>Friday</span>
-                                <span>9:00 - 02:00</span>
-                            </li>
-                            <li class="d-flex">
-                                <span>Saturday</span>
-                                <span>9:00 - 02:00</span>
-                            </li>
-                            <li class="d-flex">
-                                <span>Sunday</span>
-                                <span>
-									9:00 - 02:00</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Instagram</h2>
-                        <div class="thumb d-sm-flex">
-                            <a href="#" class="thumb-menu img"
-                               style="background-image: url('../../../../../public/images/insta-1.jpg')"></a>
-                            <a href="#" class="thumb-menu img"
-                               style="background-image: url('../../../../../public/images/insta-2.jpg');"></a>
-                            <a href="#" class="thumb-menu img"
-                               style="background-image: url('../../../../../public/images/insta-3.jpg');"></a>
-                        </div>
-                        <div class="thumb d-flex">
-                            <a href="#" class="thumb-menu img"
-                               style="background-image: url('../../../../../public/images/insta-4.jpg');"></a>
-                            <a href="#" class="thumb-menu img"
-                               style="background-image: url('../../../../../public/images/insta-5.jpg');"></a>
-                            <a href="#" class="thumb-menu img"
-                               style="background-image: url('../../../../../public/images/insta-6.jpg');"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Newsletter</h2>
-                        <p>Far far away, behind the word mountains, far from the countries.</p>
-                        <form action="#" class="subscribe-form">
-                            <div class="form-group">
-                                <input type="text" class="form-control mb-2 text-center"
-                                       placeholder="Enter email address">
-                                <input type="submit" value="Subscribe" class="form-control submit px-3">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p>
-                        All rights reserved | Powerd By EquitemSoft &copy;
-                        <script data-cfasync="false" src="#"></script>
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script>
-                        <i class="icon-heart" aria-hidden="true"></i>
-                        <a href="" target="_blank"></a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+
 
 
 {% endblock body %}

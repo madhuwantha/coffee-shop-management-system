@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OpenHour{% endblock %}
+
+{% block body %}
+    <h1>OpenHour</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ open_hour.id }}</td>
+            </tr>
+            <tr>
+                <th>Start</th>
+                <td>{{ open_hour.start }}</td>
+            </tr>
+            <tr>
+                <th>End</th>
+                <td>{{ open_hour.end }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('open_hour_index') }}">back to list</a>
+
+    <a href="{{ path('open_hour_edit', {'id': open_hour.id}) }}">edit</a>
+
+    {{ include('open_hour/_delete_form.html.twig') }}
+{% endblock %}

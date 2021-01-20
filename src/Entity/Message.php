@@ -19,6 +19,7 @@ class Message
      */
     private $id;
 
+
     /**
      * @ORM\Column(type="string", length=5000, nullable=true)
      */
@@ -45,9 +46,44 @@ class Message
      */
     private $messageReceivers;
 
+
+    private $messageReceiver;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isReplyTo;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Message::class, inversedBy="messages")
+     */
+    private $replyTo;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Message::class, mappedBy="replyTo")
+     */
+    private $messages;
+
+    /**
+     * @return mixed
+     */
+    public function getMessageReceiver()
+    {
+        return $this->messageReceiver;
+    }
+
+    /**
+     * @param mixed $messageReceiver
+     */
+    public function setMessageReceiver($messageReceiver): void
+    {
+        $this->messageReceiver = $messageReceiver;
+    }
+
     public function __construct()
     {
         $this->messageReceivers = new ArrayCollection();
+        $this->messages = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -127,6 +163,60 @@ class Message
             // set the owning side to null (unless already changed)
             if ($messageReceived->getMessage() === $this) {
                 $messageReceived->setMessage(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getIsReplyTo(): ?bool
+    {
+        return $this->isReplyTo;
+    }
+
+    public function setIsReplyTo(bool $isReplyTo): self
+    {
+        $this->isReplyTo = $isReplyTo;
+
+        return $this;
+    }
+
+    public function getReplyTo(): ?self
+    {
+        return $this->replyTo;
+    }
+
+    public function setReplyTo(?self $replyTo): self
+    {
+        $this->replyTo = $replyTo;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|self[]
+     */
+    public function getMessages(): Collection
+    {
+        return $this->messages;
+    }
+
+    public function addMessage(self $message): self
+    {
+        if (!$this->messages->contains($message)) {
+            $this->messages[] = $message;
+            $message->setReplyTo($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMessage(self $message): self
+    {
+        if ($this->messages->removeElement($message)) {
+            // set the owning side to null (unless already changed)
+            if ($message->getReplyTo() === $this) {
+                $message->setReplyTo(null);
             }
         }
 

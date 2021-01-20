@@ -32,7 +32,7 @@ class MessageReceivedType extends AbstractType
                 },
                 'placeholder' => 'Receiver'
             ])
-            ->add('save', SubmitType::class);;
+            ->add('Send', SubmitType::class);;
         ;
     }
 

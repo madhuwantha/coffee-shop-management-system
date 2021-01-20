@@ -1,0 +1,119 @@
+{% extends "theme_one_base.html.twig" %}
+{% block stylesheets %}
+
+{% endblock %}
+{% block body %}
+
+
+    <span class="p-lg-5"></span>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="left-sidebar">
+                        <div class="price-range"><!--price-range-->
+                            <h2>Price Range</h2>
+                            <div class="well text-center">
+                                <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600"
+                                       data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br/>
+                                <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
+                            </div>
+                        </div><!--/price-range-->
+                        <div class="shipping text-center"><!--shipping-->
+                            <img src="{{ asset('../public/images/buy_image.jpg') }}"
+                                 alt=""/>
+                        </div><!--/shipping-->
+
+                    </div>
+                </div>
+
+                <div class="col-sm-9 padding-right">
+                    <div class="features_items"><!--features_items-->
+                        <h2 class="title text-center">Coffee</h2>
+                        {% for product in products %}
+                            <div class="col-md-12 col-lg-12 d-flex align-self-stretch">
+                                <div class="menus d-sm-flex ftco-animate align-items-stretch">
+                                    <div class="menu-img img"
+                                         style="background-image: url({{ asset('uploads/images/') ~ product.itemImages[0].path }});"></div>
+                                    <div class="text d-flex align-items-center">
+                                        <div>
+                                            <div class="d-flex">
+                                                <div class="one-half">
+                                                    <h3>{{ product.name }}</h3>
+                                                </div>
+                                                <div class="one-forth">
+                                                    <span class="price">${{ product.price }}</span>
+                                                </div>
+                                            </div>
+                                            <p>
+                                                <span>{{ product.ingredients }}</span>
+                                            </p>
+                                            <p>
+                                                <a href="{{ path('shop_product_buy',  {shop_id: shop.id, item_id: product.id  }) }}" class="btn btn-primary">Order now</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="p-sm-1"></span>
+                        {% endfor %}
+                    </div><!--features_items-->
+
+                    <div class="d-flex align-items-end flex-column" style="">
+                        <div class="navigation justify-content-end">
+                            {{ knp_pagination_render(products) }}
+                        </div>
+                    </div>
+                    {#                    <div class="recommended_items"><!--recommended_items-->#}
+                    {#                        <h2 class="title text-center">recommended items</h2>#}
+                    {#                        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">#}
+                    {#                            <div class="carousel-inner">#}
+                    {#                                <div class="item active">#}
+                    {#                                    <div class="row">#}
+                    {#                                        <div class="col-sm-4">#}
+                    {#                                            <div class="product-image-wrapper">#}
+                    {#                                                <div class="single-products">#}
+                    {#                                                    <div class="productinfo text-center">#}
+                    {#                                                        #}{#                                                    style="background-image: url('../../public/images/bg_3.jpg')"#}
+                    {#                                                        <img src="https://flutter.dev/assets/flutter-lockup-1caf6476beed76adec3c477586da54de6b552b2f42108ec5bc68dc63bae2df75.png"#}
+                    {#                                                             alt=""/>#}
+                    {#                                                        <h2>$56</h2>#}
+                    {#                                                        <p>Easy Polo Black Edition</p>#}
+                    {#                                                        <a href="#" class="btn btn-default add-to-cart"><i#}
+                    {#                                                                    class="fa fa-shopping-cart"></i>Add to cart</a>#}
+                    {#                                                    </div>#}
+                    {#                                                </div>#}
+                    {#                                            </div>#}
+                    {#                                        </div>#}
+                    {#                                        <div class="col-sm-4">#}
+                    {#                                            <div class="product-image-wrapper">#}
+                    {#                                                <div class="single-products">#}
+                    {#                                                    <div class="productinfo text-center">#}
+                    {#                                                        #}{#                                                    style="background-image: url('../../public/images/bg_3.jpg')"#}
+                    {#                                                        <img src="https://flutter.dev/assets/flutter-lockup-1caf6476beed76adec3c477586da54de6b552b2f42108ec5bc68dc63bae2df75.png"#}
+                    {#                                                             alt=""/>#}
+                    {#                                                        <h2>$56</h2>#}
+                    {#                                                        <p>Easy Polo Black Edition</p>#}
+                    {#                                                        <a href="#" class="btn btn-default add-to-cart"><i#}
+                    {#                                                                    class="fa fa-shopping-cart"></i>Add to cart</a>#}
+                    {#                                                    </div>#}
+                    {#                                                </div>#}
+                    {#                                            </div>#}
+                    {#                                        </div>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </div><!--/recommended_items-->#}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+    </script>
+{% endblock %}

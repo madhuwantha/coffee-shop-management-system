@@ -41,6 +41,102 @@ class CoffeeShopController extends AbstractController
     }
 
     /**
+     * @Route("/shop/product/buy/{shop_id}/{item_id}", name="shop_product_buy")
+     * @param $item_id
+     * @param $shop_id
+     * @return Response
+     */
+    public function buyProduct($item_id, $shop_id){
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository(Item::class)->find($item_id);
+        $coffeeShop = $em->getRepository(CoffeeShop::class)->find($shop_id);
+
+
+        $menu = $coffeeShop->getMenu();
+        $categories = $em->getRepository(Category::class)->findBy(["menu" => $menu, "level" => 1]) ;
+        $sendCategories = array();
+        foreach ($categories as $category){
+            $nextCategories = $em->getRepository(Category::class)->findBy([
+                "parentCategory" => $category,
+                "level" => 2
+            ]);
+            array_push($sendCategories,array(
+                "category" => $category,
+                "subCategories" => $nextCategories,
+            ));
+        }
+
+
+        return $this->render('coffee_shop/one_buy_page.html.twig', [
+            'constance' => new Constance(),
+            'controller_name' => 'ShopController',
+            'shop' => $coffeeShop,
+            'categories' => $sendCategories,
+            'isLightNave' => false,
+            'product' => $product
+        ]);
+    }
+
+
+    /**
+     * @Route("/shop/products/{shop_id}/{category_id}", name="shop_products")
+     * @param PaginatorInterface $paginator
+     * @param $shop_id
+     * @param $category_id
+     * @param Request $request
+     * @return Response
+     */
+    public function shopProducts(PaginatorInterface $paginator, $shop_id, $category_id, Request $request): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+
+
+        $coffeeShop = $em->getRepository(CoffeeShop::class)->find($shop_id);
+
+
+        $selectedCategory =  $em->getRepository(Category::class)->find($category_id);
+        $themeCode  = $coffeeShop->getTheme()->getCode();
+        $menu = $coffeeShop->getMenu();
+        $categories = $em->getRepository(Category::class)->findBy(["menu" => $menu, "level" => 1]) ;
+
+        $sendCategories = array();
+        foreach ($categories as $category){
+            $nextCategories = $em->getRepository(Category::class)->findBy([
+                "parentCategory" => $category,
+                "level" => 2
+            ]);
+            array_push($sendCategories,array(
+                "category" => $category,
+                "subCategories" => $nextCategories,
+            ));
+        }
+
+
+
+        if ($category_id == 0){
+            $query = $em->getRepository(Item::class)->findAll();
+        }else{
+            $query = $selectedCategory->getItems();
+        }
+
+        $products = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            10
+        );
+
+        return $this->render('coffee_shop/one_products.html.twig', [
+            'constance' => new Constance(),
+            'controller_name' => 'ShopController',
+            'shop' => $coffeeShop,
+            'categories' => $sendCategories,
+            'isLightNave' => false,
+            'products' => $products
+        ]);
+    }
+
+
+    /**
      * @Route("/shop/{shop_id}", name="shop")
      * @param $shop_id
      * @return Response
@@ -54,8 +150,6 @@ class CoffeeShopController extends AbstractController
         $themeCode  = $coffeeShop->getTheme()->getCode();
         $menu = $coffeeShop->getMenu();
 
-
-
         $categories = $em->getRepository(Category::class)->findBy(["menu" => $menu, "level" => 1]) ;
 
         $gallery  = $em->getRepository(Gallery::class)->findOneBy(['coffee_shop' => $coffeeShop]);
@@ -64,7 +158,7 @@ class CoffeeShopController extends AbstractController
         $videoGallery =$em->getRepository(GalleryVideo::class)->findBy(['gallery' => $gallery]);
 
 
-//        $products = $em->getRepository(Item::class)->findBy(['isInHomePage' => true, ""]);
+        $products = $em->getRepository(Item::class)->findBy(['isInHomePage' => true, "shop" => $coffeeShop]);
 
         $sendCategories = array();
         foreach ($categories as $category){
@@ -80,28 +174,44 @@ class CoffeeShopController extends AbstractController
 
 
 
-//        switch ($themeCode){
-//            case 'TWO':
-//                return $this->render('shop/two/index.html.twig', [
-//                    'controller_name' => 'ShopController',
-//                    'shop' => $coffeeShop
-//                ]);
-//            case 'ONE':
-////            default:
-////                return $this->render('themes/one/one_index.html.twig', [
-////                    'controller_name' => 'ShopController',
-////                    'shop' => $coffeeShop
-////                ]);
-//        }
+        switch ($themeCode){
+            case 'TWO':
+                return $this->render('shop/two/index.html.twig', [
+                    'constance' => new Constance(),
+                    'controller_name' => 'ShopController',
+                    'shop' => $coffeeShop,
+                    'categories' => $sendCategories,
+                    'imageGallery' => $imageGallery,
+                    'videoGallery' => $videoGallery,
+                    'products' => $products,
+                    'isLightNave' => true
+                ]);
+            case 'ONE':
+            default:
+                return $this->render('coffee_shop/one_index.html.twig', [
+                    'constance' => new Constance(),
+                    'controller_name' => 'ShopController',
+                    'shop' => $coffeeShop,
+                    'categories' => $sendCategories,
+                    'imageGallery' => $imageGallery,
+                    'videoGallery' => $videoGallery,
+                    'products' => $products,
+                    'isLightNave' => true
+                ]);
+        }
 
 
-        return $this->render('coffee_shop/one_index.html.twig', [
-            'controller_name' => 'ShopController',
-            'shop' => $coffeeShop,
-            'categories' => $sendCategories,
-            'imageGallery' => $imageGallery,
-            'videoGallery' => $videoGallery
-        ]);
+
+//        return $this->render('coffee_shop/one_index.html.twig', [
+//            'constance' => new Constance(),
+//            'controller_name' => 'ShopController',
+//            'shop' => $coffeeShop,
+//            'categories' => $sendCategories,
+//            'imageGallery' => $imageGallery,
+//            'videoGallery' => $videoGallery,
+//            'products' => $products,
+//            'isLightNave' => true
+//        ]);
     }
 
 
@@ -132,6 +242,7 @@ class CoffeeShopController extends AbstractController
         );
 
         return $this->render('coffee_shop/index.html.twig', [
+            'constance' => new Constance(),
             'coffee_shops' =>$coffeeShops,
         ]);
     }
@@ -183,6 +294,7 @@ class CoffeeShopController extends AbstractController
 
         $f = $form->createView();
         return $this->render('coffee_shop/new.html.twig', [
+            'constance' => new Constance(),
             'coffee_shop' => $coffeeShop,
             'form' => $f,
             'themes' => $teams
@@ -197,6 +309,7 @@ class CoffeeShopController extends AbstractController
     public function show(CoffeeShop $coffeeShop): Response
     {
         return $this->render('coffee_shop/show.html.twig', [
+            'constance' => new Constance(),
             'coffee_shop' => $coffeeShop,
         ]);
     }
@@ -237,6 +350,7 @@ class CoffeeShopController extends AbstractController
         }
 
         return $this->render('coffee_shop/edit.html.twig', [
+            'constance' => new Constance(),
             'coffee_shop' => $coffeeShop,
             'form' => $form->createView(),
             'themes' => $teams

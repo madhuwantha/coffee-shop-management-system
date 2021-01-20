@@ -21,6 +21,14 @@ class CoffeeShopType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('openHours', CollectionType::class,[
+                'entry_type' => OpenHourType::class,
+                'entry_options' => ['label' => true],
+                'allow_add' => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+                'label' => false
+            ])
             ->add('theme',EntityType::class,[
                 'required' => true,
                 'class' => Theme::class,

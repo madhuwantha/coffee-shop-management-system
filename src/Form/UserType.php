@@ -21,12 +21,13 @@ class UserType extends AbstractType
         $builder
             ->add('name')
             ->add('email')
-            ->add('isAdmin',CheckboxType::class)
+            ->add('isAdmin',CheckboxType::class,  ['required' => false])
             ->add('file', FileType::class, ['required' => false])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
+                'required' => false,
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',

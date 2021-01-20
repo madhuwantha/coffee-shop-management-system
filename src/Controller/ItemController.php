@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Entity\CoffeeShop;
 use App\Entity\Item;
 use App\Form\ItemCollectionType;
 use App\Form\ItemEditType;
@@ -51,8 +52,15 @@ class ItemController extends AbstractController
         $form = $this->createForm(ItemCollectionType::class,$category);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
+            $items = $form->get('items')->getData();
             $entityManager = $this->getDoctrine()->getManager();
+            $shop =  $entityManager->getRepository(CoffeeShop::class)->findOneBy(["menu" => $category->getMenu()]);
+            foreach ($items as $item){
+                $item->setShop($shop);
+            }
+
             $entityManager->persist($category);
             $entityManager->flush();
 

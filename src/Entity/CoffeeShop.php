@@ -68,10 +68,22 @@ class CoffeeShop
      */
     private $coverPhoto;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Item::class, mappedBy="shop", orphanRemoval=true)
+     */
+    private $items;
+
+    /**
+     * @ORM\OneToMany(targetEntity=OpenHour::class, mappedBy="shop", orphanRemoval=true,  cascade={"persist", "remove"})
+     */
+    private $openHours;
+
 
     public function __construct()
     {
         $this->sliderImages = new ArrayCollection();
+        $this->items = new ArrayCollection();
+        $this->openHours = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -203,6 +215,66 @@ class CoffeeShop
     public function setCoverPhoto(?CoverPhoto $coverPhoto): self
     {
         $this->coverPhoto = $coverPhoto;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Item[]
+     */
+    public function getItems(): Collection
+    {
+        return $this->items;
+    }
+
+    public function addItem(Item $item): self
+    {
+        if (!$this->items->contains($item)) {
+            $this->items[] = $item;
+            $item->setShop($this);
+        }
+
+        return $this;
+    }
+
+    public function removeItem(Item $item): self
+    {
+        if ($this->items->removeElement($item)) {
+            // set the owning side to null (unless already changed)
+            if ($item->getShop() === $this) {
+                $item->setShop(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|OpenHour[]
+     */
+    public function getOpenHours(): Collection
+    {
+        return $this->openHours;
+    }
+
+    public function addOpenHour(OpenHour $openHour): self
+    {
+        if (!$this->openHours->contains($openHour)) {
+            $this->openHours[] = $openHour;
+            $openHour->setShop($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOpenHour(OpenHour $openHour): self
+    {
+        if ($this->openHours->removeElement($openHour)) {
+            // set the owning side to null (unless already changed)
+            if ($openHour->getShop() === $this) {
+                $openHour->setShop(null);
+            }
+        }
 
         return $this;
     }

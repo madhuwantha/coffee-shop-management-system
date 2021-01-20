@@ -4,12 +4,14 @@ namespace App\Controller;
 
 use App\Entity\ProfilePicture;
 use App\Entity\User;
+use App\Form\UserEditType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use App\Service\FileUploader;
 use Knp\Component\Pager\PaginatorInterface;
 use phpDocumentor\Reflection\Types\Null_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -82,15 +84,12 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-
-
             $profilePhoto = $form->get('file')->getData();
             $path = $fileUploader->upload($profilePhoto);
 
             $profilePicture = new ProfilePicture();
             $profilePicture->setPath($path);
             $user->addProfilePicture($profilePicture);
-
 
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -104,6 +103,7 @@ class UserController extends AbstractController
         return $this->render('user/new.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
+            'edit' => false
         ]);
     }
 
@@ -123,15 +123,36 @@ class UserController extends AbstractController
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      * @param Request $request
      * @param User $user
+     * @param FileUploader $fileUploader
      * @return Response
      */
-    public function edit(Request $request, User $user): Response
+    public function edit(Request $request, User $user, FileUploader $fileUploader): Response
     {
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserEditType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+
+            $profilePhoto = $form->get('file')->getData();
+            $entityManager = $this->getDoctrine()->getManager();
+            if ($profilePhoto){
+               try{
+                   $path = $fileUploader->upload($profilePhoto);
+
+                   $profilePicture = $user->getProfilePictures()->get(0);
+                   $profilePicture->setPath($path);
+
+                   $entityManager->persist($profilePicture);
+               }catch (FileException $e){
+                   $entityManager->persist($user);
+                   $entityManager->flush();
+                   return $this->redirectToRoute('user_index');
+               }
+
+            }
+
+            $entityManager->persist($user);
+            $entityManager->flush();
 
             return $this->redirectToRoute('user_index');
         }
@@ -139,6 +160,7 @@ class UserController extends AbstractController
         return $this->render('user/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
+            'edit' => true
         ]);
     }
 

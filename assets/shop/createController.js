@@ -12,6 +12,79 @@
             }
         });
 
+        //for openHours---------------------------------------------------
+        var $collectionHolder9;
+
+        // setup an "add a tag" link
+        var $addTagButton9 = $('<button type="button" class="add_children_link btn btn-sm btn-primary">Add</button>');
+        var $newLinkLi9 = $('<li><hr/></li>').append($addTagButton9);
+
+        // Get the ul that holds the collection of tags
+        $collectionHolder9 = $('ul.openHours');
+
+        // count the current form inputs we have (e.g. 2), use that as the new
+        // index when inserting a new item (e.g. 2)
+        $collectionHolder9.data('index', $collectionHolder9.find(':input').length);
+
+        $addTagButton9.on('click', function (e) {
+            // add a new tag form (see next code block)
+            addTagForm($collectionHolder9, $newLinkLi9);
+        });
+
+        // add a delete link to all of the existing tag form li elements
+        $collectionHolder9.find('li').each(function () {
+            addTagFormDeleteLink9($(this));
+        });
+
+        // add the "add a tag" anchor and li to the tags ul
+        $collectionHolder9.append($newLinkLi9);
+
+        function addTagForm($collectionHolder9, $newLinkLi9) {
+            // Get the data-prototype explained earlier
+            var prototype = $collectionHolder9.data('prototype');
+
+            // get the new index
+            var index = $collectionHolder9.data('index');
+
+            var newForm = prototype;
+            // You need this only if you didn't set 'label' => false in your tags field in TaskType
+            // Replace '__name__label__' in the prototype's HTML to
+            // instead be a number based on how many items we have
+            // newForm = newForm.replace(/__name__label__/g, index);
+
+            // Replace '__name__' in the prototype's HTML to
+            // instead be a number based on how many items we have
+            newForm = newForm.replace(/__name__/g, index);
+
+            $('#menu_categories_'+index).addClass("form-group row");
+            // console.log("menu_categories_"+index);
+            // increase the index with one for the next item
+            $collectionHolder9.data('index', index + 1);
+
+            // console.log(index);
+            // console.log(newForm);
+
+            // Display the form in the page in an li, before the "Add a tag" link li
+            var $newFormLi9 = $('<li><hr/></li>').append(newForm);
+            $newLinkLi9.before($newFormLi9);
+
+            // add a delete link to the new form
+            addTagFormDeleteLink9($newFormLi9);
+        }
+
+        function addTagFormDeleteLink9($tagFormLi9) {
+            var $removeFormButton9 = $('<button type="button" class="btn btn-sm btn-danger">Delete</button>');
+            $tagFormLi9.append($removeFormButton9);
+
+            $removeFormButton9.on('click', function (e) {
+                // remove the li for the tag form
+                $tagFormLi9.remove();
+            });
+        }
+        //for openHours end------------------------------------------
+
+
+
 
         //for category---------------------------------------------------
         var $collectionHolder2;

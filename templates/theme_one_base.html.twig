@@ -28,57 +28,226 @@
     {% endblock %}
 </head>
 <body>
-{% block body %}
 
-{% endblock %}
+{% if isLightNave == true %}
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    {% else %}
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
+        {% endif %}
+        <div class="departments" data-departments-fixed-by="">
+            <div class="departments__body" id="set">
+                <div class="departments__links-wrapper">
+                    <ul class="departments__links">
+                        {% for category in categories %}
+                            <li class="departments__item">
+                                <a href="{{ path('shop_products',  {shop_id: shop.id, category_id: category.category.id  }) }}">{{ category.category.name }}
+                                    <svg class="departments__link-arrow" width="6px" height="9px">
+                                        <use xlink:href="../../../../../public/images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                    </svg>
+                                </a>
+                                <div class="departments__megamenu departments__megamenu--xl">
+                                    <div class="megamenu megamenu--departments" style="background-image: url('{{ asset('images/megamenu/my-shop-1.jpg') }}');">
+                                        <ul class="megamenu__links megamenu__links--level--0">
+                                            <li class="megamenu__item megamenu__item--with-submenu">
+                                                <ul class="megamenu__links megamenu__links--level--1">
+                                                    {% if category.subCategories | length > 0 %}
+                                                        {% for sub in category.subCategories %}
+                                                            <li class="megamenu__item"><a href="{{ path('shop_products',  {shop_id: shop.id, category_id: sub.id  }) }}">{{ sub.name }}</a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <button class="departments__button">{{ constance.Menu }}</button>
+        </div>
+        <div class="container">
+            <a class="navbar-brand" style="cursor: pointer" href="{{ path('home') }}">{{ shop.name }}</a>
+            <!---------------------------------------------------------------------------------------------->
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item active"><a href="{{ path('shop', {shop_id: shop.id  }) }}" class="nav-link">{{ constance.home }}</a></li>
+                    {% if shop is defined %}
+                        <li class="nav-item"><a href="{{ path('shop_products',  {shop_id: shop.id, category_id: 0  }) }}" class="nav-link">{{ constance.Products }}</a></li>
+                        <li class="nav-item"><a href="{{ path('shop', {shop_id: shop.id  }) }}#gallery" class="nav-link">{{ constance.Gallery }}</a></li>
+                        <li class="nav-item"><a href="{{ path('shop', {shop_id: shop.id  }) }}#about-us" class="nav-link">{{ constance.About }}</a></li>
+                        <li class="nav-item"><a href="#footer" class="nav-link">{{ constance.contact }}</a></li>
+                    {% else %}
+                    <li class="nav-item"><a href="#products" class="nav-link">{{ constance.Products }}</a></li>
+                    <li class="nav-item"><a href="#gallery" class="nav-link">{{ constance.Gallery }}</a></li>
+                    <li class="nav-item"><a href="#about-us" class="nav-link">{{ constance.About }}</a></li>
+                    <li class="nav-item"><a href="#footer" class="nav-link">{{ constance.contact }}</a></li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block body %}
+
+    {% endblock %}
+
+    <footer id="footer" class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-6 col-lg-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">{{ shop.name }}</h2>
+                        <p>{{ shop.description }}</p>
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                            <li class="ftco-animate">
+                                <a href="#">
+                                    <span class="icon-twitter"></span>
+                                </a>
+                            </li>
+                            <li class="ftco-animate">
+                                <a href="#">
+                                    <span class="icon-facebook"></span>
+                                </a>
+                            </li>
+                            <li class="ftco-animate">
+                                <a href="#">
+                                    <span class="icon-instagram"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Open Hours</h2>
+                        <ul class="list-unstyled open-hours">
+                            {% for open in shop.openHours %}
+                                <li class="d-flex">
+                                    <span>{{ open.day }}</span>
+                                    <span>{{ open.start }} - {{ open.end }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    {#                    <div class="ftco-footer-widget mb-4">#}
+                    {#                        <h2 class="ftco-heading-2">Instagram</h2>#}
+                    {#                        <div class="thumb d-sm-flex">#}
+                    {#                            <a href="#" class="thumb-menu img"#}
+                    {#                               style="background-image: url('../../../../../public/images/insta-1.jpg')"></a>#}
+                    {#                            <a href="#" class="thumb-menu img"#}
+                    {#                               style="background-image: url('../../../../../public/images/insta-2.jpg');"></a>#}
+                    {#                            <a href="#" class="thumb-menu img"#}
+                    {#                               style="background-image: url('../../../../../public/images/insta-3.jpg');"></a>#}
+                    {#                        </div>#}
+                    {#                        <div class="thumb d-flex">#}
+                    {#                            <a href="#" class="thumb-menu img"#}
+                    {#                               style="background-image: url('../../../../../public/images/insta-4.jpg');"></a>#}
+                    {#                            <a href="#" class="thumb-menu img"#}
+                    {#                               style="background-image: url('../../../../../public/images/insta-5.jpg');"></a>#}
+                    {#                            <a href="#" class="thumb-menu img"#}
+                    {#                               style="background-image: url('../../../../../public/images/insta-6.jpg');"></a>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">{{ constance.Contact_Details }}</h2>
+                        <p>Far far away, behind the word mountains, far from the countries.</p>
+                        <div class="row">
+                            <li class="d-flex">
+                                <span>Email :</span>
+                                <span class="p-2"></span>
+                                <span>  {{ shop.contactDetail.email }}</span>
+                            </li>
+                            <li class="d-flex">
+                                <span>Phone Number :</span>
+                                <span class="p-2"></span>
+                                <span>  {{ shop.contactDetail.phoneNumber }}</span>
+                            </li>
+                            <li class="d-flex">
+                                <span>Address :</span>
+                                <span class="p-2"></span>
+                                <span>  {{ shop.contactDetail.address.lineOne }} , {{ shop.contactDetail.address.lineTwo }}</span>
+                                <span>{{ shop.contactDetail.address.city }}</span>
+                                {#                                <span>{{ shop.contactDetail.address.city }}</span>#}
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        All rights reserved | Powerd By EquitemSoft &copy; 
+                        <script data-cfasync="false" src="#"></script>
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                        <i class="icon-heart" aria-hidden="true"></i>
+                        <a href="" target="_blank"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
-<script src="{{ asset('js/popper.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
-<script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
-<script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
-<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('js/aos.js') }}"></script>
-<script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
-<script src="{{ asset('js/jquery.timepicker.min.js') }}"></script>
-<script src="{{ asset('js/scrollax.min.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="{{ asset('js/google-map.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+    <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/aos.js') }}"></script>
+    <script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('js/jquery.timepicker.min.js') }}"></script>
+    <script src="{{ asset('js/scrollax.min.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{{ asset('js/google-map.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 
 
-<link rel="stylesheet" href="{{ asset('vendor/bootstrap-4.2.1/css/bootstrap.min.css') }}">
-<link rel="stylesheet" href="{{ asset('vendor/owl-carousel-2.3.4/assets/owl.carousel.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<script src="{{ asset('vendor/jquery-3.3.1/jquery.min.js') }}"></script>
-<script src="{{ asset('vendor/bootstrap-4.2.1/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('vendor/owl-carousel-2.3.4/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('vendor/nouislider-12.1.0/nouislider.min.js') }}"></script>
-<script src="{{ asset('jss/number.js') }}"></script>
-<script src="{{ asset('jss/main.js') }}"></script>
-<script src="{{ asset('vendor/svg4everybody-2.1.9/svg4everybody.min.js') }}"></script>
-<script>svg4everybody();</script>
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap-4.2.1/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/owl-carousel-2.3.4/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <script src="{{ asset('vendor/jquery-3.3.1/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap-4.2.1/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/owl-carousel-2.3.4/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('vendor/nouislider-12.1.0/nouislider.min.js') }}"></script>
+    <script src="{{ asset('jss/number.js') }}"></script>
+    <script src="{{ asset('jss/main.js') }}"></script>
+    <script src="{{ asset('jss/responsive.css.js') }}"></script>
+    <script src="{{ asset('jss/jquery.scrollUp.min.js') }}"></script>
+    <script src="{{ asset('vendor/svg4everybody-2.1.9/svg4everybody.min.js') }}"></script>
+    <script>svg4everybody();</script>
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-{#<script src="{{ asset('js/animsition.min.js') }}"></script>#}
-<script>
-    window.dataLayer = window.dataLayer || [];
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    {#<script src="{{ asset('js/animsition.min.js') }}"></script>#}
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-    gtag('js', new Date());
+        gtag('js', new Date());
 
-    gtag('config', 'UA-23581568-13');
-</script>
+        gtag('config', 'UA-23581568-13');
+    </script>
 
-{% block javascripts %}{% endblock %}
+    {% block javascripts %}{% endblock %}
 </body>
 </html>

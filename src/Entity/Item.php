@@ -54,6 +54,12 @@ class Item
      */
     private $isInHomePage;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=CoffeeShop::class, inversedBy="items")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $shop;
+
     public function __construct()
     {
         $this->itemImages = new ArrayCollection();
@@ -162,6 +168,18 @@ class Item
     public function setIsInHomePage(bool $isInHomePage): self
     {
         $this->isInHomePage = $isInHomePage;
+
+        return $this;
+    }
+
+    public function getShop(): ?CoffeeShop
+    {
+        return $this->shop;
+    }
+
+    public function setShop(?CoffeeShop $shop): self
+    {
+        $this->shop = $shop;
 
         return $this;
     }

@@ -4,8 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Message;
 use App\Entity\MessageReceived;
+use App\Entity\MessageState;
 use App\Entity\User;
 use App\Form\MessageReceivedType;
+use App\Form\MessageReplyType;
 use App\Form\MessageType;
 use App\Repository\MessageRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -19,34 +21,81 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class MessageController extends AbstractController
 {
+
+
     /**
-     * @Route("/{id}", name="message_index", methods={"GET","POST"})
+     * @Route("/sent-messages}", name="sent_messages", methods={"GET","POST"})
+     * @param Request $request
+     * @return string
+     */
+    public function sentMessages(Request $request){
+        $entityManager = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
+        $sentMessage = $entityManager->getRepository(Message::class)->findBy([
+            "sender" => $user,
+            "isReplyTo" => false
+        ]);
+
+
+        return $this->render('message/sent_index.html.twig', [
+            'messages' => $sentMessage,
+//            'form' => $form->createView(),
+        ]);
+
+    }
+
+    /**
+     * @Route("/", name="message_index", methods={"GET","POST"})
      * @param PaginatorInterface $paginator
      * @param Request $request
      * @param MessageRepository $messageRepository
-     * @param User $user
      * @return Response
+     * @throws \Exception
      */
-    public function index(PaginatorInterface $paginator,Request $request,MessageRepository $messageRepository, User $user ): Response
+    public function index(PaginatorInterface $paginator,Request $request,MessageRepository $messageRepository ): Response
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
         $query  = $user->getMessageReceiveds();
-        $messageReceived = new MessageReceived();
-        $form = $this->createForm(MessageReceivedType::class, $messageReceived);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+//
+        $message = new Message();
+        $form = $this->createForm(MessageType::class, $message);
+        $form->handleRequest($request);
 
-            $entityManager = $this->getDoctrine()->getManager();
+        if ($form->isSubmitted() && $form->isValid() ) {
+
+
+            $receiver = $form->get('messageReceiver')->getData();
+
+            $messageState  = $entityManager->getRepository(MessageState::class)->findOneBy(['code' => "DELIVERED"]);
+
+            $message->setSender($user);$senders = array();
+            $message->setState($messageState);
+            $message->setDate(new \DateTime());
+
+
+            $messageReceived = new MessageReceived();
+            $messageReceived->setMessage($message);
+            $messageReceived->setReciever($receiver);
+
             $entityManager->persist($messageReceived);
+            $entityManager->persist($message);
             $entityManager->flush();
 
             return $this->redirectToRoute('message_index');
         }
 
+
+
         $messages = $paginator->paginate(
             $query,
             $request->query->getInt('page', 1),
-            1
+            5
         );
+
+//        dump($messages);
+//        exit();
         return $this->render('message/index.html.twig', [
             'messages' => $messages,
             'form' => $form->createView(),
@@ -61,11 +110,13 @@ class MessageController extends AbstractController
      */
     public function new(Request $request): Response
     {
+
         $message = new Message();
         $form = $this->createForm(MessageType::class, $message);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($message);
             $entityManager->flush();
@@ -80,12 +131,48 @@ class MessageController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="message_show", methods={"GET"})
+     * @Route("/{id}", name="message_show", methods={"GET","POST"})
+     * @param Message $message
+     * @param Request $request
+     * @return Response
+     * @throws \Exception
      */
-    public function show(Message $message): Response
+    public function show(Message $message, Request $request): Response
     {
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $replies = $entityManager->getRepository(Message::class)->findBy([
+            "isReplyTo" => true,
+            "replyTo" => $message
+        ]);
+
+
+        $user = $this->getUser();
+        $reply = new Message();
+        $form = $this->createForm(MessageReplyType::class, $reply);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid() ) {
+            $message__ = $form->get('message')->getData();
+            $messageState  = $entityManager->getRepository(MessageState::class)->findOneBy(['code' => "DELIVERED"]);
+            $reply->setSender($user);
+            $reply->setIsReplyTo(true);
+            $reply->setMessage($message__);
+            $reply->setState($messageState);
+            $reply->setDate(new \DateTime());
+            $reply->setReplyTo($message);
+            $entityManager->persist($reply);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('message_index');
+        }
+
+
         return $this->render('message/show.html.twig', [
             'message' => $message,
+            'replies' =>$replies,
+            'form' => $form->createView()
         ]);
     }
 

@@ -44,7 +44,7 @@
                                         {{ form_errors(form.email) }}
                                     </div>
                                 </div>
-                                {% if is_granted('ROLE_SUPPER_ADMIN') %}
+                                {% if is_granted('ROLE_SUPPER_ADMIN') and edit == false %}
                                     <div class="form-group row">
                                         <label for="employee" class="col-sm-4 control-label">Is this user admin of a coffee shop</label>
                                         <div class="col-sm-8">
@@ -53,7 +53,6 @@
                                         </div>
                                     </div>
                                 {% endif %}
-
                                 <div class="form-group row">
                                     <label for="employee" class="col-sm-4 control-label">Password</label>
                                     <div class="col-sm-8">

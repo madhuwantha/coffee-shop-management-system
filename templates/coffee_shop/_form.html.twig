@@ -34,8 +34,8 @@
                                         {{ form_errors(form.name) }}
                                     </div>
                                 </div>
-                                    {% if is_granted('ROLE_SUPPER_ADMIN') == true %}
-                                    <div class="form-group row">
+                                {% if is_granted('ROLE_SUPPER_ADMIN') == true %}
+                                <div class="form-group row">
                                     {% else %}
                                     <div style="display: none" class="form-group row">
                                         {% endif %}
@@ -74,7 +74,7 @@
                         </div>
 
 
-                        {% if is_granted('ROLE_ADMIN')  %}
+                        {% if is_granted('ROLE_ADMIN') %}
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="mt-0 header-title">Theme</h4>
@@ -85,14 +85,17 @@
                                                 <label for="employee"
                                                        class="col-sm-4 control-label">{{ theme.name }}</label>
                                                 <div class="col-sm-8">
-                                                    <a target="_blank" style="cursor: pointer" href="{{ path('preview', {code: theme.code})  }}" class="btn btn-primary">preview</a>
+                                                    <a target="_blank" style="cursor: pointer"
+                                                       href="{{ path('preview', {code: theme.code}) }}"
+                                                       class="btn btn-primary">preview</a>
                                                 </div>
                                             </div>
                                         {% endfor %}
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="noOfInstallments" class="col-sm-4 control-label">Select a theam</label>
+                                        <label for="noOfInstallments" class="col-sm-4 control-label">Select a
+                                            theam</label>
                                         <div class="col-sm-8">
                                             {{ form_widget(form.theme, { 'attr': {'class': 'form-control'}}) }}
                                             {{ form_errors(form.theme) }}
@@ -188,7 +191,8 @@
                                                             {{ form_widget(sliderImg.file, {'attr': {'class': 'form-control'}}) }}
                                                             {{ form_errors(sliderImg.file) }}
                                                         </div>
-
+                                                    </div>
+                                                    <div class="form-group row ">
                                                         <label for="sibling_name"
                                                                class="col-sm-4 control-label">Position in slider</label>
                                                         <div class="col-sm-8">
@@ -196,6 +200,24 @@
                                                             {{ form_errors(sliderImg.position) }}
                                                         </div>
                                                     </div>
+                                                    <div class="form-group row ">
+
+                                                        <label for="sibling_name"
+                                                               class="col-sm-4 control-label">Title</label>
+                                                        <div class="col-sm-8">
+                                                            {{ form_widget(sliderImg.title, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                                            {{ form_errors(sliderImg.title) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row ">
+                                                        <label for="sibling_name"
+                                                               class="col-sm-4 control-label">Sub title</label>
+                                                        <div class="col-sm-8">
+                                                            {{ form_widget(sliderImg.subTitle, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                                            {{ form_errors(sliderImg.subTitle) }}
+                                                        </div>
+                                                    </div>
+                                                </li>
                                                 </li>
                                             {% endfor %}
                                         </ul>
@@ -263,6 +285,48 @@
                                 <!-- /.box-body -->
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="box-body">
+                                    <h4 class="mt-0 header-title">Open Days</h4>
+                                    <hr/>
+                                    <ul class="openHours"
+                                        data-prototype="{{ include('coffee_shop/_form_open_day.html.twig', { 'od': form.openHours.vars.prototype }) |e('html_attr') }}">
+                                        {% for key, openHour in form.openHours %}
+                                            <li>
+                                                <hr/>
+                                                <div class="form-group row ">
+                                                    <label for="sibling_name"
+                                                           class="col-sm-4 control-label">Day</label>
+                                                    <div class="col-sm-8">
+                                                        {{ form_widget(openHour.day, {'attr': {'class': 'form-control'}}) }}
+                                                        {{ form_errors(openHour.day) }}
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row ">
+                                                    <label for="sibling_name"
+                                                           class="col-sm-4 control-label">From</label>
+                                                    <div class="col-sm-8">
+                                                        {{ form_widget(openHour.start, {'attr': {'class': 'form-control'}}) }}
+                                                        {{ form_errors(openHour.start) }}
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row ">
+                                                    <label for="sibling_name"
+                                                           class="col-sm-4 control-label">To</label>
+                                                    <div class="col-sm-8">
+                                                        {{ form_widget(openHour.end, {'attr': {'class': 'form-control'}}) }}
+                                                        {{ form_errors(openHour.end) }}
+                                                    </div>
+                                                </div>
+
+
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="card">
                             <div class="card-body">
@@ -281,13 +345,10 @@
                         </div>
                     </div> <!-- end col -->
                 </div>
-
                 <!-- end row -->
                 {{ form_end(form) }}
         </form>
-
     </div>
     <!-- container-fluid -->
-
 </div>
 <!-- content -->
