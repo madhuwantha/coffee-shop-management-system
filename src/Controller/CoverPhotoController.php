@@ -22,6 +22,7 @@ class CoverPhotoController extends AbstractController
     public function index(CoverPhotoRepository $coverPhotoRepository): Response
     {
         return $this->render('cover_photo/index.html.twig', [
+            'constance' => new Constance(),
             'cover_photos' => $coverPhotoRepository->findAll(),
         ]);
     }
@@ -45,6 +46,7 @@ class CoverPhotoController extends AbstractController
         }
 
         return $this->render('cover_photo/new.html.twig', [
+            'constance' => new Constance(),
             'cover_photo' => $coverPhoto,
             'form' => $form->createView(),
         ]);
@@ -56,6 +58,7 @@ class CoverPhotoController extends AbstractController
     public function show(CoverPhoto $coverPhoto): Response
     {
         return $this->render('cover_photo/show.html.twig', [
+            'constance' => new Constance(),
             'cover_photo' => $coverPhoto,
         ]);
     }
@@ -75,6 +78,7 @@ class CoverPhotoController extends AbstractController
         }
 
         return $this->render('cover_photo/edit.html.twig', [
+            'constance' => new Constance(),
             'cover_photo' => $coverPhoto,
             'form' => $form->createView(),
         ]);

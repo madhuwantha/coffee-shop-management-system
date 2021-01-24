@@ -21,6 +21,7 @@ class AddressController extends AbstractController
     public function index(AddressRepository $addressRepository): Response
     {
         return $this->render('address/index.html.twig', [
+            'constance' => new Constance(),
             'addresses' => $addressRepository->findAll(),
         ]);
     }
@@ -45,6 +46,7 @@ class AddressController extends AbstractController
         }
 
         return $this->render('address/new.html.twig', [
+            'constance' => new Constance(),
             'address' => $address,
             'form' => $form->createView(),
         ]);
@@ -56,6 +58,7 @@ class AddressController extends AbstractController
     public function show(Address $address): Response
     {
         return $this->render('address/show.html.twig', [
+            'constance' => new Constance(),
             'address' => $address,
         ]);
     }
@@ -75,6 +78,7 @@ class AddressController extends AbstractController
         }
 
         return $this->render('address/edit.html.twig', [
+            'constance' => new Constance(),
             'address' => $address,
             'form' => $form->createView(),
         ]);

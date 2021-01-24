@@ -21,6 +21,7 @@ class SliderImageController extends AbstractController
     public function index(SliderImageRepository $sliderImageRepository): Response
     {
         return $this->render('slider_image/index.html.twig', [
+            'constance' => new Constance(),
             'slider_images' => $sliderImageRepository->findAll(),
         ]);
     }
@@ -43,6 +44,7 @@ class SliderImageController extends AbstractController
         }
 
         return $this->render('slider_image/new.html.twig', [
+            'constance' => new Constance(),
             'slider_image' => $sliderImage,
             'form' => $form->createView(),
         ]);
@@ -54,12 +56,16 @@ class SliderImageController extends AbstractController
     public function show(SliderImage $sliderImage): Response
     {
         return $this->render('slider_image/show.html.twig', [
+            'constance' => new Constance(),
             'slider_image' => $sliderImage,
         ]);
     }
 
     /**
      * @Route("/{id}/edit", name="slider_image_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param SliderImage $sliderImage
+     * @return Response
      */
     public function edit(Request $request, SliderImage $sliderImage): Response
     {
@@ -73,6 +79,7 @@ class SliderImageController extends AbstractController
         }
 
         return $this->render('slider_image/edit.html.twig', [
+            'constance' => new Constance(),
             'slider_image' => $sliderImage,
             'form' => $form->createView(),
         ]);

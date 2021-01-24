@@ -38,6 +38,7 @@ class MessageController extends AbstractController
 
 
         return $this->render('message/sent_index.html.twig', [
+            'constance' => new Constance(),
             'messages' => $sentMessage,
 //            'form' => $form->createView(),
         ]);
@@ -70,8 +71,10 @@ class MessageController extends AbstractController
 
             $messageState  = $entityManager->getRepository(MessageState::class)->findOneBy(['code' => "DELIVERED"]);
 
-            $message->setSender($user);$senders = array();
+            $message->setSender($user);
+            $senders = array();
             $message->setState($messageState);
+            $message->setIsReplyTo(false);
             $message->setDate(new \DateTime());
 
 
@@ -81,6 +84,10 @@ class MessageController extends AbstractController
 
             $entityManager->persist($messageReceived);
             $entityManager->persist($message);
+
+
+//            dump($message);
+//            exit();
             $entityManager->flush();
 
             return $this->redirectToRoute('message_index');
@@ -97,6 +104,7 @@ class MessageController extends AbstractController
 //        dump($messages);
 //        exit();
         return $this->render('message/index.html.twig', [
+            'constance' => new Constance(),
             'messages' => $messages,
             'form' => $form->createView(),
         ]);
@@ -125,6 +133,7 @@ class MessageController extends AbstractController
         }
 
         return $this->render('message/new.html.twig', [
+            'constance' => new Constance(),
             'message' => $message,
             'form' => $form->createView(),
         ]);
@@ -170,6 +179,7 @@ class MessageController extends AbstractController
 
 
         return $this->render('message/show.html.twig', [
+            'constance' => new Constance(),
             'message' => $message,
             'replies' =>$replies,
             'form' => $form->createView()
@@ -191,6 +201,7 @@ class MessageController extends AbstractController
         }
 
         return $this->render('message/edit.html.twig', [
+            'constance' => new Constance(),
             'message' => $message,
             'form' => $form->createView(),
         ]);

@@ -36,6 +36,7 @@ class ItemController extends AbstractController
             10
         );
         return $this->render('item/index.html.twig', [
+            'constance' => new Constance(),
             'items' => $items,
         ]);
     }
@@ -68,6 +69,7 @@ class ItemController extends AbstractController
         }
 
         return $this->render('item/new.html.twig', [
+            'constance' => new Constance(),
             'item' => $item,
             'form' => $form->createView(),
         ]);
@@ -79,6 +81,7 @@ class ItemController extends AbstractController
     public function show(Item $item): Response
     {
         return $this->render('item/show.html.twig', [
+            'constance' => new Constance(),
             'item' => $item,
         ]);
     }
@@ -98,6 +101,7 @@ class ItemController extends AbstractController
         }
 
         return $this->render('item/edit.html.twig', [
+            'constance' => new Constance(),
             'item' => $item,
             'form' => $form->createView(),
         ]);

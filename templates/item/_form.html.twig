@@ -48,6 +48,30 @@
                                                     {{ form_errors(item.price) }}
                                                 </div>
                                             </div>
+                                            <div  class="form-group row ">
+                                                <label for="sibling_name"
+                                                       class="col-sm-4 control-label">Price</label>
+                                                <div class="col-sm-8">
+                                                    {{ form_widget(item.ingredients, {'type':'text', 'attr': {'class': 'form-control'}}) }}
+                                                    {{ form_errors(item.ingredients) }}
+                                                </div>
+                                            </div>
+                                            <div  class="form-group row ">
+                                                <label for="sibling_name"
+                                                       class="col-sm-4 control-label">Price</label>
+                                                <div class="col-sm-8">
+                                                    {{ form_widget(item.isInHomePage, { 'attr': {'class': 'form-control'}}) }}
+                                                    {{ form_errors(item.isInHomePage) }}
+                                                </div>
+                                            </div>
+                                            <div  class="form-group row ">
+                                                <label for="sibling_name"
+                                                       class="col-sm-4 control-label">Price</label>
+                                                <div class="col-sm-8">
+                                                    {{ form_widget(item.description, { 'attr': {'class': 'form-control'}}) }}
+                                                    {{ form_errors(item.description) }}
+                                                </div>
+                                            </div>
                                         </li>
                                     {% endfor %}
                                 </ul>

@@ -23,8 +23,7 @@ class RegistrationController extends AbstractController
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder,FileUploader $fileUploader): Response
     {
-//        $this->denyAccessUnlessGranted('ROLE_SUPPER_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
-
+        $this->denyAccessUnlessGranted('ROLE_SUPPER_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
 
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -39,6 +38,10 @@ class RegistrationController extends AbstractController
                 $path = $fileUploader->upload($profilePhoto);
                 $profilePicture = new ProfilePicture();
                 $profilePicture->setPath($path);
+                $user->addProfilePicture($profilePicture);
+            }else{
+                $profilePicture = new ProfilePicture();
+                $profilePicture->setPath("");
                 $user->addProfilePicture($profilePicture);
             }
 
@@ -65,6 +68,8 @@ class RegistrationController extends AbstractController
         }
 
         return $this->render('user/new.html.twig', [
+            'edit' => false,
+            'constance' => new Constance(),
             'form' => $form->createView(),
         ]);
     }

@@ -21,6 +21,7 @@ class OrderController extends AbstractController
     public function index(OrderRepository $orderRepository): Response
     {
         return $this->render('order/index.html.twig', [
+            'constance' => new Constance(),
             'orders' => $orderRepository->findAll(),
         ]);
     }
@@ -43,6 +44,7 @@ class OrderController extends AbstractController
         }
 
         return $this->render('order/new.html.twig', [
+            'constance' => new Constance(),
             'order' => $order,
             'form' => $form->createView(),
         ]);
@@ -54,6 +56,7 @@ class OrderController extends AbstractController
     public function show(Order $order): Response
     {
         return $this->render('order/show.html.twig', [
+            'constance' => new Constance(),
             'order' => $order,
         ]);
     }
@@ -73,6 +76,7 @@ class OrderController extends AbstractController
         }
 
         return $this->render('order/edit.html.twig', [
+            'constance' => new Constance(),
             'order' => $order,
             'form' => $form->createView(),
         ]);

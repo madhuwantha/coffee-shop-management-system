@@ -21,8 +21,10 @@ class HomeController extends AbstractController
 
 
         return $this->render('home/index.html.twig', [
+            'constance' => new Constance(),
             'controller_name' => 'HomeController',
-            'coffeeShops' => $coffeeShops
+            'coffeeShops' => $coffeeShops,
+            'isLightNave ' => false
         ]);
     }
 
@@ -31,8 +33,23 @@ class HomeController extends AbstractController
      */
     public function themeOneIndex(): Response
     {
+
+        $sendCategories = array();
+        $imageGallery = array();
+        $sendCategories = array();
+        $videoGallery = array();
+        $products = array();
+        $coffeeShop = new CoffeeShop();
+        $coffeeShop->setName("TEST");
         return $this->render('theme_one/index2.html.twig', [
+            'constance' => new Constance(),
             'controller_name' => 'HomeController',
+            'shop' => $coffeeShop,
+            'categories' => $sendCategories,
+            'imageGallery' => $imageGallery,
+            'videoGallery' => $videoGallery,
+            'products' => $products,
+            'isLightNave' => true
         ]);
     }
 
@@ -42,6 +59,7 @@ class HomeController extends AbstractController
     public function themeOneProduct(): Response
     {
         return $this->render('theme_one/products.html.twig', [
+            'constance' => new Constance(),
             'controller_name' => 'HomeController',
         ]);
     }

@@ -22,6 +22,7 @@ class MenuController extends AbstractController
     public function index(MenuRepository $menuRepository): Response
     {
         return $this->render('menu/index.html.twig', [
+            'constance' => new Constance(),
             'menus' => $menuRepository->findAll(),
         ]);
     }
@@ -47,6 +48,7 @@ class MenuController extends AbstractController
         }
 
         return $this->render('menu/new.html.twig', [
+            'constance' => new Constance(),
             'menu' => $menu,
             'form' => $form->createView(),
         ]);
@@ -67,6 +69,7 @@ class MenuController extends AbstractController
 //        dump($categories);
 //        exit();
         return $this->render('menu/show.html.twig', [
+            'constance' => new Constance(),
             'menu' => $menu,
         ]);
     }
@@ -91,6 +94,7 @@ class MenuController extends AbstractController
         }
 
         return $this->render('menu/edit.html.twig', [
+            'constance' => new Constance(),
             'menu' => $menu,
             'form' => $form->createView(),
         ]);

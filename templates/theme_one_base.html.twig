@@ -52,7 +52,8 @@
                                                 <ul class="megamenu__links megamenu__links--level--1">
                                                     {% if category.subCategories | length > 0 %}
                                                         {% for sub in category.subCategories %}
-                                                            <li class="megamenu__item"><a href="{{ path('shop_products',  {shop_id: shop.id, category_id: sub.id  }) }}">{{ sub.name }}</a>
+                                                            <li style="background: #4a4a4b;padding: 5px 20px;margin-top: 3px" class="megamenu__item">
+                                                                <a style="color: whitesmoke" href="{{ path('shop_products',  {shop_id: shop.id, category_id: sub.id  }) }}">{{ sub.name }}</a>
                                                             </li>
                                                         {% endfor %}
                                                     {% endif %}

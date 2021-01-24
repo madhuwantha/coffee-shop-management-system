@@ -26,6 +26,7 @@ class ItemImageController extends AbstractController
     public function index(ItemImageRepository $itemImageRepository): Response
     {
         return $this->render('item_image/index.html.twig', [
+            'constance' => new Constance(),
             'item_images' => $itemImageRepository->findAll(),
         ]);
     }
@@ -63,6 +64,7 @@ class ItemImageController extends AbstractController
         }
 
         return $this->render('item_image/new.html.twig', [
+            'constance' => new Constance(),
             'item_image' => $itemImage,
             'form' => $form->createView(),
         ]);
@@ -74,6 +76,7 @@ class ItemImageController extends AbstractController
     public function show(ItemImage $itemImage): Response
     {
         return $this->render('item_image/show.html.twig', [
+            'constance' => new Constance(),
             'item_image' => $itemImage,
         ]);
     }
@@ -93,6 +96,7 @@ class ItemImageController extends AbstractController
         }
 
         return $this->render('item_image/edit.html.twig', [
+            'constance' => new Constance(),
             'item_image' => $itemImage,
             'form' => $form->createView(),
         ]);

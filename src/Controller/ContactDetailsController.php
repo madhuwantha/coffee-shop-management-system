@@ -21,6 +21,7 @@ class ContactDetailsController extends AbstractController
     public function index(ContactDetailsRepository $contactDetailsRepository): Response
     {
         return $this->render('contact_details/index.html.twig', [
+            'constance' => new Constance(),
             'contact_details' => $contactDetailsRepository->findAll(),
         ]);
     }
@@ -43,6 +44,7 @@ class ContactDetailsController extends AbstractController
         }
 
         return $this->render('contact_details/new.html.twig', [
+            'constance' => new Constance(),
             'contact_detail' => $contactDetail,
             'form' => $form->createView(),
         ]);
@@ -54,6 +56,7 @@ class ContactDetailsController extends AbstractController
     public function show(ContactDetails $contactDetail): Response
     {
         return $this->render('contact_details/show.html.twig', [
+            'constance' => new Constance(),
             'contact_detail' => $contactDetail,
         ]);
     }
@@ -73,6 +76,7 @@ class ContactDetailsController extends AbstractController
         }
 
         return $this->render('contact_details/edit.html.twig', [
+            'constance' => new Constance(),
             'contact_detail' => $contactDetail,
             'form' => $form->createView(),
         ]);

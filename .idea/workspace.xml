@@ -2,97 +2,183 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3f2ec66-bb44-482f-8451-16964c9fc257" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210113140049.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210113174126.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210113174941.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210117182204.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/buy_image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/megamenu/my-shop-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/jss/jquery.prettyPhoto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/jss/jquery.scrollUp.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-1-5ffefd7f56793.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-2-5ffeffbb8493b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-2-5ffeffbb8761f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-2-5fff09cb98db0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/buy-image-6002b6303b1ba.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/buy-image-6002b80e4ed74.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/buy-image-6002ba11904d4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/buy-image-6002ba439fbbb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/buy-image-6002bba62dcbe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/buy-image-6002bc4ff1196.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/buy-image-6002bc6b2c126.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/buy-image-6002bc98ed0e8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/buy-image-6002bd84d9abb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/buy-image-6002c09e9da4b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/openstack-6002b204b65b0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/openstack-6002ba2277040.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-1-5ffeffbb882a6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-1-5fff09cb9b652.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-1-5fff09de7bcd9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-1-5fff09de7e46e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-1-600099996e3f8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-3-6000999972028.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-6000999972b8d.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/udemy-6001cc8bda51b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/udemy-6002b74cbf61e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/udemy-6002bca432aa4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/udemy-6002bcb6ee178.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/udemy-6002bcd1237f0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/udemy-6002bce94e97e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/udemy-6002bcf3091fc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/udemy-6002bd0f1e033.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/udemy-6002bd629f724.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/xbotix-6002b652646c0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/xbotix-6002b71d16d33.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Constance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/OpenHourController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/OpenHour.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/MessageReplyType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/OpenHourType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/UserEditType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/OpenHourRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/coffee_shop/_form_open_day.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/coffee_shop/one_buy_page.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/coffee_shop/one_products.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/message/sent_index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/open_hour/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/open_hour/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/open_hour/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/open_hour/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/open_hour/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/open_hour/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210124064507.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/Deploy-Spring-Boot-Micro-Service-to-Google-Cloud-in-10-minutes-600d465504523.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/Drowsy-Driving-600d2873f1a69.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/android-chrome-512x512-600d1be2af102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-1-600d2e929208c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/bg-3-600d28f29a3f5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/buy-image-600d28f29d0b8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d1dcd3ca62.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d236c28c77.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d241644d15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d243370f63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d2449bb7f8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d2475032ed.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d2494c8bf0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d24a75975c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d276278610.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d27627ac65.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d27627b6f3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d2873ef0e7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d2873f2928.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d28e31dfc8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d2cbe6711e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d3e3c49540.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/coffe-logo-600d4586ab5b7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/cybersecurity-lock-600d3e7bb9458.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/download-jpg-600d1bb1a41b0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/ex-network-to-int-network-ping-work-tcpdump-in-gateway-instance-600d2873f3787.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/java-cource-600d1de017982.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/my-600d21e6b3753.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/shop-4-600d28e3209df.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/tuxpi-com-1610888209-600d3d6e9f8fa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/tuxpi-com-1610888209-600d3dbdacc4c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/web-600d24b4045f4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/web-600d261668fc6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/theme_one_base_preview.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/shop/createController.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/shop/createController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/jss/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/jss/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CoffeeShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CoffeeShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/controllers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AddressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AddressController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CoverPhotoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CoverPhotoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GalleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GalleryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GalleryImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GalleryImageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GalleryVideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GalleryVideoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ItemImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemImageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuCategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MessageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/NextCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/NextCategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OpenHourController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OpenHourController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OrderItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderItemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OrderStatusController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OrderStatusController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProfilePictureController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProfilePictureController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SliderImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SliderImageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ThemeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ThemeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CoffeeShop.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CoffeeShop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CoffeeShopType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CoffeeShopType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/MessageReceivedType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MessageReceivedType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/MessageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MessageType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/FileUploader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/FileUploader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Base/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Base/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Base/left-side-menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Base/left-side-menu.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/category/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/coffee_shop/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/coffee_shop/one_index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/one_index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/message/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/message/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/message/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/message/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/coffee_shop/one_products.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/coffee_shop/one_products.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gallery/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/item/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/item/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/item/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/item/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/order/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/theme_one/index2.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/theme_one/index2.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/theme_one_base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/theme_one_base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/AfterEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/AfterEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/BeforeEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/BeforeEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/ItemsEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/ItemsEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/PaginationEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/PaginationEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/Doctrine/ORM/Query/WhereWalker.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/Doctrine/ORM/Query/WhereWalker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/Doctrine/ORM/QuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/Doctrine/ORM/QuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/FiltrationSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/FiltrationSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/PropelQuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/PropelQuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/ArraySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/ArraySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Callback/CallbackPagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Callback/CallbackPagination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Callback/CallbackSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Callback/CallbackSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/CollectionSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/CollectionSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/MongoDB/QueryBuilderSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/MongoDB/QueryBuilderSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/MongoDB/QuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/MongoDB/QuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/PHPCR/QueryBuilderSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/PHPCR/QueryBuilderSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/PHPCR/QuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/PHPCR/QuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/Query/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/Query/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/QueryBuilderSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/QueryBuilderSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/QuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/QuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/ElasticaQuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/ElasticaQuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/PaginationSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/PaginationSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/PropelQuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/PropelQuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/SolariumQuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/SolariumQuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/ArraySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/ArraySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/Doctrine/ODM/MongoDB/QuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/Doctrine/ODM/MongoDB/QuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/Doctrine/ORM/Query/OrderByWalker.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/Doctrine/ORM/Query/OrderByWalker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/Doctrine/ORM/QuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/Doctrine/ORM/QuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/ElasticaQuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/ElasticaQuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/PropelQuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/PropelQuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/SolariumQuerySubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/SolariumQuerySubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/SortableSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/SortableSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Exception/PageNumberOutOfRangeException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Exception/PageNumberOutOfRangeException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Pagination/AbstractPagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Pagination/AbstractPagination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Pagination/PaginationInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Pagination/PaginationInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Pagination/SlidingPagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Pagination/SlidingPagination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Paginator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Paginator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/PaginatorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/PaginatorInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/config/paginator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/config/paginator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/config/templating_php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/config/templating_php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/docs/custom_pagination_subscribers.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/docs/custom_pagination_subscribers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/docs/manual_counting.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/docs/manual_counting.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/docs/paginator_configuration.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/docs/paginator_configuration.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/docs/templates.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/docs/templates.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Definition/AbstractPaginatorAware.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Definition/AbstractPaginatorAware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Definition/PaginatorAware.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Definition/PaginatorAware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Definition/PaginatorAwareInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Definition/PaginatorAwareInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/DependencyInjection/Compiler/PaginatorAwarePass.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/DependencyInjection/Compiler/PaginatorAwarePass.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/DependencyInjection/Compiler/PaginatorConfigurationPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/DependencyInjection/Compiler/PaginatorConfigurationPass.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/DependencyInjection/Configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/DependencyInjection/Configuration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/DependencyInjection/KnpPaginatorExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/DependencyInjection/KnpPaginatorExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Helper/Processor.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Helper/Processor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/KnpPaginatorBundle.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/KnpPaginatorBundle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Pagination/SlidingPagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Pagination/SlidingPagination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Pagination/SlidingPaginationInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Pagination/SlidingPaginationInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Subscriber/SlidingPaginationSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Subscriber/SlidingPaginationSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Templating/PaginationHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Templating/PaginationHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Twig/Extension/PaginationExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/src/Twig/Extension/PaginationExtension.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/bulma_pagination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/bulma_pagination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/filtration.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/filtration.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/foundation_v5_pagination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/foundation_v5_pagination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/materialize_pagination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/materialize_pagination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/semantic_ui_pagination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/semantic_ui_pagination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/semantic_ui_sortable_link.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/semantic_ui_sortable_link.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/sliding.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/sliding.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/sortable_link.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/sortable_link.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/twitter_bootstrap_pagination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/twitter_bootstrap_pagination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/twitter_bootstrap_v3_pagination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/twitter_bootstrap_v3_pagination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/twitter_bootstrap_v3_sortable_link.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/twitter_bootstrap_v3_sortable_link.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/twitter_bootstrap_v4_filtration.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/twitter_bootstrap_v4_filtration.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/twitter_bootstrap_v4_font_awesome_sortable_link.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/twitter_bootstrap_v4_font_awesome_sortable_link.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/twitter_bootstrap_v4_pagination.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/templates/Pagination/twitter_bootstrap_v4_pagination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ar.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ar.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.bg.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.bg.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.cs.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.cs.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.da.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.da.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.de.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.de.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.en.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.en.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.es.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.es.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.eu.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.eu.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.fa.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.fa.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.fr.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.fr.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.hu.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.hu.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.id.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.id.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.it.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.it.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ja.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ja.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ky.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ky.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.lt.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.lt.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.nl.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.nl.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.no.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.no.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.pl.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.pl.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.pt_BR.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.pt_BR.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ro.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ro.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ru.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.ru.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.sv.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.sv.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.sw.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.sw.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.tr.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.tr.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.uk.xliff" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/translations/KnpPaginatorBundle.uk.xliff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -255,7 +341,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1608047873732" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -264,18 +350,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\coffee-shop-management-system\templates" />
+      <recent name="C:\xampp\htdocs\coffice\public\images" />
+      <recent name="C:\xampp\htdocs\coffice\templates\message" />
+      <recent name="C:\xampp\htdocs\coffice\templates\user" />
+      <recent name="C:\xampp\htdocs\coffice\src\Form" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\coffice\public\images\megamenu" />
       <recent name="C:\xampp\htdocs\coffice\templates\coffee_shop" />
       <recent name="C:\xampp\htdocs\coffice\templates\shop" />
       <recent name="C:\xampp\htdocs\coffee-shop-management-system\public" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\coffice\public\images" />
-      <recent name="C:\xampp\htdocs\coffice\templates\message" />
-      <recent name="C:\xampp\htdocs\coffice\templates\user" />
-      <recent name="C:\xampp\htdocs\coffice\src\Form" />
-      <recent name="C:\xampp\htdocs\coffice\public\images\megamenu" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -347,6 +433,7 @@
       <workItem from="1610903730130" duration="8329000" />
       <workItem from="1610988723282" duration="5386000" />
       <workItem from="1611169228850" duration="4401000" />
+      <workItem from="1611470528455" duration="8832000" />
     </task>
     <servers />
   </component>

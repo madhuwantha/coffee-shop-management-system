@@ -21,6 +21,7 @@ class OpenHourController extends AbstractController
     public function index(OpenHourRepository $openHourRepository): Response
     {
         return $this->render('open_hour/index.html.twig', [
+            'constance' => new Constance(),
             'open_hours' => $openHourRepository->findAll(),
         ]);
     }
@@ -43,6 +44,7 @@ class OpenHourController extends AbstractController
         }
 
         return $this->render('open_hour/new.html.twig', [
+            'constance' => new Constance(),
             'open_hour' => $openHour,
             'form' => $form->createView(),
         ]);
@@ -54,6 +56,7 @@ class OpenHourController extends AbstractController
     public function show(OpenHour $openHour): Response
     {
         return $this->render('open_hour/show.html.twig', [
+            'constance' => new Constance(),
             'open_hour' => $openHour,
         ]);
     }
@@ -73,6 +76,7 @@ class OpenHourController extends AbstractController
         }
 
         return $this->render('open_hour/edit.html.twig', [
+            'constance' => new Constance(),
             'open_hour' => $openHour,
             'form' => $form->createView(),
         ]);

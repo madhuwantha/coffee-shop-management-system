@@ -22,6 +22,7 @@ class ProfilePictureController extends AbstractController
     public function index(ProfilePictureRepository $profilePictureRepository): Response
     {
         return $this->render('profile_picture/index.html.twig', [
+            'constance' => new Constance(),
             'profile_pictures' => $profilePictureRepository->findAll(),
         ]);
     }
@@ -53,6 +54,7 @@ class ProfilePictureController extends AbstractController
         }
 
         return $this->render('user/new_profile_pic.html.twig', [
+            'constance' => new Constance(),
             'profile_picture' => $profilePicture,
             'form' => $form->createView(),
         ]);
@@ -64,6 +66,7 @@ class ProfilePictureController extends AbstractController
     public function show(ProfilePicture $profilePicture): Response
     {
         return $this->render('profile_picture/show.html.twig', [
+            'constance' => new Constance(),
             'profile_picture' => $profilePicture,
         ]);
     }
@@ -83,6 +86,7 @@ class ProfilePictureController extends AbstractController
         }
 
         return $this->render('profile_picture/edit.html.twig', [
+            'constance' => new Constance(),
             'profile_picture' => $profilePicture,
             'form' => $form->createView(),
         ]);

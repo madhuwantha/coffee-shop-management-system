@@ -21,6 +21,7 @@ class GalleryVideoController extends AbstractController
     public function index(GalleryVideoRepository $galleryVideoRepository): Response
     {
         return $this->render('gallery_video/index.html.twig', [
+            'constance' => new Constance(),
             'gallery_videos' => $galleryVideoRepository->findAll(),
         ]);
     }
@@ -43,6 +44,7 @@ class GalleryVideoController extends AbstractController
         }
 
         return $this->render('gallery_video/new.html.twig', [
+            'constance' => new Constance(),
             'gallery_video' => $galleryVideo,
             'form' => $form->createView(),
         ]);
@@ -54,6 +56,7 @@ class GalleryVideoController extends AbstractController
     public function show(GalleryVideo $galleryVideo): Response
     {
         return $this->render('gallery_video/show.html.twig', [
+            'constance' => new Constance(),
             'gallery_video' => $galleryVideo,
         ]);
     }
@@ -73,6 +76,7 @@ class GalleryVideoController extends AbstractController
         }
 
         return $this->render('gallery_video/edit.html.twig', [
+            'constance' => new Constance(),
             'gallery_video' => $galleryVideo,
             'form' => $form->createView(),
         ]);

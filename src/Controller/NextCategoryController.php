@@ -21,6 +21,7 @@ class NextCategoryController extends AbstractController
     public function index(NextCategoryRepository $nextCategoryRepository): Response
     {
         return $this->render('next_category/index.html.twig', [
+            'constance' => new Constance(),
             'next_categories' => $nextCategoryRepository->findAll(),
         ]);
     }
@@ -43,6 +44,7 @@ class NextCategoryController extends AbstractController
         }
 
         return $this->render('next_category/new.html.twig', [
+            'constance' => new Constance(),
             'next_category' => $nextCategory,
             'form' => $form->createView(),
         ]);
@@ -54,6 +56,7 @@ class NextCategoryController extends AbstractController
     public function show(NextCategory $nextCategory): Response
     {
         return $this->render('next_category/show.html.twig', [
+            'constance' => new Constance(),
             'next_category' => $nextCategory,
         ]);
     }
@@ -73,6 +76,7 @@ class NextCategoryController extends AbstractController
         }
 
         return $this->render('next_category/edit.html.twig', [
+            'constance' => new Constance(),
             'next_category' => $nextCategory,
             'form' => $form->createView(),
         ]);

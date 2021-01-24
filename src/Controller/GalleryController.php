@@ -22,6 +22,7 @@ class GalleryController extends AbstractController
     public function index(GalleryRepository $galleryRepository): Response
     {
         return $this->render('gallery/index.html.twig', [
+            'constance' => new Constance(),
             'galleries' => $galleryRepository->findAll(),
         ]);
     }
@@ -69,6 +70,7 @@ class GalleryController extends AbstractController
         }
 
         return $this->render('gallery/new.html.twig', [
+            'constance' => new Constance(),
             'gallery' => $gallery,
             'form' => $form->createView(),
         ]);
@@ -80,6 +82,7 @@ class GalleryController extends AbstractController
     public function show(Gallery $gallery): Response
     {
         return $this->render('gallery/show.html.twig', [
+            'constance' => new Constance(),
             'gallery' => $gallery,
         ]);
     }
@@ -124,6 +127,7 @@ class GalleryController extends AbstractController
         }
 
         return $this->render('gallery/edit.html.twig', [
+            'constance' => new Constance(),
             'gallery' => $gallery,
             'form' => $form->createView(),
         ]);

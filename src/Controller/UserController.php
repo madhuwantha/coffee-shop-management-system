@@ -41,7 +41,7 @@ class UserController extends AbstractController
      * @param UserRepository $userRepository
      * @return Response
      */
-    public function index(PaginatorInterface $paginator,Request $request, UserRepository $userRepository): Response
+    public function index(PaginatorInterface $paginator, Request $request, UserRepository $userRepository): Response
     {
 
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
@@ -49,7 +49,7 @@ class UserController extends AbstractController
         $user = $this->security->getUser();
         $users = [];
         $k = false;
-        if (in_array("ROLE_SUPPER_ADMIN", $user->getRoles())){
+        if (in_array("ROLE_SUPPER_ADMIN", $user->getRoles())) {
             $query = $userRepository->findAll();
             $users = $paginator->paginate(
                 $query,
@@ -57,11 +57,12 @@ class UserController extends AbstractController
                 6
             );
             $k = true;
-        }else{
-            array_push($users,$user);
+        } else {
+            array_push($users, $user);
         }
 
         return $this->render('user/index.html.twig', [
+            'constance' => new Constance(),
             'users' => $users,
             'k' => $k
         ]);
@@ -101,6 +102,7 @@ class UserController extends AbstractController
         }
 
         return $this->render('user/new.html.twig', [
+            'constance' => new Constance(),
             'user' => $user,
             'form' => $form->createView(),
             'edit' => false
@@ -115,6 +117,7 @@ class UserController extends AbstractController
     public function show(User $user): Response
     {
         return $this->render('user/show.html.twig', [
+            'constance' => new Constance(),
             'user' => $user,
         ]);
     }
@@ -135,29 +138,42 @@ class UserController extends AbstractController
 
             $profilePhoto = $form->get('file')->getData();
             $entityManager = $this->getDoctrine()->getManager();
-            if ($profilePhoto){
-               try{
-                   $path = $fileUploader->upload($profilePhoto);
+            if ($profilePhoto) {
+                try {
+                    $path = $fileUploader->upload($profilePhoto);
 
-                   $profilePicture = $user->getProfilePictures()->get(0);
-                   $profilePicture->setPath($path);
+                    $profilePicture = $user->getProfilePictures()->get(0);
+                    $profilePicture->setPath($path);
 
-                   $entityManager->persist($profilePicture);
-               }catch (FileException $e){
-                   $entityManager->persist($user);
-                   $entityManager->flush();
-                   return $this->redirectToRoute('user_index');
-               }
+                    $entityManager->persist($profilePicture);
+                } catch (FileException $e) {
+                    $u = $this->getUser();
+
+                    if (in_array("ROLE_SUPPER_ADMIN", $u->getRoles())){
+                        return $this->redirectToRoute('user_index');
+                    }else{
+                        return $this->redirectToRoute('dashboard');
+                    }
+                }
 
             }
 
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('user_index');
+
+            $u = $this->getUser();
+
+            if (in_array("ROLE_SUPPER_ADMIN", $u->getRoles())){
+                return $this->redirectToRoute('user_index');
+            }else{
+                return $this->redirectToRoute('user_show',["id" =>$u->getId()]);
+            }
+
         }
 
         return $this->render('user/edit.html.twig', [
+            'constance' => new Constance(),
             'user' => $user,
             'form' => $form->createView(),
             'edit' => true
@@ -172,7 +188,7 @@ class UserController extends AbstractController
      */
     public function delete(Request $request, User $user): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();
